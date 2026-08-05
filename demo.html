@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>التجربة التفاعلية والمحاكاة | رَبْـط - مقارنة الأتمتة 2026</title>
+  <meta name="description" content="تجربة تفاعلية حية لمقارنة الأداء التجاري والمالي قبل وبعد نظام رَبْـط: معالجة فورية وزمن تنفيذ 12ms.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </div>
+        <span data-i18n="nav.brand">رَبْـط</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="services.html" class="nav-link" data-i18n="nav.services">الخدمات والحلول</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
+        <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
+        <li><a href="demo.html" class="nav-link active" data-i18n="nav.demo">التجربة التفاعلية</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span id="lang-switch-label">English</span>
+        </button>
+
+        <button class="toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span id="theme-toggle-icon"></span>
+        </button>
+
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">ابدأ الآن مجاناً</a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Demo Hero Header -->
+    <section class="hero-section" style="padding: 4rem 0 2rem;">
+      <div class="container hero-content">
+        <div class="hero-badge-wrap">
+          <span class="badge badge-emerald" data-i18n="demo.hero_badge">محاكاة واقعية للمقارنة</span>
+        </div>
+        <h1 class="hero-title" data-i18n="demo.hero_title">شاهد الفرق الفعلي قبل وبعد نظام رَبْـط</h1>
+        <p class="hero-subtitle" data-i18n="demo.hero_subtitle">
+          جرب كيف تحول رَبْـط المعاملات المالية المربكة واليدوية إلى عملية فورية تكتمل خلال ثوانٍ.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Comparison Showcase Widget -->
+    <section class="section-padding" style="padding-top: 0;">
+      <div class="container container-narrow">
+        
+        <div class="showcase-widget">
+          <div class="widget-tabs">
+            <button class="widget-tab active-before" id="tab-before" data-i18n="demo.tab_before">❌ العمل التقليدي (قبل رَبْـط)</button>
+            <button class="widget-tab" id="tab-after" data-i18n="demo.tab_after">⚡ الأتمتة الذكية (بعد رَبْـط)</button>
+          </div>
+
+          <div class="widget-body">
+            <!-- Panel Before -->
+            <div class="comparison-panel active" id="panel-before">
+              <div class="comparison-card">
+                <div class="comparison-card-title" style="color: var(--color-error);">
+                  <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                  <span>التأخير والأخطاء اليدويّة</span>
+                </div>
+                <ul class="comparison-list">
+                  <li class="comparison-item">
+                    <svg class="icon-svg" style="color: var(--color-error);" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <div>
+                      <strong data-i18n="demo.before_t1">تحقق يدوي من زين كاش (ساعتان تأخير)</strong>
+                      <p style="font-size: 0.85rem;" data-i18n="demo.before_d1">الزبون يرسل لقطة شاشة للحوالة، والموظف يتحقق يدوياً من تطبيق المحفظة.</p>
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <svg class="icon-svg" style="color: var(--color-error);" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <div>
+                      <strong data-i18n="demo.before_t2">خطأ في المخزون ونفاذ القطع</strong>
+                      <p style="font-size: 0.85rem;" data-i18n="demo.before_d2">طلب نفس القطعة من المحل والجريد في وقت واحد مما يسبب إحراجاً مع الزبون.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="comparison-card">
+                <div class="comparison-card-title" style="color: var(--color-error);">
+                  <svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                  <span>ارتفاع التكاليف والراجع</span>
+                </div>
+                <ul class="comparison-list">
+                  <li class="comparison-item">
+                    <svg class="icon-svg" style="color: var(--color-error);" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    <div>
+                      <strong data-i18n="demo.before_t3">ارتفاع نسبة الشحنات المرجعة</strong>
+                      <p style="font-size: 0.85rem;" data-i18n="demo.before_d3">عدم تأكيد العنوان الدقيق يؤدي لعدم وصول سائق التوصيل ورجوع الطلب.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Panel After -->
+            <div class="comparison-panel" id="panel-after">
+              <div class="comparison-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                <div class="comparison-card-title" style="color: var(--color-success);">
+                  <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>سرعة ودقة فائقة</span>
+                </div>
+                <ul class="comparison-list">
+                  <li class="comparison-item">
+                    <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <div>
+                      <strong data-i18n="demo.after_t1">تأكيد مالي فوري خلال 15 ثانية</strong>
+                      <p style="font-size: 0.85rem;" data-i18n="demo.after_d1">إشعار فوري وتأكيد تلقائي للطلب بمجرد إتمام التحويل عبر API زين كاش وكي كارد.</p>
+                    </div>
+                  </li>
+                  <li class="comparison-item">
+                    <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <div>
+                      <strong data-i18n="demo.after_t2">مزامنة لحظية للمخزون في المحل والمتجر</strong>
+                      <p style="font-size: 0.85rem;" data-i18n="demo.after_d2">خصم تلقائي لحظي يضمن عدم تكرار بيع المنتج المباع في أي منصة.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="comparison-card" style="border-color: rgba(16, 185, 129, 0.3);">
+                <div class="comparison-card-title" style="color: var(--color-success);">
+                  <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>أقل راجع وأعلى أرباح</span>
+                </div>
+                <ul class="comparison-list">
+                  <li class="comparison-item">
+                    <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <div>
+                      <strong data-i18n="demo.after_t3">تأكيد العنوان عبر الذكاء الاصطناعي</strong>
+                      <p style="font-size: 0.85rem;" data-i18n="demo.after_d3">شات بوت يحدد الموقع بدقة ويصدر البوليصة لشركة التوصيل مباشرة.</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Live Interactive Simulator Console -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container container-narrow">
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="badge badge-primary">المحاكاة الحية</span>
+          <h2 data-i18n="demo.sim_title">مشغل محاكاة الطلب الحي (Live Transaction Simulator)</h2>
+        </div>
+
+        <div class="sim-container">
+          <div class="sim-controls">
+            <button class="btn btn-primary" id="sim-start-btn">
+              <svg class="icon-svg" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              <span data-i18n="demo.sim_start_btn">تشغيل تجربة طلب حية</span>
+            </button>
+            <button class="btn btn-secondary" id="sim-clear-btn">
+              <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              <span data-i18n="demo.sim_clear_btn">مسح السجل</span>
+            </button>
+          </div>
+
+          <div class="sim-log-box" id="sim-log">
+            <div class="sim-log-line"><span class="sim-log-time">[SYSTEM]</span> Ready to execute transaction simulation. Click "Run Live Transaction Test" above...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </div>
+            <span data-i18n="nav.brand">رَبْـط</span>
+          </a>
+          <p class="footer-desc" data-i18n="footer.desc">
+            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع الإلكتروني (زين كاش، كي كارد) وأنظمة إدارة المخزون والتوصيل.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
+          <ul class="footer-links">
+            <li><a href="services.html" data-i18n="footer.col1_link1">تسوية زين كاش وكي كارد</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col2_title">الشركة والبيئة</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" data-i18n="footer.col2_link1">عن رَبْـط Baghdad</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link2">معايير الأمان ISO</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link3">مركز بغداد للبيانات</a></li>
+            <li><a href="contact.html" data-i18n="footer.col2_link4">الوظائف والانضمام</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col3_title">الدعم الفني</h4>
+          <ul class="footer-links">
+            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ API والـ SDK</a></li>
+            <li><a href="about.html" data-i18n="footer.col3_link2">حالة الخدمة (Uptime)</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link3">مركز مساعدة التجار</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link4">اتصل بالدعم</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 رَبْـط للتكنولوجيا والتكامل البرمجي ش.م.م - بغداد، العراق. جميع الحقوق محفوظة.</span>
+        <span class="badge badge-emerald">
+          <span class="pulse-dot"></span>
+          <span data-i18n="footer.status">جميع الأنظمة تعمل بكفاءة 99.99%</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared-engine.js"></script>
+</body>
+</html>
