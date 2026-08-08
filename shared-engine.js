@@ -109,12 +109,22 @@ const translations = {
     "about.val4_title": "دعم فني برمجيات محلي",
     "about.val4_desc": "فريق مهندسين موجود في الجادرية تقديم الدعم والمساعدة المباشرة على مدار الساعة.",
 
+    "about.hq_badge": "مقرنا الرئيسي في بغداد",
+    "about.hq_title": "الجادرية - المجمع التكنولوجي",
+    "about.hq_desc": "نحن نعمل بالقرب من أرقى المؤسسات الأكاديمية والبحثية في بغداد. نوفر بيئة عمل هندسية تجذب أفضل العقول البرمجية العراقية لبناء حلول وطنية مستقلة ومستدامة.",
+    "about.hq_btn": "زيارة مقر الشركة أو التواصل",
+    "about.standards_title": "معايير السلامة والجودة البرمجية",
+    "about.std1": "شهادة الأمن السيبراني وتشفير الاتصالات SSL/TLS 1.3",
+    "about.std2": "امتثال تام مع معايير البنك المركزي العراقي (CBI Guidelines)",
+    "about.std3": "نسخ احتياطي فوري وموزع جغرافي كل 60 ثانية",
+
     // --- Pricing Page (pricing.html) ---
     "pricing.hero_badge": "خطط وتكاليف شفافة",
     "pricing.hero_title": "باقات تناسب جميع أحجام الأعمال",
     "pricing.hero_subtitle": "ابدأ بأتمتة متجرك اليوم اختر الخطة المناسبة لنشاطك التجاري دون مصاريف خفية.",
-    "pricing.monthly": "دفعت شهرية",
-    "pricing.annual": "دفعت سنوية (خصم 20%)",
+    "pricing.monthly": "دفعة شهرية",
+    "pricing.annual": "دفعة سنوية (خصم 20%)",
+    "pricing.period": "شهرياً / تُدفع بحسب الاختيار",
 
     "pricing.p1_name": "باقة المتاجر الناشئة",
     "pricing.p1_desc": "مثالية للمتاجر الصغرى التي تبدأ أتمتة الدفع الشائع والتوصيل.",
@@ -123,7 +133,9 @@ const translations = {
     "pricing.p1_f2": "ربط زين كاش أو كي كارد",
     "pricing.p1_f3": "مزامنة مخزون متجر واحد",
     "pricing.p1_f4": "دعم عبر البريد والواتساب",
+    "pricing.p1_cta": "اختر الباقة الناشئة",
 
+    "pricing.p2_badge": "الأكثر شعبية ونمواً",
     "pricing.p2_name": "باقة النمو المتكاملة",
     "pricing.p2_desc": "للحركات التجارية المتنامية والمتاجر متعددة الفروع.",
     "pricing.p2_price": "129",
@@ -132,6 +144,7 @@ const translations = {
     "pricing.p2_f3": "مزامنة POS + ERP متقدمة",
     "pricing.p2_f4": "شات بوت تأكيد العناوين بالعراقي",
     "pricing.p2_f5": "دعم هاتف ذو أولوية 24/7",
+    "pricing.p2_cta": "جرب باقة النمو مجاناً",
 
     "pricing.p3_name": "باقة المؤسسات والشركات",
     "pricing.p3_desc": "سعة لا محدودة مع بنية تحتية مخصصة ومطابقة حسابات معقدة.",
@@ -142,6 +155,30 @@ const translations = {
     "pricing.p3_f4": "مدير حسابات فني خاص في بغداد",
     "pricing.p3_cta": "تواصل مع قسم المبيعات",
 
+    "pricing.matrix_h1": "الميزة / الخاصيّة البرمجيّة",
+    "pricing.matrix_h2": "الناشئة ($49)",
+    "pricing.matrix_h3": "النمو ($129)",
+    "pricing.matrix_h4": "المؤسسات ($299)",
+    "pricing.matrix_r1_f": "سرعة التحقق الفوري (ZainCash & QiCard)",
+    "pricing.matrix_r2_f": "مزامنة نقاط البيع اليدوية POS",
+    "pricing.matrix_r2_c1": "فرع واحد",
+    "pricing.matrix_r2_c2": "حتى 5 فروع",
+    "pricing.matrix_r2_c3": "فروع لا محدودة",
+    "pricing.matrix_r3_f": "شات بوت العناوين العراقي (WhatsApp)",
+    "pricing.matrix_r3_c1": "غير مشمول",
+    "pricing.matrix_r3_c2": "مشمول 1,000 محادثة",
+    "pricing.matrix_r3_c3": "محادثات لا محدودة",
+    "pricing.matrix_r4_f": "اتفاقية مستوى الخدمة SLA",
+
+    "pricing.faq_badge": "الأسئلة الشائعة",
+    "pricing.faq_title": "إجابات على استفساراتك الفنية والتجارية",
+    "pricing.faq_q1": "هل يتطلب الربط تعديل كود متجري الإلكتروني الحالي؟",
+    "pricing.faq_a1": "لا، نوفر إضافات برمجية جاهزة (Plugins / SDKs) لمنصات سلة، زد، Odoo، ووكمرس، كما نوفر RESTful APIs سهلة الدمج لأي تطبيق مخصص.",
+    "pricing.faq_q2": "كيف تضمنون أمان التحويلات المالية عبر زين كاش وكي كارد؟",
+    "pricing.faq_a2": "يتم الاتصال مباشرة عبر القنوات المعتمدة تشفيرياً مع البنوك والمحافظ الإلكترونية دون تخزين أي بيانات حساسة، مع استخدام تشفير AES-256 ومطابقة التوقيع الرقمي (Signature Verification).",
+    "pricing.faq_q3": "ما هي المدة الاستغراقية لبدء التشغيل الفعلي (Go-Live)؟",
+    "pricing.faq_a3": "تستغرق عملية الإعداد والتفعيل للمتاجر القياسية أقل من 24 ساعة. بالنسبة للمؤسسات الكبرى التي تتطلب دمج SAP أو Oracle، يتطلب ذلك من 3 إلى 5 أيام عمل فقط.",
+
     // --- Demo Page (demo.html) ---
     "demo.hero_badge": "محاكاة واقعية للمقارنة",
     "demo.hero_title": "شاهد الفرق الفعلي قبل وبعد نظام رَبْـط",
@@ -149,23 +186,31 @@ const translations = {
     "demo.tab_before": "❌ العمل التقليدي (قبل رَبْـط)",
     "demo.tab_after": "⚡ الأتمتة الذكية (بعد رَبْـط)",
 
+    "demo.card_before1_title": "التأخير والأخطاء اليدويّة",
     "demo.before_t1": "تحقق يدوي من زين كاش (ساعتان تأخير)",
     "demo.before_d1": "الزبون يرسل لقطة شاشة للحوالة، والموظف يتحقق يدوياً من تطبيق المحفظة.",
     "demo.before_t2": "خطأ في المخزون ونفاذ القطع",
     "demo.before_d2": "طلب نفس القطعة من المحل والجريد في وقت واحد مما يسبب إحراجاً مع الزبون.",
+
+    "demo.card_before2_title": "ارتفاع التكاليف والراجع",
     "demo.before_t3": "ارتفاع نسبة الشحنات المرجعة",
     "demo.before_d3": "عدم تأكيد العنوان الدقيق يؤدي لعدم وصول سائق التوصيل ورجوع الطلب.",
 
+    "demo.card_after1_title": "سرعة ودقة فائقة",
     "demo.after_t1": "تأكيد مالي فوري خلال 15 ثانية",
     "demo.after_d1": "إشعار فوري وتأكيد تلقائي للطلب بمجرد إتمام التحويل عبر API زين كاش وكي كارد.",
     "demo.after_t2": "مزامنة لحظية للمخزون في المحل والمتجر",
     "demo.after_d2": "خصم تلقائي لحظي يضمن عدم تكرار بيع المنتج المباع في أي منصة.",
+
+    "demo.card_after2_title": "أقل راجع وأعلى أرباح",
     "demo.after_t3": "تأكيد العنوان عبر الذكاء الاصطناعي",
     "demo.after_d3": "شات بوت يحدد الموقع بدقة ويصدر البوليصة لشركة التوصيل مباشرة.",
 
+    "demo.sim_badge": "المحاكاة الحية",
     "demo.sim_title": "مشغل محاكاة الطلب الحي (Live Transaction Simulator)",
     "demo.sim_start_btn": "تشغيل تجربة طلب حية",
     "demo.sim_clear_btn": "مسح السجل",
+    "demo.sim_ready": "جاهز لتشغيل محاكاة المعاملة المالية. اضغط \"تشغيل تجربة طلب حية\" أعلاه...",
 
     // --- Contact Page (contact.html) ---
     "contact.hero_badge": "تواصل مباشر",
@@ -183,12 +228,21 @@ const translations = {
     "contact.opt4": "حلول المؤسسات المخصصة Enterprise",
     "contact.lbl_message": "تفاصيل استفسارك",
     "contact.btn_submit": "إرسال الطلب الآن",
+    "contact.placeholder_fullname": "مثال: المهندس علي أحمد",
+    "contact.placeholder_email": "ali@company.iq",
+    "contact.placeholder_phone": "+964 780 000 0000",
+    "contact.placeholder_company": "شركة دجلة للتجارة",
+    "contact.placeholder_message": "اشرح لنا طبيعة متجرك أو النظام المراد ربطه...",
 
     "contact.office_title": "مقر الشركة في بغداد",
+    "contact.addr_lbl": "العنوان الجغرافي:",
     "contact.office_addr": "بغداد - الجادرية - المجمع التكنولوجي، بالقرب من جامعة بغداد",
+    "contact.hours_lbl": "ساعات العمل الرسمية:",
     "contact.office_hours": "أوقات العمل: الأحد - الخميس (9:00 صباحاً - 5:00 مساءً)",
+    "contact.support_lbl": "المبيعات والدعم:",
     "contact.office_phone": "الهاتف المباشر: 9647800000000+",
-    "contact.office_email": "البريد: enterprise@rabt.iq"
+    "contact.office_email": "البريد: enterprise@rabt.iq",
+    "contact.map_title": "مركز بيانات واستشارات بغداد"
   },
   en: {
     // --- Navigation & Common ---
@@ -295,12 +349,22 @@ const translations = {
     "about.val4_title": "Local Engineering Support",
     "about.val4_desc": "On-ground engineering team stationed in Jadriya, Baghdad providing 24/7 technical assistance.",
 
+    "about.hq_badge": "Baghdad Headquarters",
+    "about.hq_title": "Al-Jadriya Technology Park",
+    "about.hq_desc": "Stationed near top academic and research institutions in Baghdad. We foster an engineering culture attracting Iraq's top software talent to build independent, sustainable national solutions.",
+    "about.hq_btn": "Visit Baghdad HQ or Contact",
+    "about.standards_title": "Software Safety & Quality Standards",
+    "about.std1": "Cybersecurity compliance & SSL/TLS 1.3 encryption",
+    "about.std2": "Full compliance with Central Bank of Iraq (CBI) guidelines",
+    "about.std3": "Automated distributed backups synced every 60 seconds",
+
     // --- Pricing Page ---
     "pricing.hero_badge": "Transparent SaaS Pricing",
     "pricing.hero_title": "Flexible Tiers for Every Scale",
     "pricing.hero_subtitle": "Automate your retail operations today. Pick the ideal plan for your enterprise with zero hidden charges.",
     "pricing.monthly": "Billed Monthly",
     "pricing.annual": "Billed Annually (Save 20%)",
+    "pricing.period": "Per Month / Billed per plan selection",
 
     "pricing.p1_name": "Starter Automation",
     "pricing.p1_desc": "Ideal for small merchants beginning payment and courier automation.",
@@ -309,7 +373,9 @@ const translations = {
     "pricing.p1_f2": "ZainCash or QiCard API integration",
     "pricing.p1_f3": "Single storefront stock sync",
     "pricing.p1_f4": "Email & WhatsApp standard support",
+    "pricing.p1_cta": "Select Starter Plan",
 
+    "pricing.p2_badge": "Most Popular & Fast Growing",
     "pricing.p2_name": "Growth E-Commerce",
     "pricing.p2_desc": "For scaling businesses & multi-channel retail brands.",
     "pricing.p2_price": "129",
@@ -318,6 +384,7 @@ const translations = {
     "pricing.p2_f3": "Advanced Multi-Branch POS & ERP Sync",
     "pricing.p2_f4": "Iraqi Dialect WhatsApp AI Chatbot",
     "pricing.p2_f5": "24/7 Priority Phone Support",
+    "pricing.p2_cta": "Try Growth Plan Free",
 
     "pricing.p3_name": "Enterprise Infrastructure",
     "pricing.p3_desc": "Unlimited volume with custom dedicated pipelines & ledger rules.",
@@ -328,6 +395,30 @@ const translations = {
     "pricing.p3_f4": "Dedicated Technical Account Manager in Baghdad",
     "pricing.p3_cta": "Contact Enterprise Sales",
 
+    "pricing.matrix_h1": "Feature / API Capability",
+    "pricing.matrix_h2": "Starter ($49)",
+    "pricing.matrix_h3": "Growth ($129)",
+    "pricing.matrix_h4": "Enterprise ($299)",
+    "pricing.matrix_r1_f": "Instant API Settlement Latency",
+    "pricing.matrix_r2_f": "Physical POS Cashier Sync",
+    "pricing.matrix_r2_c1": "1 Branch",
+    "pricing.matrix_r2_c2": "Up to 5 Branches",
+    "pricing.matrix_r2_c3": "Unlimited Branches",
+    "pricing.matrix_r3_f": "Iraqi Address AI Chatbot",
+    "pricing.matrix_r3_c1": "Not Included",
+    "pricing.matrix_r3_c2": "Included (1,000 chats)",
+    "pricing.matrix_r3_c3": "Unlimited Conversations",
+    "pricing.matrix_r4_f": "Service Level Agreement (SLA)",
+
+    "pricing.faq_badge": "Frequently Asked Questions",
+    "pricing.faq_title": "Answers to Technical & Commercial FAQs",
+    "pricing.faq_q1": "Does integration require modifying my store's codebase?",
+    "pricing.faq_a1": "No, we provide ready-made Plugins / SDKs for Salla, Ziina, Odoo, WooCommerce, as well as developer-friendly RESTful APIs for custom apps.",
+    "pricing.faq_q2": "How do you guarantee transaction security for ZainCash & QiCard?",
+    "pricing.faq_a2": "Connections use encrypted channels with banks and mobile wallets without storing sensitive payload data, utilizing AES-256 encryption & RSA signature verification.",
+    "pricing.faq_q3": "How long does Go-Live onboarding take?",
+    "pricing.faq_a3": "Standard store setup takes under 24 hours. Enterprise integrations requiring custom SAP or Oracle connectors take 3-5 business days.",
+
     // --- Demo Page ---
     "demo.hero_badge": "Interactive Benchmark",
     "demo.hero_title": "Before vs After RABT Automation",
@@ -335,23 +426,31 @@ const translations = {
     "demo.tab_before": "❌ Traditional Manual Workflow",
     "demo.tab_after": "⚡ RABT Automated Engine",
 
+    "demo.card_before1_title": "Delays & Manual Errors",
     "demo.before_t1": "Manual ZainCash Receipt Verification (2hr Delay)",
     "demo.before_d1": "Customers send transfer screenshots, staff manually check wallet app records.",
     "demo.before_t2": "Stock Mismatch & Double Selling",
     "demo.before_d2": "Same item sold in physical store and online simultaneously causing order cancellations.",
+
+    "demo.card_before2_title": "High Costs & Returns",
     "demo.before_t3": "High Delivery Return Rate",
     "demo.before_d3": "Unconfirmed addresses lead to courier driver confusion and returned packages.",
 
+    "demo.card_after1_title": "Ultra Speed & Accuracy",
     "demo.after_t1": "Instant Financial Settlement in 15s",
     "demo.after_d1": "Automated order confirmation immediately upon API verification from ZainCash/QiCard.",
     "demo.after_t2": "Real-Time Multi-Channel Stock Inventory",
     "demo.after_d2": "Instant stock deduction prevents overselling across all physical and web points.",
+
+    "demo.card_after2_title": "Lower Returns & Higher Profit",
     "demo.after_t3": "AI Dialect Address Verification",
     "demo.after_d3": "WhatsApp bot confirms landmark details and sends dispatch waybill to couriers automatically.",
 
+    "demo.sim_badge": "Live Simulation",
     "demo.sim_title": "Live Transaction Pipeline Simulator",
     "demo.sim_start_btn": "Run Live Transaction Test",
     "demo.sim_clear_btn": "Clear Log",
+    "demo.sim_ready": "Ready to execute transaction simulation. Click \"Run Live Transaction Test\" above...",
 
     // --- Contact Page ---
     "contact.hero_badge": "Get In Touch",
@@ -369,12 +468,21 @@ const translations = {
     "contact.opt4": "Custom Enterprise Solutions",
     "contact.lbl_message": "Project Details & Inquiry",
     "contact.btn_submit": "Submit Request Now",
+    "contact.placeholder_fullname": "e.g. Eng. Ali Ahmed",
+    "contact.placeholder_email": "ali@company.iq",
+    "contact.placeholder_phone": "+964 780 000 0000",
+    "contact.placeholder_company": "Tigris Commerce Ltd.",
+    "contact.placeholder_message": "Describe your storefront, ERP, or API requirements...",
 
     "contact.office_title": "Baghdad Headquarters",
+    "contact.addr_lbl": "Headquarters Address:",
     "contact.office_addr": "Baghdad - Al-Jadriya - Technology Hub, near University of Baghdad",
+    "contact.hours_lbl": "Office Working Hours:",
     "contact.office_hours": "Working Hours: Sun - Thu (9:00 AM - 5:00 PM)",
+    "contact.support_lbl": "Sales & Support Lines:",
     "contact.office_phone": "Direct Phone: +9647800000000",
-    "contact.office_email": "Email: enterprise@rabt.iq"
+    "contact.office_email": "Email: enterprise@rabt.iq",
+    "contact.map_title": "Baghdad Data & Consulting Hub"
   }
 };
 
@@ -536,7 +644,11 @@ function initInteractivity() {
 
   if (simClearBtn && simLog) {
     simClearBtn.addEventListener('click', () => {
-      simLog.innerHTML = `<div class="sim-log-line"><span class="sim-log-time">[SYSTEM]</span> Ready to execute transaction simulation...</div>`;
+      const currentLang = document.documentElement.getAttribute('lang') || 'ar';
+      const readyMsg = translations[currentLang] && translations[currentLang]['demo.sim_ready'] 
+        ? translations[currentLang]['demo.sim_ready'] 
+        : 'Ready to execute transaction simulation...';
+      simLog.innerHTML = `<div class="sim-log-line"><span class="sim-log-time">[SYSTEM]</span> <span data-i18n="demo.sim_ready">${readyMsg}</span></div>`;
     });
   }
 

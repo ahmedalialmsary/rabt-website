@@ -69,18 +69,7 @@
           <label class="pricing-switch">
             <input type="checkbox" id="pricing-checkbox">
             <span class="pricing-slider"></span>
-          </label>
-          <span style="font-weight: 600; color: var(--color-primary);" data-i18n="pricing.annual">دفعت سنوية (خصم 20%)</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing 3-Tier Grid -->
-    <section class="section-padding" style="padding-top: 0;">
-      <div class="container">
-        <div class="pricing-grid">
-
-          <!-- Tier 1: Starter -->
+          </labe            <!-- Tier 1: Starter -->
           <div class="pricing-card">
             <div class="pricing-plan-name" data-i18n="pricing.p1_name">باقة المتاجر الناشئة</div>
             <div class="pricing-plan-desc" data-i18n="pricing.p1_desc">مثالية للمتاجر الصغرى التي تبدأ أتمتة الدفع الشائع والتوصيل.</div>
@@ -88,7 +77,7 @@
               <span class="pricing-currency">$</span>
               <span class="pricing-price-val" data-monthly="49">49</span>
             </div>
-            <div class="pricing-period">شهرياً / تُدفع بحسب الاختيار</div>
+            <div class="pricing-period" data-i18n="pricing.period">شهرياً / تُدفع بحسب الاختيار</div>
             <ul class="pricing-features">
               <li class="pricing-feature-item">
                 <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -107,19 +96,19 @@
                 <span data-i18n="pricing.p1_f4">دعم عبر البريد والواتساب</span>
               </li>
             </ul>
-            <a href="contact.html" class="btn btn-secondary btn-lg" style="width: 100%;">اختر الباقة الناشئة</a>
+            <a href="contact.html" class="btn btn-secondary btn-lg" style="width: 100%;" data-i18n="pricing.p1_cta">اختر الباقة الناشئة</a>
           </div>
 
           <!-- Tier 2: Growth (Featured) -->
           <div class="pricing-card featured">
-            <span class="pricing-badge">الأكثر شعبية ونمواً</span>
+            <span class="pricing-badge" data-i18n="pricing.p2_badge">الأكثر شعبية ونمواً</span>
             <div class="pricing-plan-name" data-i18n="pricing.p2_name">باقة النمو المتكاملة</div>
             <div class="pricing-plan-desc" data-i18n="pricing.p2_desc">للحركات التجارية المتنامية والمتاجر متعددة الفروع.</div>
             <div class="pricing-price">
               <span class="pricing-currency">$</span>
               <span class="pricing-price-val" data-monthly="129">129</span>
             </div>
-            <div class="pricing-period">شهرياً / تُدفع بحسب الاختيار</div>
+            <div class="pricing-period" data-i18n="pricing.period">شهرياً / تُدفع بحسب الاختيار</div>
             <ul class="pricing-features">
               <li class="pricing-feature-item">
                 <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -131,7 +120,7 @@
               </li>
               <li class="pricing-feature-item">
                 <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span data-i18n="pricing.p2_f3">مزامنة POS + ERP متتقدمة</span>
+                <span data-i18n="pricing.p2_f3">مزامنة POS + ERP متقدمة</span>
               </li>
               <li class="pricing-feature-item">
                 <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -142,7 +131,7 @@
                 <span data-i18n="pricing.p2_f5">دعم هاتف ذو أولوية 24/7</span>
               </li>
             </ul>
-            <a href="contact.html" class="btn btn-primary btn-lg" style="width: 100%;">جرب باقة النمو مجاناً</a>
+            <a href="contact.html" class="btn btn-primary btn-lg" style="width: 100%;" data-i18n="pricing.p2_cta">جرب باقة النمو مجاناً</a>
           </div>
 
           <!-- Tier 3: Enterprise -->
@@ -153,7 +142,7 @@
               <span class="pricing-currency">$</span>
               <span class="pricing-price-val" data-monthly="299">299</span>
             </div>
-            <div class="pricing-period">شهرياً / تُدفع بحسب الاختيار</div>
+            <div class="pricing-period" data-i18n="pricing.period">شهرياً / تُدفع بحسب الاختيار</div>
             <ul class="pricing-features">
               <li class="pricing-feature-item">
                 <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -182,33 +171,33 @@
           <table class="matrix-table">
             <thead>
               <tr>
-                <th>الميزة / الخاصيّة البرمجيّة</th>
-                <th>الناشئة ($49)</th>
-                <th>النمو ($129)</th>
-                <th>المؤسسات ($299)</th>
+                <th data-i18n="pricing.matrix_h1">الميزة / الخاصيّة البرمجيّة</th>
+                <th data-i18n="pricing.matrix_h2">الناشئة ($49)</th>
+                <th data-i18n="pricing.matrix_h3">النمو ($129)</th>
+                <th data-i18n="pricing.matrix_h4">المؤسسات ($299)</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>سرعة التحقق الفوري (ZainCash & QiCard)</td>
+                <td data-i18n="pricing.matrix_r1_f">سرعة التحقق الفوري (ZainCash & QiCard)</td>
                 <td>500ms</td>
                 <td>200ms</td>
                 <td>12ms (Dedicated Node)</td>
               </tr>
               <tr>
-                <td>مزامنة نقاط البيع اليدوية POS</td>
-                <td>فرع واحد</td>
-                <td>حتى 5 فروع</td>
-                <td>فروع لا محدودة</td>
+                <td data-i18n="pricing.matrix_r2_f">مزامنة نقاط البيع اليدوية POS</td>
+                <td data-i18n="pricing.matrix_r2_c1">فرع واحد</td>
+                <td data-i18n="pricing.matrix_r2_c2">حتى 5 فروع</td>
+                <td data-i18n="pricing.matrix_r2_c3">فروع لا محدودة</td>
               </tr>
               <tr>
-                <td>شات بوت العناوين العراقي (WhatsApp)</td>
-                <td>غير مشمول</td>
-                <td>مشمول 1,000 محادثة</td>
-                <td>محادثات لا محدودة</td>
+                <td data-i18n="pricing.matrix_r3_f">شات بوت العناوين العراقي (WhatsApp)</td>
+                <td data-i18n="pricing.matrix_r3_c1">غير مشمول</td>
+                <td data-i18n="pricing.matrix_r3_c2">مشمول 1,000 محادثة</td>
+                <td data-i18n="pricing.matrix_r3_c3">محادثات لا محدودة</td>
               </tr>
               <tr>
-                <td>اتفاقية مستوى الخدمة SLA</td>
+                <td data-i18n="pricing.matrix_r4_f">اتفاقية مستوى الخدمة SLA</td>
                 <td>99.5%</td>
                 <td>99.9%</td>
                 <td>99.99% Guaranteed</td>
@@ -224,18 +213,43 @@
     <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-primary">الأسئلة الشائعة</span>
-          <h2>إجابات على استفساراتك الفنية والتجارية</h2>
+          <span class="badge badge-primary" data-i18n="pricing.faq_badge">الأسئلة الشائعة</span>
+          <h2 data-i18n="pricing.faq_title">إجابات على استفساراتك الفنية والتجارية</h2>
         </div>
 
         <div class="faq-list">
           <div class="faq-item">
             <div class="faq-question">
-              <span>هل يتطلب الربط تعديل كود متجري الإلكتروني الحالي؟</span>
+              <span data-i18n="pricing.faq_q1">هل يتطلب الربط تعديل كود متجري الإلكتروني الحالي؟</span>
               <svg class="icon-svg faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
-            <div class="faq-answer">
+            <div class="faq-answer" data-i18n="pricing.faq_a1">
               لا، نوفر إضافات برمجية جاهزة (Plugins / SDKs) لمنصات سلة، زد، Odoo، ووكمرس، كما نوفر RESTful APIs سهلة الدمج لأي تطبيق مخصص.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-i18n="pricing.faq_q2">كيف تضمنون أمان التحويلات المالية عبر زين كاش وكي كارد؟</span>
+              <svg class="icon-svg faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer" data-i18n="pricing.faq_a2">
+              يتم الاتصال مباشرة عبر القنوات المعتمدة تشفيرياً مع البنوك والمافظ الإلكترونية دون تخزين أي بيانات حساسة، مع استخدام تشفير AES-256 ومطابقة التوقيع الرقمي (Signature Verification).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span data-i18n="pricing.faq_q3">ما هي المدة الاستغراقية لبدء التشغيل الفعلي (Go-Live)؟</span>
+              <svg class="icon-svg faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="faq-answer" data-i18n="pricing.faq_a3">
+              تستغرق عملية الإعداد والتفعيل للمتاجر القياسية أقل من 24 ساعة. بالنسبة للمؤسسات الكبرى التي تتطلب دمج SAP أو Oracle، يتطلب ذلك من 3 إلى 5 أيام عمل فقط.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>�ت سلة، زد، Odoo، ووكمرس، كما نوفر RESTful APIs سهلة الدمج لأي تطبيق مخصص.
             </div>
           </div>
 
