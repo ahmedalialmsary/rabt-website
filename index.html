@@ -80,7 +80,7 @@
           </a>
         </div>
 
-        <!-- Visual Architecture Workflow Node Diagram -->
+        <!-- Visual Architecture Workflow Node Diagram Container -->
         <div class="architecture-card">
           <div class="architecture-header">
             <div class="architecture-title">
@@ -94,7 +94,7 @@
             </div>
             <span class="badge badge-primary">
               <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-              Live Pipeline Active
+              <span data-i18n="home.diag_status">خط المعالجة المباشر نشط</span>
             </span>
           </div>
 
@@ -111,9 +111,9 @@
               <div class="node-title" data-i18n="home.diag_node1_title">المتاجر ونقاط البيع</div>
               <div class="node-desc" data-i18n="home.diag_node1_desc">سلة، زد، Odoo، Shopify أو تطبيقات خاصة</div>
               <div class="node-tags">
-                <span class="node-tag">Salla</span>
-                <span class="node-tag">Ziina</span>
-                <span class="node-tag">Custom Webhooks</span>
+                <span class="node-tag" data-i18n="home.tag_salla">سلة Salla</span>
+                <span class="node-tag" data-i18n="home.tag_ziina">زد Ziina</span>
+                <span class="node-tag" data-i18n="home.tag_webhooks">Custom APIs</span>
               </div>
             </div>
 
@@ -131,8 +131,8 @@
               <div class="node-title" data-i18n="home.diag_node2_title">محرك RABT الذكي</div>
               <div class="node-desc" data-i18n="home.diag_node2_desc">معالجة فورية، أتمتة الدفع والتدقيق</div>
               <div class="node-tags">
-                <span class="node-tag" style="color: var(--color-primary); font-weight: 700;">AES-256</span>
-                <span class="node-tag" style="color: var(--color-primary); font-weight: 700;">12ms Sync</span>
+                <span class="node-tag node-tag-primary" data-i18n="home.tag_aes">تشفير AES-256</span>
+                <span class="node-tag node-tag-primary" data-i18n="home.tag_12ms">مزامنة 12ms</span>
               </div>
             </div>
 
@@ -151,9 +151,9 @@
               <div class="node-title" data-i18n="home.diag_node3_title">البنوك والتوصيل</div>
               <div class="node-desc" data-i18n="home.diag_node3_desc">ZainCash, QiCard, شركات التوصيل العراقية</div>
               <div class="node-tags">
-                <span class="node-tag">زين كاش</span>
-                <span class="node-tag">كي كارد</span>
-                <span class="node-tag">أساطيل التوصيل</span>
+                <span class="node-tag" data-i18n="home.tag_zaincash">زين كاش ZainCash</span>
+                <span class="node-tag" data-i18n="home.tag_qicard">كي كارد QiCard</span>
+                <span class="node-tag" data-i18n="home.tag_delivery">أساطيل التوصيل</span>
               </div>
             </div>
           </div>
@@ -207,7 +207,7 @@
             </div>
             <div class="bento-visual">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600;">
-                <span>ZainCash API Response</span>
+                <span data-i18n="home.bento_c1_sub">ZainCash API Response</span>
                 <span style="color: var(--color-success);">200 OK (0.18s)</span>
               </div>
               <div style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-main); padding: 0.75rem; border-radius: var(--radius-sm);">
@@ -216,7 +216,7 @@
             </div>
           </div>
 
-          <!-- Card 2 -->
+          <!-- Card 2 (Balanced with Micro Schematic Visual) -->
           <div class="bento-card col-span-5">
             <div>
               <div class="bento-card-icon">
@@ -227,12 +227,28 @@
               <h3 class="bento-card-title" data-i18n="home.bento_card2_title">مزامنة المخزون متعدد الفروع</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card2_desc">ربط برنامج الكاشير في محلّك مع متجرك الإلكتروني لمنع بيع المنتجات غير المتوفرة.</p>
             </div>
-            <div class="bento-visual" style="text-align: center;">
-              <span class="badge badge-emerald">POS <---> Odoo <---> Store Syncing</span>
+            <div class="bento-visual">
+              <div class="bento-schematic-box">
+                <div class="schematic-item">
+                  <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
+                  <div>
+                    <strong data-i18n="home.c2_pos">الكاشير (POS)</strong>
+                    <span data-i18n="home.c2_pos_sub">-1 قطعة مبيعة</span>
+                  </div>
+                </div>
+                <div class="schematic-arrow">⚡ 12ms</div>
+                <div class="schematic-item highlight">
+                  <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                  <div>
+                    <strong data-i18n="home.c2_store">المتجر الإلكتروني</strong>
+                    <span data-i18n="home.c2_store_sub">خصم فوري للمخزون</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Card 3 -->
+          <!-- Card 3 (Balanced with Iraqi AI Chat Preview Visual) -->
           <div class="bento-card col-span-5">
             <div>
               <div class="bento-card-icon">
@@ -242,6 +258,18 @@
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card3_title">الذكاء الاصطناعي باللهجة العراقية</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card3_desc">تأكيد العناوين ورقم الهاتف عبر الواتساب والانستغرام تلقائياً قبل إرسال الشحنة لتقليل نسبة الراجع.</p>
+            </div>
+            <div class="bento-visual">
+              <div class="bento-chat-preview">
+                <div class="chat-bubble bot-msg">
+                  <span class="chat-sender">🤖 RABT AI Bot</span>
+                  <p data-i18n="home.c3_msg1">"هلا بيك! نأكد شحنتك للجادرية قرب الجامع؟"</p>
+                </div>
+                <div class="chat-bubble user-msg">
+                  <p data-i18n="home.c3_msg2">"اي نعم بالضبط، شكراً إلكم!"</p>
+                  <span class="chat-status" data-i18n="home.c3_status">✔✔ تم التأكيد</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -261,9 +289,9 @@
             </div>
             <div class="bento-visual">
               <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <span class="badge badge-primary">Baghdad Dispatch Hub</span>
-                <span class="badge badge-primary">Erbil Branch</span>
-                <span class="badge badge-primary">Basra Direct Express</span>
+                <span class="badge badge-primary" data-i18n="home.bento_c4_t1">مركز توزيع بغداد</span>
+                <span class="badge badge-primary" data-i18n="home.bento_c4_t2">فرع أربيل</span>
+                <span class="badge badge-primary" data-i18n="home.bento_c4_t3">شحن البصرة السريع</span>
               </div>
             </div>
           </div>
@@ -274,11 +302,11 @@
     <!-- Call to Action Banner -->
     <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container container-narrow" style="text-align: center;">
-        <h2 style="margin-bottom: 1.25rem;">جاهز لرفع كفاءة متجرك الإلكتروني في العراق؟</h2>
-        <p style="margin-bottom: 2rem;">انضم إلى المئات من التجار والمؤسسات التي تعتمد على رَبْـط لأتمتة عملياتها المالية والتنفيذية.</p>
+        <h2 style="margin-bottom: 1.25rem;" data-i18n="home.cta_banner_title">جاهز لرفع كفاءة متجرك الإلكتروني في العراق؟</h2>
+        <p style="margin-bottom: 2rem;" data-i18n="home.cta_banner_subtitle">انضم إلى المئات من التجار والمؤسسات التي تعتمد على رَبْـط لأتمتة عملياتها المالية والتنفيذية.</p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <a href="contact.html" class="btn btn-primary btn-lg">تواصل مع فريق المبيعات</a>
-          <a href="demo.html" class="btn btn-secondary btn-lg">جرب المحاكاة التفاعلية</a>
+          <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="home.cta_banner_btn1">تواصل مع فريق المبيعات</a>
+          <a href="demo.html" class="btn btn-secondary btn-lg" data-i18n="home.cta_banner_btn2">جرب المحاكاة التفاعلية</a>
         </div>
       </div>
     </section>
