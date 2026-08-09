@@ -3,9 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>رَبْـط | أتمتة وتكامل أنظمة التجارة الإلكترونية كلياً - العراق 2026</title>
+  <title data-i18n="page.title.index">رَبْـط | أتمتة وتكامل أنظمة التجارة الإلكترونية كلياً - العراق 2026</title>
   <meta name="description" content="المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع (زين كاش، كي كارد) وأنظمة إدارة المخزون والتوصيل.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Bento Grid Card Header & Visual Polish */
+    .bento-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .bento-card-header .bento-card-icon {
+      margin-bottom: 0;
+    }
+    .bento-card-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      opacity: 0.35;
+      font-family: var(--font-heading);
+      letter-spacing: -0.02em;
+    }
+    .schematic-status-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.775rem;
+      color: var(--color-success);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      background: rgba(16, 185, 129, 0.08);
+      padding: 0.35rem 0.65rem;
+      border-radius: var(--radius-sm);
+      width: fit-content;
+    }
+    .chat-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+      padding-top: 0.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .chat-loc-tag {
+      font-size: 0.675rem;
+      color: var(--text-muted);
+    }
+    .delivery-manifest-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .manifest-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .manifest-info strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+    .manifest-info span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .manifest-fleets {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Pipeline Diagram Section Container (Issue 3) */
+    .pipeline-section-wrapper {
+      margin-top: 3.5rem;
+      padding: 0.75rem;
+      background: rgba(37, 99, 235, 0.04);
+      border: 1.5px solid rgba(59, 130, 246, 0.3);
+      border-radius: var(--radius-2xl);
+      box-shadow: 0 16px 45px -12px rgba(0, 0, 0, 0.3), 0 0 35px rgba(37, 99, 235, 0.12);
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+    html[data-theme="light"] .pipeline-section-wrapper {
+      background: #f8fafc;
+      border: 1.5px solid rgba(37, 99, 235, 0.25);
+      box-shadow: 0 14px 35px -8px rgba(37, 99, 235, 0.12);
+    }
+    .pipeline-section-wrapper .architecture-card {
+      margin-top: 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: calc(var(--radius-2xl) - 0.5rem);
+    }
+    html[data-theme="light"] .pipeline-section-wrapper .architecture-card {
+      background: #ffffff;
+      border-color: rgba(226, 232, 240, 0.8);
+    }
+  </style>
 </head>
 <body>
 
@@ -80,80 +179,82 @@
           </a>
         </div>
 
-        <!-- Visual Architecture Workflow Node Diagram Container -->
-        <div class="architecture-card">
-          <div class="architecture-header">
-            <div class="architecture-title">
-              <svg class="icon-svg icon-svg-lg" style="color: var(--color-primary);" viewBox="0 0 24 24">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-              </svg>
-              <span data-i18n="home.diag_title">مخطط التدفق الآلي المباشر (RABT Architecture Pipeline)</span>
-            </div>
-            <span class="badge badge-primary">
-              <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-              <span data-i18n="home.diag_status">خط المعالجة المباشر نشط</span>
-            </span>
-          </div>
-
-          <div class="pipeline-grid">
-            <!-- Node 1 -->
-            <div class="pipeline-node">
-              <div class="node-icon-box">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                  <line x1="3" y1="6" x2="21" y2="6"></line>
-                  <path d="M16 10a4 4 0 0 1-8 0"></path>
+        <!-- Visual Architecture Workflow Node Diagram Container Wrapper (Issue 3) -->
+        <div class="pipeline-section-wrapper">
+          <div class="architecture-card">
+            <div class="architecture-header">
+              <div class="architecture-title">
+                <svg class="icon-svg icon-svg-lg" style="color: var(--color-primary);" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
                 </svg>
+                <span data-i18n="home.diag_title">مخطط التدفق الآلي المباشر (معمارية رَبْـط)</span>
               </div>
-              <div class="node-title" data-i18n="home.diag_node1_title">المتاجر ونقاط البيع</div>
-              <div class="node-desc" data-i18n="home.diag_node1_desc">سلة، زد، Odoo، Shopify أو تطبيقات خاصة</div>
-              <div class="node-tags">
-                <span class="node-tag" data-i18n="home.tag_salla">سلة Salla</span>
-                <span class="node-tag" data-i18n="home.tag_ziina">زد Ziina</span>
-                <span class="node-tag" data-i18n="home.tag_webhooks">Custom APIs</span>
-              </div>
+              <span class="badge badge-primary">
+                <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                <span data-i18n="home.diag_status">خط المعالجة المباشر نشط</span>
+              </span>
             </div>
 
-            <div class="pipeline-connector connector-1">
-              <div class="pulse-line"></div>
-            </div>
-
-            <!-- Node 2 -->
-            <div class="pipeline-node" style="border-color: var(--color-primary); background: rgba(37, 99, 235, 0.05);">
-              <div class="node-icon-box" style="background: var(--color-primary); color: #FFFFFF;">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                </svg>
+            <div class="pipeline-grid">
+              <!-- Node 1 -->
+              <div class="pipeline-node">
+                <div class="node-icon-box">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                  </svg>
+                </div>
+                <div class="node-title" data-i18n="home.diag_node1_title">المتاجر ونقاط البيع</div>
+                <div class="node-desc" data-i18n="home.diag_node1_desc">سلة، زد، أودو، شوبيفاي أو تطبيقات خاصة</div>
+                <div class="node-tags">
+                  <span class="node-tag" data-i18n="home.tag_salla">متاجر سلة</span>
+                  <span class="node-tag" data-i18n="home.tag_ziina">متاجر زد</span>
+                  <span class="node-tag" data-i18n="home.tag_webhooks">واجهات برمجية مخصصة</span>
+                </div>
               </div>
-              <div class="node-title" data-i18n="home.diag_node2_title">محرك RABT الذكي</div>
-              <div class="node-desc" data-i18n="home.diag_node2_desc">معالجة فورية، أتمتة الدفع والتدقيق</div>
-              <div class="node-tags">
-                <span class="node-tag node-tag-primary" data-i18n="home.tag_aes">تشفير AES-256</span>
-                <span class="node-tag node-tag-primary" data-i18n="home.tag_12ms">مزامنة 12ms</span>
-              </div>
-            </div>
 
-            <div class="pipeline-connector connector-2">
-              <div class="pulse-line"></div>
-            </div>
-
-            <!-- Node 3 -->
-            <div class="pipeline-node">
-              <div class="node-icon-box">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                  <line x1="1" y1="10" x2="23" y2="10"></line>
-                </svg>
+              <div class="pipeline-connector connector-1">
+                <div class="pulse-line"></div>
               </div>
-              <div class="node-title" data-i18n="home.diag_node3_title">البنوك والتوصيل</div>
-              <div class="node-desc" data-i18n="home.diag_node3_desc">ZainCash, QiCard, شركات التوصيل العراقية</div>
-              <div class="node-tags">
-                <span class="node-tag" data-i18n="home.tag_zaincash">زين كاش ZainCash</span>
-                <span class="node-tag" data-i18n="home.tag_qicard">كي كارد QiCard</span>
-                <span class="node-tag" data-i18n="home.tag_delivery">أساطيل التوصيل</span>
+
+              <!-- Node 2 -->
+              <div class="pipeline-node" style="border-color: var(--color-primary); background: rgba(37, 99, 235, 0.05);">
+                <div class="node-icon-box" style="background: var(--color-primary); color: #FFFFFF;">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="node-title" data-i18n="home.diag_node2_title">محرك رَبْـط الذكي</div>
+                <div class="node-desc" data-i18n="home.diag_node2_desc">معالجة فورية، أتمتة الدفع والتدقيق</div>
+                <div class="node-tags">
+                  <span class="node-tag node-tag-primary" data-i18n="home.tag_aes">تشفير AES-256</span>
+                  <span class="node-tag node-tag-primary" data-i18n="home.tag_12ms">مزامنة 12ms</span>
+                </div>
+              </div>
+
+              <div class="pipeline-connector connector-2">
+                <div class="pulse-line"></div>
+              </div>
+
+              <!-- Node 3 -->
+              <div class="pipeline-node">
+                <div class="node-icon-box">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                    <line x1="1" y1="10" x2="23" y2="10"></line>
+                  </svg>
+                </div>
+                <div class="node-title" data-i18n="home.diag_node3_title">البنوك والتوصيل</div>
+                <div class="node-desc" data-i18n="home.diag_node3_desc">زين كاش، كي كارد، وشركات التوصيل العراقية</div>
+                <div class="node-tags">
+                  <span class="node-tag" data-i18n="home.tag_zaincash">زين كاش</span>
+                  <span class="node-tag" data-i18n="home.tag_qicard">كي كارد</span>
+                  <span class="node-tag" data-i18n="home.tag_delivery">أساطيل التوصيل</span>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +279,7 @@
             <div class="metric-label" data-i18n="home.metrics_3_lbl">استقرار الخدمة الجغرافي</div>
           </div>
           <div class="metric-item">
-            <div class="metric-value" data-i18n="home.metrics_4_val">ZERO</div>
+            <div class="metric-value" data-i18n="home.metrics_4_val">صفر</div>
             <div class="metric-label" data-i18n="home.metrics_4_lbl">أخطاء مطابقة الحسابات</div>
           </div>
         </div>
@@ -197,20 +298,23 @@
           <!-- Card 1 (Large) -->
           <div class="bento-card col-span-7">
             <div>
-              <div class="bento-card-icon">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
-                </svg>
+              <div class="bento-card-header">
+                <div class="bento-card-icon">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <span class="bento-card-num">01</span>
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card1_title">مطابقة فورية للمبالغ والتحويلات</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card1_desc">لا حاجة للتحقق اليدوي من إشعارات زين كاش وكي كارد. يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.</p>
             </div>
             <div class="bento-visual">
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600;">
-                <span data-i18n="home.bento_c1_sub">ZainCash API Response</span>
-                <span style="color: var(--color-success);">200 OK (0.18s)</span>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.85rem; font-weight: 600;">
+                <span data-i18n="home.bento_c1_sub">استجابة زين كاش الفورية</span>
+                <span class="badge badge-emerald" data-i18n="home.bento_c1_status">200 تم بنجاح (0.18ث)</span>
               </div>
-              <div style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-main); padding: 0.75rem; border-radius: var(--radius-sm);">
+              <div style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-main); padding: 0.75rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
                 { "txid": "ZC-991204", "status": "VERIFIED", "amount_iqd": 250000, "settlement": "INSTANT" }
               </div>
             </div>
@@ -219,24 +323,31 @@
           <!-- Card 2 (Balanced with Micro Schematic Visual) -->
           <div class="bento-card col-span-5">
             <div>
-              <div class="bento-card-icon">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                </svg>
+              <div class="bento-card-header">
+                <div class="bento-card-icon">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  </svg>
+                </div>
+                <span class="bento-card-num">02</span>
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card2_title">مزامنة المخزون متعدد الفروع</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card2_desc">ربط برنامج الكاشير في محلّك مع متجرك الإلكتروني لمنع بيع المنتجات غير المتوفرة.</p>
             </div>
             <div class="bento-visual">
+              <div class="schematic-status-bar">
+                <span class="pulse-dot"></span>
+                <span data-i18n="home.c2_status_lbl">مزامنة المخزون نشطة 100%</span>
+              </div>
               <div class="bento-schematic-box">
                 <div class="schematic-item">
                   <svg class="icon-svg" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path></svg>
                   <div>
-                    <strong data-i18n="home.c2_pos">الكاشير (POS)</strong>
+                    <strong data-i18n="home.c2_pos">الكاشير (نقطة البيع)</strong>
                     <span data-i18n="home.c2_pos_sub">-1 قطعة مبيعة</span>
                   </div>
                 </div>
-                <div class="schematic-arrow">⚡ 12ms</div>
+                <div class="schematic-arrow" data-i18n="home.c2_arrow">⚡ 12 ملي ثانية</div>
                 <div class="schematic-item highlight">
                   <svg class="icon-svg" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
                   <div>
@@ -251,10 +362,13 @@
           <!-- Card 3 (Balanced with Iraqi AI Chat Preview Visual) -->
           <div class="bento-card col-span-5">
             <div>
-              <div class="bento-card-icon">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
+              <div class="bento-card-header">
+                <div class="bento-card-icon">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                </div>
+                <span class="bento-card-num">03</span>
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card3_title">الذكاء الاصطناعي باللهجة العراقية</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card3_desc">تأكيد العناوين ورقم الهاتف عبر الواتساب والانستغرام تلقائياً قبل إرسال الشحنة لتقليل نسبة الراجع.</p>
@@ -262,12 +376,15 @@
             <div class="bento-visual">
               <div class="bento-chat-preview">
                 <div class="chat-bubble bot-msg">
-                  <span class="chat-sender">🤖 RABT AI Bot</span>
+                  <span class="chat-sender" data-i18n="home.c3_bot_sender">🤖 بوت رَبْـط الذكي</span>
                   <p data-i18n="home.c3_msg1">"هلا بيك! نأكد شحنتك للجادرية قرب الجامع؟"</p>
                 </div>
                 <div class="chat-bubble user-msg">
                   <p data-i18n="home.c3_msg2">"اي نعم بالضبط، شكراً إلكم!"</p>
-                  <span class="chat-status" data-i18n="home.c3_status">✔✔ تم التأكيد</span>
+                  <div class="chat-meta-bar">
+                    <span class="chat-loc-tag" data-i18n="home.c3_loc">📍 بغداد - الجادرية</span>
+                    <span class="chat-status" data-i18n="home.c3_status">✔✔ تم التأكيد</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -276,22 +393,34 @@
           <!-- Card 4 (Large) -->
           <div class="bento-card col-span-7">
             <div>
-              <div class="bento-card-icon">
-                <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
-                  <rect x="1" y="3" width="15" height="13"></rect>
-                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                </svg>
+              <div class="bento-card-header">
+                <div class="bento-card-icon">
+                  <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                </div>
+                <span class="bento-card-num">04</span>
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card4_title">تكامل مع كبرى شركات التوصيل</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card4_desc">إصدار المانفيست وطباعة بوليصة الشحن بنقرة واحدة عبر الربط المباشر مع أساطيل التوصيل.</p>
             </div>
             <div class="bento-visual">
-              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                <span class="badge badge-primary" data-i18n="home.bento_c4_t1">مركز توزيع بغداد</span>
-                <span class="badge badge-primary" data-i18n="home.bento_c4_t2">فرع أربيل</span>
-                <span class="badge badge-primary" data-i18n="home.bento_c4_t3">شحن البصرة السريع</span>
+              <div class="delivery-manifest-card">
+                <div class="manifest-top">
+                  <div class="manifest-info">
+                    <strong data-i18n="home.c4_manifest_title">بوليصة الشحن رقم #IQ-99104</strong>
+                    <span data-i18n="home.c4_manifest_sub">تأكيد تلقائي وطباعة مباشرة</span>
+                  </div>
+                  <span class="badge badge-emerald" data-i18n="home.c4_status">جاهز للشحن</span>
+                </div>
+                <div class="manifest-fleets">
+                  <span class="badge badge-primary" data-i18n="home.bento_c4_t1">مركز توزيع بغداد</span>
+                  <span class="badge badge-primary" data-i18n="home.bento_c4_t2">فرع أربيل</span>
+                  <span class="badge badge-primary" data-i18n="home.bento_c4_t3">شحن البصرة السريع</span>
+                </div>
               </div>
             </div>
           </div>

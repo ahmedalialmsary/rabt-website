@@ -37,6 +37,7 @@ const translations = {
     "footer.status": "جميع الأنظمة تعمل بكفاءة 99.99%",
 
     // --- Homepage (index.html) ---
+    "page.title.index": "رَبْـط | أتمتة وتكامل أنظمة التجارة الإلكترونية كلياً - العراق 2026",
     "home.badge": "منصة الأتمتة المالية والتجارية الأولى في العراق 2026",
     "home.hero_title": "أتمتة وتكامل أنظمة التجارة الإلكترونية كلياً",
     "home.hero_subtitle": "ربط فوري ومباشر بين متجرك الإلكتروني، بوابات الدفع (زين كاش، كي كارد، ماستركارد)، وأنظمة إدارة المخزون ERP والتوصيل. دون أخطاء يدويّة وبسرعة تنفيذ خلال ملي ثوانٍ.",
@@ -44,21 +45,21 @@ const translations = {
     "home.cta_secondary": "حجز جلسة استشارية",
     "home.status_badge": "● زمن الاستجابة: 12ms | نسبة التشغيل: 99.99%",
     
-    "home.diag_title": "مخطط التدفق الآلي المباشر (RABT Architecture Pipeline)",
+    "home.diag_title": "مخطط التدفق الآلي المباشر (معمارية رَبْـط)",
     "home.diag_status": "● خط المعالجة المباشر نشط",
     "home.diag_node1_title": "المتاجر ونقاط البيع",
-    "home.diag_node1_desc": "سلة، زد، Odoo، Shopify أو تطبيقات خاصة",
-    "home.tag_salla": "سلة Salla",
-    "home.tag_ziina": "زد Ziina",
-    "home.tag_webhooks": "Custom APIs",
-    "home.diag_node2_title": "محرك RABT الذكي",
+    "home.diag_node1_desc": "سلة، زد، أودو، شوبيفاي أو تطبيقات خاصة",
+    "home.tag_salla": "متاجر سلة",
+    "home.tag_ziina": "متاجر زد",
+    "home.tag_webhooks": "واجهات برمجية مخصصة",
+    "home.diag_node2_title": "محرك رَبْـط الذكي",
     "home.diag_node2_desc": "معالجة فورية، أتمتة الدفع والتدقيق",
     "home.tag_aes": "تشفير AES-256",
     "home.tag_12ms": "مزامنة 12ms",
     "home.diag_node3_title": "البنوك والتوصيل",
-    "home.diag_node3_desc": "ZainCash, QiCard, شركات التوصيل العراقية",
-    "home.tag_zaincash": "زين كاش ZainCash",
-    "home.tag_qicard": "كي كارد QiCard",
+    "home.diag_node3_desc": "زين كاش، كي كارد، وشركات التوصيل العراقية",
+    "home.tag_zaincash": "زين كاش",
+    "home.tag_qicard": "كي كارد",
     "home.tag_delivery": "أساطيل التوصيل",
 
     "home.metrics_1_val": "+5,000,000",
@@ -67,27 +68,35 @@ const translations = {
     "home.metrics_2_lbl": "متوسط زمن معالجة الطلب",
     "home.metrics_3_val": "99.99%",
     "home.metrics_3_lbl": "استقرار الخدمة الجغرافي",
-    "home.metrics_4_val": "zero",
+    "home.metrics_4_val": "صفر",
     "home.metrics_4_lbl": "أخطاء مطابقة الحسابات",
 
     "home.bento_badge": "لماذا تختار رَبْـط؟",
     "home.bento_title": "بنية تحتية مصممة خصيصاً للتجارة العراقية",
     "home.bento_card1_title": "مطابقة فورية للمبالغ والتحويلات",
     "home.bento_card1_desc": "لا حاجة للتحقق اليدوي من إشعارات زين كاش وكي كارد. يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.",
-    "home.bento_c1_sub": "استجابة ZainCash API",
+    "home.bento_c1_sub": "استجابة زين كاش الفورية",
+    "home.bento_c1_status": "200 تم بنجاح (0.18ث)",
     "home.bento_card2_title": "مزامنة المخزون متعدد الفروع",
     "home.bento_card2_desc": "ربط برنامج الكاشير في محلّك مع متجرك الإلكتروني لمنع بيع المنتجات غير المتوفرة.",
-    "home.c2_pos": "الكاشير (POS)",
+    "home.c2_status_lbl": "مزامنة المخزون نشطة 100%",
+    "home.c2_pos": "الكاشير (نقطة البيع)",
     "home.c2_pos_sub": "-1 قطعة مبيعة",
+    "home.c2_arrow": "⚡ 12 ملي ثانية",
     "home.c2_store": "المتجر الإلكتروني",
     "home.c2_store_sub": "خصم فوري للمخزون",
     "home.bento_card3_title": "الذكاء الاصطناعي باللهجة العراقية",
     "home.bento_card3_desc": "تأكيد العناوين ورقم الهاتف عبر الواتساب والانستغرام تلقائياً قبل إرسال الشحنة لتقليل نسبة الراجع.",
+    "home.c3_bot_sender": "🤖 بوت رَبْـط الذكي",
     "home.c3_msg1": "\"هلا بيك! نأكد شحنتك للجادرية قرب الجامع؟\"",
     "home.c3_msg2": "\"اي نعم بالضبط، شكراً إلكم!\"",
+    "home.c3_loc": "📍 بغداد - الجادرية",
     "home.c3_status": "✔✔ تم التأكيد",
     "home.bento_card4_title": "تكامل مع كبرى شركات التوصيل",
     "home.bento_card4_desc": "إصدار المانفيست وطباعة بوليصة الشحن بنقرة واحدة عبر الربط المباشر مع أساطيل التوصيل.",
+    "home.c4_manifest_title": "بوليصة الشحن رقم #IQ-99104",
+    "home.c4_manifest_sub": "تأكيد تلقائي وطباعة مباشرة",
+    "home.c4_status": "جاهز للشحن",
     "home.bento_c4_t1": "مركز توزيع بغداد",
     "home.bento_c4_t2": "فرع أربيل",
     "home.bento_c4_t3": "شحن البصرة السريع",
@@ -314,6 +323,7 @@ const translations = {
     "footer.status": "All systems operational (99.99% Uptime)",
 
     // --- Homepage (index.html) ---
+    "page.title.index": "RABT | End-to-End E-Commerce & Payment Automation Infrastructure - Iraq 2026",
     "home.badge": "Iraq's #1 B2B Financial & Retail Automation Platform 2026",
     "home.hero_title": "Unified E-Commerce & Payment Integration Infrastructure",
     "home.hero_subtitle": "Instant API connectivity between your online store, Iraqi payment gateways (ZainCash, QiCard, Visa/Mastercard), ERP inventory, and logistics. Zero manual errors with millisecond-speed execution.",
@@ -344,7 +354,7 @@ const translations = {
     "home.metrics_2_lbl": "Average Latency Execution",
     "home.metrics_3_val": "99.99%",
     "home.metrics_3_lbl": "Regional High-Availability Uptime",
-    "home.metrics_4_val": "zero",
+    "home.metrics_4_val": "ZERO",
     "home.metrics_4_lbl": "Reconciliation Discrepancies",
 
     "home.bento_badge": "Why RABT?",
@@ -352,19 +362,27 @@ const translations = {
     "home.bento_card1_title": "Instant Payment Settlement",
     "home.bento_card1_desc": "Eliminate manual verification of ZainCash and QiCard transfer receipts. RABT verifies every Dinar and updates orders automatically.",
     "home.bento_c1_sub": "ZainCash API Response",
+    "home.bento_c1_status": "200 OK (0.18s)",
     "home.bento_card2_title": "Multi-Branch POS Stock Sync",
     "home.bento_card2_desc": "Sync physical store cash registers with your online store instantly to prevent overselling unavailable items.",
+    "home.c2_status_lbl": "100% Active Stock Sync",
     "home.c2_pos": "Store POS Cashier",
     "home.c2_pos_sub": "-1 item sold offline",
+    "home.c2_arrow": "⚡ 12ms Sync",
     "home.c2_store": "E-Commerce Storefront",
     "home.c2_store_sub": "Instant stock auto-deducted",
     "home.bento_card3_title": "Iraqi Dialect AI Chatbot",
     "home.bento_card3_desc": "Automate address verification & phone confirmations via WhatsApp/Instagram before dispatch to reduce returns.",
+    "home.c3_bot_sender": "🤖 RABT AI Bot",
     "home.c3_msg1": "\"Hello! Confirm delivery to Jadriya near mosque?\"",
     "home.c3_msg2": "\"Yes exactly, thank you!\"",
+    "home.c3_loc": "📍 Baghdad - Jadriya",
     "home.c3_status": "✔✔ Address Verified",
     "home.bento_card4_title": "Top Delivery Logistics Integration",
     "home.bento_card4_desc": "Generate manifests and print shipping labels in one click with direct API links to top Iraqi courier fleets.",
+    "home.c4_manifest_title": "Waybill #IQ-99104",
+    "home.c4_manifest_sub": "Auto-Confirmed & 1-Click Print",
+    "home.c4_status": "Ready to Dispatch",
     "home.bento_c4_t1": "Baghdad Dispatch Hub",
     "home.bento_c4_t2": "Erbil Fleet Hub",
     "home.bento_c4_t3": "Basra Direct Express",
@@ -601,7 +619,9 @@ function updateThemeIcon(theme) {
 
 // Language & Localization Management
 function initLanguage() {
-  const savedLang = localStorage.getItem('rabt_lang') || 'ar';
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryLang = urlParams.get('lang');
+  const savedLang = queryLang || localStorage.getItem('rabt_lang') || 'ar';
   setLanguage(savedLang);
 
   const langBtn = document.getElementById('lang-switch-btn');
@@ -622,6 +642,15 @@ function setLanguage(lang) {
   const langLabel = document.getElementById('lang-switch-label');
   if (langLabel) {
     langLabel.textContent = lang === 'ar' ? 'English' : 'عربي';
+  }
+
+  // Translate document title if title has data-i18n
+  const titleEl = document.querySelector('title[data-i18n]');
+  if (titleEl) {
+    const key = titleEl.getAttribute('data-i18n');
+    if (translations[lang] && translations[lang][key]) {
+      document.title = translations[lang][key];
+    }
   }
 
   // Translate all elements with data-i18n
