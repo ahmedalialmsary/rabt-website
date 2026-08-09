@@ -3,9 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عن الشركة والهندسة | رَبْـط - البنية التحتية للتجارة العراقية 2026</title>
-  <meta name="description" content="تعرّف على الرؤية والمعايير الهندسية لشركة رَبْـط في بغداد: مركز بيانات فائق السرعة، أمان بدرجة البنوك، ونسبة استقرار 99.99%.">
+  <title data-i18n="about.page_title">عن رَبْـط | الرؤية والمعايير البرمجية</title>
+  <meta name="description" content="تعرّف على منصة رَبْـط للتكامل البرمجي في بغداد - معايير الأمان، موثوقية البنية التحتية، ورؤيتنا لأتمتة التجارة العراقية.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Interactive Timeline & Data Center Node Styles */
+    .timeline-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .timeline-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    .timeline-card.active-year {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px var(--color-primary), var(--shadow-md);
+      background: rgba(37, 99, 235, 0.04);
+    }
+    .timeline-year-tag {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 0.5rem;
+    }
+    .node-monitor-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: var(--shadow-md);
+    }
+    .node-tab-btn {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      font-weight: 600;
+      transition: all var(--transition-fast);
+    }
+    .node-tab-btn.active {
+      background: var(--color-primary);
+      color: #ffffff;
+      border-color: var(--color-primary);
+    }
+  </style>
 </head>
 <body>
 
@@ -52,11 +109,11 @@
 
   <main class="main-content">
 
-    <!-- About Hero Header -->
+    <!-- About Hero Section -->
     <section class="hero-section" style="padding: 4rem 0 2.5rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
-          <span class="badge badge-emerald" data-i18n="about.hero_badge">الهندسة والموثوقية العراقية</span>
+          <span class="badge badge-primary" data-i18n="about.hero_badge">الهندسة والموثوقية العراقية</span>
         </div>
         <h1 class="hero-title" data-i18n="about.hero_title">نبني البنية التحتية لمستقبل التجارة الرقمية في العراق</h1>
         <p class="hero-subtitle" data-i18n="about.hero_subtitle">
@@ -65,14 +122,13 @@
       </div>
     </section>
 
-    <!-- Engineering Core Pillars Grid -->
-    <section class="section-padding" style="padding-top: 1rem;">
+    <!-- Company Values Grid -->
+    <section class="section-padding">
       <div class="container">
         <div class="bento-grid">
-          
-          <!-- Pillar 1 -->
+
           <div class="bento-card col-span-6">
-            <div class="bento-card-icon" style="background: rgba(37, 99, 235, 0.12); color: var(--color-primary);">
+            <div class="bento-card-icon">
               <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
                 <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
                 <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
@@ -86,12 +142,10 @@
             </p>
           </div>
 
-          <!-- Pillar 2 -->
           <div class="bento-card col-span-6">
             <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.12); color: var(--color-success);">
               <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
             <h3 class="bento-card-title" data-i18n="about.val2_title">أمان بدرجة البنوك</h3>
@@ -100,9 +154,8 @@
             </p>
           </div>
 
-          <!-- Pillar 3 -->
           <div class="bento-card col-span-6">
-            <div class="bento-card-icon" style="background: rgba(217, 119, 6, 0.12); color: var(--color-accent-amber);">
+            <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.12); color: var(--color-warning);">
               <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
               </svg>
@@ -113,7 +166,6 @@
             </p>
           </div>
 
-          <!-- Pillar 4 -->
           <div class="bento-card col-span-6">
             <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.12); color: var(--color-accent-purple);">
               <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
@@ -133,8 +185,71 @@
       </div>
     </section>
 
-    <!-- Baghdad HQ Infrastructure Banner -->
-    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <!-- Interactive Roadmap Timeline Section -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="about.timeline_badge">مسيرة الابتكار</span>
+          <h2 class="section-title" data-i18n="about.timeline_title">تطور معمارية رَبْـط في العراق</h2>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-card active-year" onclick="selectTimeline(2024, this)">
+            <div class="timeline-year-tag">2024</div>
+            <h4 style="margin-bottom: 0.5rem;">تأسيس النواة وإطلاق الـ API</h4>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">بناء محرك الربط المباشر مع بوابة زين كاش وكي كارد ومعالجة أول 100,000 معاملة.</p>
+          </div>
+
+          <div class="timeline-card" onclick="selectTimeline(2025, this)">
+            <div class="timeline-year-tag">2025</div>
+            <h4 style="margin-bottom: 0.5rem;">مزامنة الـ POS والـ ERP</h4>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">إطلاق محرك M-POS المزدوج ومزامنة أكثر من 500 فرع في بغداد والمحافظات.</p>
+          </div>
+
+          <div class="timeline-card" onclick="selectTimeline(2026, this)">
+            <div class="timeline-year-tag">2026</div>
+            <h4 style="margin-bottom: 0.5rem;">ذكاء العناوين والمانفيست</h4>
+            <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">تكامل شات بوت العناوين بالعراقي وأتمتة بوليصات الشحن بنقرة واحدة بكفاءة 99.99%.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data Center Node Network Monitor Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-emerald" data-i18n="about.datacenter_badge">مراقبة الأنظمة الحيّة</span>
+          <h2 class="section-title" data-i18n="about.datacenter_title">مركز شبكة بيانات بغداد والجادرية</h2>
+        </div>
+
+        <div class="node-monitor-box">
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <button class="node-tab-btn active" onclick="switchNode('baghdad', this)">العقدة الرئيسية (بغداد - الجادرية)</button>
+            <button class="node-tab-btn" onclick="switchNode('erbil', this)">العقدة الإقليمية (أربيل)</button>
+            <button class="node-tab-btn" onclick="switchNode('basra', this)">عقدة الجنوب (البصرة)</button>
+          </div>
+
+          <div id="node-details-display" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+            <div style="background: var(--bg-main); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">زمن الاستجابة (Latency)</span>
+              <h3 id="node-latency" style="color: var(--color-primary); margin-top: 0.25rem;">12ms</h3>
+            </div>
+            <div style="background: var(--bg-main); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">نسبة التشغيل (Uptime)</span>
+              <h3 id="node-uptime" style="color: var(--color-success); margin-top: 0.25rem;">99.99%</h3>
+            </div>
+            <div style="background: var(--bg-main); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">بروتوكول الأمان</span>
+              <h3 id="node-security" style="color: var(--color-accent-purple); margin-top: 0.25rem;">AES-256 GCM</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Baghdad HQ Section -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
           <div>
@@ -230,5 +345,29 @@
   </footer>
 
   <script src="shared-engine.js"></script>
+  <script>
+    function selectTimeline(year, btn) {
+      document.querySelectorAll('.timeline-card').forEach(c => c.classList.remove('active-year'));
+      btn.classList.add('active-year');
+    }
+
+    const nodeData = {
+      baghdad: { latency: "12ms", uptime: "99.99%", security: "AES-256 GCM" },
+      erbil: { latency: "16ms", uptime: "99.98%", security: "AES-256 GCM" },
+      basra: { latency: "18ms", uptime: "99.95%", security: "AES-256 GCM" }
+    };
+
+    function switchNode(nodeKey, btn) {
+      document.querySelectorAll('.node-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const data = nodeData[nodeKey];
+      if (data) {
+        document.getElementById('node-latency').textContent = data.latency;
+        document.getElementById('node-uptime').textContent = data.uptime;
+        document.getElementById('node-security').textContent = data.security;
+      }
+    }
+  </script>
 </body>
 </html>

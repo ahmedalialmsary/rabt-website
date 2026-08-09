@@ -107,6 +107,7 @@ const translations = {
     "home.cta_banner_btn2": "جرب المحاكاة التفاعلية",
 
     // --- Services Page (services.html) ---
+    "services.page_title": "الخدمات والحلول للتكامل البرمجي | رَبْـط",
     "services.hero_badge": "حلول متكاملة للمؤسسات والتجار",
     "services.hero_title": "خدمات الأتمتة والربط البرمجي الشامل",
     "services.hero_subtitle": "نظام موحد يستبدل العمل اليدوي الشاق بالحلول الذكية المباشرة، لتعزيز مبيعاتك وتقليل التكاليف التشغيلية.",
@@ -141,7 +142,16 @@ const translations = {
     "services.s3_feat2": "تقليل نسبة البضائع المرجعة بنسبة تصل إلى 40%.",
     "services.s3_feat3": "إعادة استهداف الزبائن ومتابعة الشحنات الآلية.",
 
+    "services.s4_title": "4. أتمتة شركات التوصيل والمانفيست",
+    "services.s4_desc": "إصدار بوليصات الشحن والمانفيست بنقرة واحدة عبر الربط المباشر مع أساطيل التوصيل العراقية.",
+    "services.s4_feat1": "طباعة تلقائية للعلامات وبوليصة الشحن بنقرة واحدة.",
+    "services.s4_feat2": "تتبع الجغرافيا الحي لشحنات التجار والزبائن.",
+    "services.s4_feat3": "إحصائيات دقيقة لنسب التسليم وتخفيض الراجع.",
+    "services.modal_btn": "طلب ربط الخدمة الآن",
+    "services.modal_close": "إغلاق",
+
     // --- About Page (about.html) ---
+    "about.page_title": "عن رَبْـط | الرؤية والمعايير البرمجية",
     "about.hero_badge": "الهندسة والموثوقية العراقية",
     "about.hero_title": "نبني البنية التحتية لمستقبل التجارة الرقمية في العراق",
     "about.hero_subtitle": "تأسست رَبْـط في بغداد بأيدي مهندسين عراقيين متخصصين في الأنظمة عالية الاعتمادية، لتزويد السوق المحلي ببرمجيات تضاهي المعايير العالمية.",
@@ -163,6 +173,10 @@ const translations = {
     "about.std1": "شهادة الأمن السيبراني وتشفير الاتصالات SSL/TLS 1.3",
     "about.std2": "امتثال تام مع معايير البنك المركزي العراقي (CBI Guidelines)",
     "about.std3": "نسخ احتياطي فوري وموزع جغرافي كل 60 ثانية",
+    "about.timeline_badge": "مسيرة الابتكار",
+    "about.timeline_title": "تطور معمارية رَبْـط في العراق",
+    "about.datacenter_badge": "مراقبة الأنظمة الحيّة",
+    "about.datacenter_title": "مركز شبكة بيانات بغداد والجادرية",
 
     // --- Pricing Page (pricing.html) ---
     "pricing.hero_badge": "خطط وتكاليف شفافة",
@@ -393,6 +407,7 @@ const translations = {
     "home.cta_banner_btn2": "Try Interactive Demo",
 
     // --- Services Page ---
+    "services.page_title": "Enterprise Integration Solutions | RABT",
     "services.hero_badge": "Enterprise Solutions",
     "services.hero_title": "End-to-End Automation & Integration Services",
     "services.hero_subtitle": "A unified infrastructure replacing tedious manual tasks with intelligent API workflows, driving sales while cutting operational costs.",
@@ -426,6 +441,14 @@ const translations = {
     "services.s3_feat1": "Precise geo-location pin confirmation via WhatsApp.",
     "services.s3_feat2": "Reduces failed delivery return rates by up to 40%.",
     "services.s3_feat3": "Automated customer order tracking notifications.",
+
+    "services.s4_title": "4. Courier Fleet & Logistics Automation",
+    "services.s4_desc": "Generate waybills and shipping manifests in one click with direct API links to top Iraqi courier fleets.",
+    "services.s4_feat1": "1-Click automated shipping label & waybill printing.",
+    "services.s4_feat2": "Real-time GPS delivery tracking for merchants and shoppers.",
+    "services.s4_feat3": "Detailed delivery success analytics to minimize return rates.",
+    "services.modal_btn": "Request Integration Now",
+    "services.modal_close": "Close",
 
     // --- About Page ---
     "about.hero_badge": "Iraqi Engineering & High Reliability",

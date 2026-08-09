@@ -3,9 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الخدمات والحلول | رَبْـط - التجارة الإلكترونية والدفع الإلكتروني العراق 2026</title>
-  <meta name="description" content="تفاصيل الخدمات التقنية والحلول الذكية: مطابقة زين كاش وكي كارد، مزامنة POS و Odoo ERP، والبوت العراقي لتأكيد العناوين.">
+  <title data-i18n="services.page_title">الخدمات والحلول للتكامل البرمجي | رَبْـط</title>
+  <meta name="description" content="حلول الأتمتة والربط البرمجي بين المتاجر الإلكترونية، زين كاش، كي كارد، أنظمة إدارة المخزون Odoo/SAP وشركات التوصيل بالعراق.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .service-interactive-card {
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    .service-interactive-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--color-primary);
+      box-shadow: 0 16px 40px -10px rgba(37, 99, 235, 0.25);
+    }
+    .service-hint-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.775rem;
+      color: var(--color-primary);
+      background: rgba(37, 99, 235, 0.1);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+    /* Service Detail Modal */
+    .service-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--transition-normal);
+    }
+    .service-modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .service-modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      max-width: 680px;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: var(--shadow-xl);
+      transform: scale(0.95);
+      transition: all var(--transition-normal);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .service-modal-backdrop.active .service-modal-box {
+      transform: scale(1);
+    }
+    .modal-header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+    .modal-close-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.4rem;
+      border-radius: var(--radius-sm);
+      transition: color var(--transition-fast);
+    }
+    .modal-close-btn:hover {
+      color: var(--text-main);
+    }
+  </style>
 </head>
 <body>
 
@@ -52,7 +132,7 @@
 
   <main class="main-content">
 
-    <!-- Services Hero Header -->
+    <!-- Services Hero Section -->
     <section class="hero-section" style="padding: 4rem 0 2.5rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
@@ -65,25 +145,24 @@
       </div>
     </section>
 
-    <!-- Deep-Dive Solutions Section -->
-    <section class="section-padding" style="padding-top: 1rem;">
-      <div class="container" style="display: flex; flex-direction: column; gap: 4rem;">
+    <!-- Services Grid Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="display: flex; flex-direction: column; gap: 2.5rem;">
 
-        <!-- Solution 1: Financial Reconciliation -->
-        <div class="bento-card col-span-12" style="padding: 3rem 2.5rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <!-- Service Module 1 -->
+          <div class="bento-card service-interactive-card col-span-12" onclick="openServiceModal(1)">
             <div>
-              <div class="bento-card-icon" style="background: rgba(13, 148, 136, 0.15); color: var(--color-accent-teal);">
+              <div class="bento-card-icon">
                 <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
-                  <rect x="2" y="5" width="20" height="14" rx="2"></rect>
-                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                 </svg>
               </div>
               <h2 style="margin-bottom: 1rem;" data-i18n="services.s1_title">1. المطابقة المالية الذكية وبوابات الدفع</h2>
               <p style="margin-bottom: 1.5rem;" data-i18n="services.s1_desc">
                 ربط برمجيات المبيعات ببوابات المحافظ الإلكترونية العراقية ZainCash و QiCard والبطاقات المصرفية مع خدمة التسوية الفورية.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   <span data-i18n="services.s1_feat1">تحقق فوري من الحوالة خلال 500 ملي ثانية.</span>
@@ -97,72 +176,36 @@
                   <span data-i18n="services.s1_feat3">حماية كاملة من الاحتيال والإشعارات المزيفة.</span>
                 </li>
               </ul>
+              <div class="service-hint-tag">
+                <span>🔍 انقر للاطلاع على التوثيق الفني والـ API Specs</span>
+              </div>
             </div>
 
-            <!-- Code/Schematic Preview -->
-            <div class="bento-visual">
-              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 0.75rem; font-size: 0.85rem; font-weight: 700;">
-                <span data-i18n="services.code_title">ZainCash Instant API Verification</span>
-                <span class="badge badge-emerald" data-i18n="services.code_badge">Active Webhook</span>
+            <div class="bento-visual" style="margin-top: 1.5rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <strong data-i18n="services.code_title">تحقق فوري عبر ZainCash API</strong>
+                <span class="badge badge-emerald" data-i18n="services.code_badge">إشعار نشط (Webhook)</span>
               </div>
-              <pre style="font-family: monospace; font-size: 0.8rem; color: #38BDF8; background: #0B0F19; padding: 1rem; border-radius: var(--radius-md); overflow-x: auto;">
-POST /api/v1/reconcile/zaincash HTTP/1.1
-Host: api.rabt.iq
-Authorization: Bearer rbt_live_99210a4f...
-
-{
-  "merchant_id": "IQ_STORE_992",
-  "transaction_id": "ZC_8819203",
-  "wallet_phone": "0780XXXXXXX",
-  "amount_iqd": 125000,
-  "verify_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-}
-
-// Response (200 OK):
-{ "status": "APPROVED", "ledger_synced": true, "timestamp": "2026-08-04T22:00:00Z" }
-              </pre>
+              <div style="font-family: monospace; font-size: 0.825rem; color: var(--text-muted); background: var(--bg-main); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                POST /api/v1/reconcile/zaincash<br>
+                { "transaction_id": "ZC-90124", "status": "SETTLED", "merchant": "Baghdad-Store-01" }
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Solution 2: Inventory POS & ERP Sync -->
-        <div class="bento-card col-span-12" style="padding: 3rem 2.5rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-            <div class="bento-visual">
-              <div style="display: flex; flex-direction: column; gap: 1rem;">
-                <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-                  <div>
-                    <div style="font-weight: 700; font-size: 0.95rem;" data-i18n="services.pos_store_title">فرع الجادرية (POS Physical Store)</div>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="services.pos_store_desc">خصم قطعتين من منتج #SKU-4912</div>
-                  </div>
-                  <span class="badge badge-primary" data-i18n="services.pos_badge">خصم تلقائي</span>
-                </div>
-                <div style="text-align: center; color: var(--color-primary); font-weight: 800; font-size: 1.1rem;" data-i18n="services.sync_arrow">
-                  ⬇️ RABT Real-Time Synchronization (12ms) ⬇️
-                </div>
-                <div style="background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
-                  <div>
-                    <div style="font-weight: 700; font-size: 0.95rem;" data-i18n="services.ecom_title">المتجر الإلكتروني (Salla / Ziina / Web)</div>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="services.ecom_desc">تحديث الرصيد المتوفر إلى 8 قطع</div>
-                  </div>
-                  <span class="badge badge-emerald" data-i18n="services.ecom_badge">متزامن 100%</span>
-                </div>
-              </div>
-            </div>
-
+          <!-- Service Module 2 -->
+          <div class="bento-card service-interactive-card col-span-12" onclick="openServiceModal(2)">
             <div>
-              <div class="bento-card-icon" style="background: rgba(37, 99, 235, 0.15); color: var(--color-primary);">
+              <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
                 <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                  <line x1="12" y1="22" x2="12" y2="12"></line>
                 </svg>
               </div>
               <h2 style="margin-bottom: 1rem;" data-i18n="services.s2_title">2. مزامنة الـ POS والـ ERP في الوقت الفعلي</h2>
               <p style="margin-bottom: 1.5rem;" data-i18n="services.s2_desc">
                 ربط نظام الإدارة والمخازن (Odoo, SAP, QuickBooks) ونقاط البيع المحلية مع متجرك الإلكتروني بكفاءة متناهية.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   <span data-i18n="services.s2_feat1">خصم المخزون التلقائي من المحل والجريد الإلكتروني.</span>
@@ -176,13 +219,36 @@ Authorization: Bearer rbt_live_99210a4f...
                   <span data-i18n="services.s2_feat3">تنبيهات انخفاض المخزون للقطع الأكثر مبيعاً.</span>
                 </li>
               </ul>
+              <div class="service-hint-tag">
+                <span>🔍 انقر للاطلاع على معمارية مزامنة الـ POS والـ ERP</span>
+              </div>
+            </div>
+
+            <div class="bento-visual" style="margin-top: 1.5rem;">
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="background: var(--bg-main); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong data-i18n="services.pos_store_title">فرع الجادرية (POS المحل)</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;" data-i18n="services.pos_store_desc">خصم قطعتين من منتج #SKU-4912</p>
+                  </div>
+                  <span class="badge badge-primary" data-i18n="services.pos_badge">خصم تلقائي</span>
+                </div>
+                <div style="text-align: center; color: var(--color-primary); font-weight: 700; font-size: 0.85rem;" data-i18n="services.sync_arrow">
+                  ⬇️ مزامنة لحظية عبر RABT (12ms) ⬇️
+                </div>
+                <div style="background: var(--bg-main); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong data-i18n="services.ecom_title">المتجر الإلكتروني (سلة / زد / Web)</strong>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;" data-i18n="services.ecom_desc">تحديث الرصيد المتوفر إلى 8 قطع</p>
+                  </div>
+                  <span class="badge badge-emerald" data-i18n="services.ecom_badge">متزامن 100%</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Solution 3: Iraqi Dialect AI Chatbot -->
-        <div class="bento-card col-span-12" style="padding: 3rem 2.5rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <!-- Service Module 3 -->
+          <div class="bento-card service-interactive-card col-span-12" onclick="openServiceModal(3)">
             <div>
               <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
                 <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
@@ -193,7 +259,7 @@ Authorization: Bearer rbt_live_99210a4f...
               <p style="margin-bottom: 1.5rem;" data-i18n="services.s3_desc">
                 مساعد افتراضي مدرب على فهم المصطلحات والعناوين العراقية (مثل: البياع، الجادرية، حي الجامعة، مقابل جامع...) لتأكيد الشحنات.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
                   <span data-i18n="services.s3_feat1">تأكيد الموقع الدقيق وتحديد نقاط العلامة الجغرافية.</span>
@@ -207,9 +273,12 @@ Authorization: Bearer rbt_live_99210a4f...
                   <span data-i18n="services.s3_feat3">إعادة استهداف الزبائن ومتابعة الشحنات الآلية.</span>
                 </li>
               </ul>
+              <div class="service-hint-tag">
+                <span>🔍 انقر للاطلاع على محاكاة البوت التفاعلي وكود الدمج</span>
+              </div>
             </div>
 
-            <div class="bento-visual">
+            <div class="bento-visual" style="margin-top: 1.5rem;">
               <div style="background: var(--bg-main); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.9rem;">
                 <div style="background: rgba(37, 99, 235, 0.15); color: var(--text-main); padding: 0.75rem 1rem; border-radius: var(--radius-md); max-width: 85%; align-self: flex-start;" data-i18n="services.chat_m1">
                   🤖 هلا بيك علي! طلبك رقم #9910 جاهز. تدلل العنوان بغداد - الجادرية قرب المستشفى؟
@@ -223,12 +292,76 @@ Authorization: Bearer rbt_live_99210a4f...
               </div>
             </div>
           </div>
-        </div>
 
+          <!-- Service Module 4 -->
+          <div class="bento-card service-interactive-card col-span-12" onclick="openServiceModal(4)">
+            <div>
+              <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
+                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              </div>
+              <h2 style="margin-bottom: 1rem;" data-i18n="services.s4_title">4. أتمتة شركات التوصيل والمانفيست</h2>
+              <p style="margin-bottom: 1.5rem;" data-i18n="services.s4_desc">
+                إصدار بوليصات الشحن والمانفيست بنقرة واحدة عبر الربط المباشر مع أساطيل التوصيل العراقية.
+              </p>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
+                  <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span data-i18n="services.s4_feat1">طباعة تلقائية للعلامات وبوليصة الشحن بنقرة واحدة.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
+                  <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span data-i18n="services.s4_feat2">تتبع الجغرافيا الحي لشحنات التجار والزبائن.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
+                  <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span data-i18n="services.s4_feat3">إحصائيات دقيقة لنسب التسليم وتخفيض الراجع.</span>
+                </li>
+              </ul>
+              <div class="service-hint-tag">
+                <span>🔍 انقر للاطلاع على تفاصيل شبكة التوصيل وإصدار البوليصات</span>
+              </div>
+            </div>
+
+            <div class="bento-visual" style="margin-top: 1.5rem;">
+              <div style="background: var(--bg-main); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <strong data-i18n="home.c4_manifest_title">بوليصة الشحن رقم #IQ-99104</strong>
+                  <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;" data-i18n="home.c4_manifest_sub">تأكيد تلقائي وطباعة مباشرة</p>
+                </div>
+                <span class="badge badge-emerald" data-i18n="home.c4_status">جاهز للشحن</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
   </main>
+
+  <!-- Service Detail Modal Backdrop -->
+  <div id="service-modal-backdrop" class="service-modal-backdrop" onclick="closeServiceModal(event)">
+    <div class="service-modal-box">
+      <div class="modal-header-row">
+        <h3 id="modal-service-title" style="margin: 0;">تفاصيل الخدمة</h3>
+        <button class="modal-close-btn" onclick="hideServiceModal()">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="modal-service-body" style="font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);">
+        <!-- Dynamic Content Injected via JS -->
+      </div>
+      <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: flex-end;">
+        <a id="modal-request-btn" href="contact.html" class="btn btn-primary" data-i18n="services.modal_btn">طلب ربط الخدمة الآن</a>
+        <button class="btn btn-secondary" onclick="hideServiceModal()" data-i18n="services.modal_close">إغلاق</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -291,5 +424,59 @@ Authorization: Bearer rbt_live_99210a4f...
   </footer>
 
   <script src="shared-engine.js"></script>
+  <script>
+    const serviceDetailsData = {
+      1: {
+        title_ar: "المطابقة المالية الذكية وبوابات الدفع (ZainCash & QiCard)",
+        title_en: "Automated Financial Settlement (ZainCash & QiCard)",
+        body_ar: "<p>يوفر محرك رَبْـط المالي اتصالاً برمجياً مباشراً بالبنوك العراقية والمحافظ الإلكترونية لتنفيذ التسوية اليومية تلقائياً دون الحاجة للتحقق اليدوي.</p><h4>الميزات الفنية:</h4><ul><li>زمن استجابة API لا يتعدى 500ms مع مطابقة التوقيع الرقمي HMAC-SHA256.</li><li>توليد كشوفات يومية لجميع المعاملات المؤتمتة وتصديرها بصيغ Excel/JSON.</li><li>دعم التسوية الفورية لحسابات التاجر البنكية في العراق.</li></ul>",
+        body_en: "<p>RABT Financial Engine connects directly to Iraqi banks & mobile wallets to execute automated daily balance reconciliation with zero manual effort.</p><h4>Technical Highlights:</h4><ul><li>API Latency under 500ms with HMAC-SHA256 signature verification.</li><li>Automated daily ledger statement export in Excel/JSON format.</li><li>Direct instant settlement into merchant bank accounts across Iraq.</li></ul>",
+        link: "contact.html?service=zaincash"
+      },
+      2: {
+        title_ar: "مزامنة المخزون والـ POS (Odoo / SAP / Store Cashier)",
+        title_en: "Multi-Branch POS & ERP Stock Synchronization",
+        body_ar: "<p>نظام مزامنة لحظية بين كاشير المحل الفيزيائي ومتجرك الإلكتروني لتفادي بيع القطع غير المتوفرة نهائياً.</p><h4>الميزات الفنية:</h4><ul><li>مزامنة فائقة السرعة خلال 12ms باستخدام تقنيات WebSockets والـ Webhooks.</li><li>دعم الربط المباشر مع أجهزة الكاشير ونظم Odoo, SAP, QuickBooks.</li><li>إشعارات تلقائية عند وصول رصيد أي منتج لـ الحد الأدنى (Low-Stock Alert).</li></ul>",
+        body_en: "<p>Real-time inventory synchronization engine connecting physical retail POS cashiers to online storefronts, preventing double-selling completely.</p><h4>Technical Highlights:</h4><ul><li>Ultra-fast 12ms sync latency powered by WebSockets & Webhooks.</li><li>Native integration with Odoo, SAP, QuickBooks & local POS cashiers.</li><li>Automated low-stock inventory alerts for high-demand SKUs.</li></ul>",
+        link: "contact.html?service=pos"
+      },
+      3: {
+        title_ar: "شات بوت الذكاء الاصطناعي باللهجة العراقية",
+        title_en: "Iraqi Dialect AI Verification Chatbot",
+        body_ar: "<p>مساعد ذكي مدرب على اللهجة العراقية ومعرفة المعالم والمناطق لـ تأكيد الشحنات والعناوين تلقائياً عبر الواتساب والانستغرام.</p><h4>الميزات الفنية:</h4><ul><li>فهم المصطلحات المحلية والعناوين المشهورة في بغداد والمحافظات.</li><li>تأكيد دبابيس موقع Google Maps مباشرة من الزبون.</li><li>تقليل نسبة الطرود المرجعة بنسبة تصل إلى 40%.</li></ul>",
+        body_en: "<p>AI virtual agent trained on Iraqi colloquial Arabic and geographic landmarks to confirm customer addresses automatically via WhatsApp/Instagram.</p><h4>Technical Highlights:</h4><ul><li>Understands local terminology and landmarks across Baghdad & provinces.</li><li>Captures and verifies precise Google Maps location pins directly.</li><li>Reduces failed courier delivery return rates by up to 40%.</li></ul>",
+        link: "contact.html?service=chatbot"
+      },
+      4: {
+        title_ar: "أتمتة شركات التوصيل والمانفيست",
+        title_en: "Courier Fleet & Logistics Automation",
+        body_ar: "<p>ربط مباشر مع كبرى أساطيل التوصيل في العراق لإصدار المانفيست وطباعة بوليصات الشحن بنقرة واحدة.</p><h4>الميزات الفنية:</h4><ul><li>إصدار البوليصة والـ Barcode وتوليد المانفيست تلقائياً.</li><li>تتبع دقيق لمسار المندوب وحالة الطرد لحظة بلحظة.</li><li>تكامل فوري مع أساطيل بغداد، أربيل، والبصرة.</li></ul>",
+        body_en: "<p>Direct API link with top Iraqi courier fleets for 1-click manifest generation and shipping label printing.</p><h4>Technical Highlights:</h4><ul><li>Automated waybill, barcode, and manifest generation in 1-click.</li><li>Real-time GPS tracking of courier dispatches and parcel states.</li><li>Native integration with fleets across Baghdad, Erbil & Basra.</li></ul>",
+        link: "contact.html?service=logistics"
+      }
+    };
+
+    function openServiceModal(id) {
+      const data = serviceDetailsData[id];
+      if (!data) return;
+      
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+      document.getElementById('modal-service-title').textContent = isAr ? data.title_ar : data.title_en;
+      document.getElementById('modal-service-body').innerHTML = isAr ? data.body_ar : data.body_en;
+      document.getElementById('modal-request-btn').setAttribute('href', data.link);
+      
+      document.getElementById('service-modal-backdrop').classList.add('active');
+    }
+
+    function hideServiceModal() {
+      document.getElementById('service-modal-backdrop').classList.remove('active');
+    }
+
+    function closeServiceModal(e) {
+      if (e.target.id === 'service-modal-backdrop') {
+        hideServiceModal();
+      }
+    }
+  </script>
 </body>
 </html>

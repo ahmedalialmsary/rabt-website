@@ -3,9 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تواصل معنا والحجز | رَبْـط - بغداد الجادرية 2026</title>
-  <meta name="description" content="تواصل مع فريق مهندسي ومبيعات منصة رَبْـط في بغداد الجادرية لحجز جلسة استشارية أو طلب عرض أسعار مخصص.">
+  <title data-i18n="contact.page_title">تواصل معنا وحجز الاستشارة | رَبْـط</title>
+  <meta name="description" content="اتصل بفريق مهندسي رَبْـط في بغداد - حجز جلسة استشارية مجانية لأتمتة متجرك الإلكتروني، زين كاش، وكي كارد.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .prefill-banner {
+      background: rgba(37, 99, 235, 0.1);
+      border: 1px solid var(--color-primary);
+      color: var(--text-main);
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .prefill-banner.show {
+      display: flex;
+    }
+    .form-success-box {
+      display: none;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--color-success);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .form-success-box.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
@@ -56,68 +85,71 @@
     <section class="hero-section" style="padding: 4rem 0 2rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
-          <span class="badge badge-primary" data-i18n="contact.hero_badge">تواصل مباشر</span>
+          <span class="badge badge-primary" data-i18n="contact.hero_badge">تواصل معنا واستشارة مجانية</span>
         </div>
-        <h1 class="hero-title" data-i18n="contact.hero_title">دعنا نساعدك في أتمتة أعمالك التجاريّة</h1>
+        <h1 class="hero-title" data-i18n="contact.hero_title">نحن هنا لدعم متجرك ونشاطك التجاري</h1>
         <p class="hero-subtitle" data-i18n="contact.hero_subtitle">
-          فريقنا في بغداد جاهز للإجابة على استفساراتك الفنية، تقديم العروض المخصصة، وتنسيق جلسة توضيحية.
+          تحدث مع فريق مهندسي رَبْـط للحصول على خطة ربط مخصصة، أو حجز جلسة تجريبية مباشرة لأنظمتنا.
         </p>
       </div>
     </section>
 
-    <!-- Form & Office Details Grid -->
-    <section class="section-padding" style="padding-top: 0;">
+    <!-- Contact Form & Info Grid -->
+    <section class="section-padding">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 7fr 5fr; gap: 2.5rem; align-items: start;">
-          
-          <!-- B2B Booking Form -->
-          <div class="form-card">
-            <h3 style="margin-bottom: 1.5rem;" data-i18n="contact.form_title">حجز استشارة فنية أو طلب عرض</h3>
+        <div class="contact-grid">
 
-            <form id="b2b-contact-form">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                <div class="form-group">
-                  <label class="form-label" data-i18n="contact.lbl_fullname">الاسم الكامل</label>
-                  <input type="text" class="form-control" required placeholder="مثال: المهندس علي أحمد" data-i18n-placeholder="contact.placeholder_fullname">
-                </div>
+          <!-- Contact Form Container -->
+          <div class="contact-form-card">
+            <div id="prefill-banner" class="prefill-banner">
+              <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <span id="prefill-text">تم تعبئة النموذج مسبقاً للباقة المختارة</span>
+            </div>
 
-                <div class="form-group">
-                  <label class="form-label" data-i18n="contact.lbl_email">البريد الإلكتروني المهني</label>
-                  <input type="email" class="form-control" required placeholder="ali@company.iq" data-i18n-placeholder="contact.placeholder_email">
-                </div>
-              </div>
+            <h3 style="margin-bottom: 1.5rem;" data-i18n="contact.form_title">نموذج الطلب والاستفسار</h3>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
-                <div class="form-group">
-                  <label class="form-label" data-i18n="contact.lbl_phone">رقم الهاتف (العراق)</label>
-                  <input type="tel" class="form-control" required placeholder="+964 780 000 0000" data-i18n-placeholder="contact.placeholder_phone">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" data-i18n="contact.lbl_company">اسم الشركة / المتجر</label>
-                  <input type="text" class="form-control" required placeholder="شركة دجلة للتجارة" data-i18n-placeholder="contact.placeholder_company">
-                </div>
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.lbl_name">الاسم الكامل / اسم الشركة</label>
+                <input type="text" id="contact-name" class="form-control" required placeholder="مثال: متجر بغداد الرقمي / علي الحمداني" data-i18n-placeholder="contact.ph_name">
               </div>
 
               <div class="form-group">
-                <label class="form-label" data-i18n="contact.lbl_service">الخدمة المطلوبة</label>
-                <select class="form-control">
-                  <option data-i18n="contact.opt1">أتمتة زين كاش وكي كارد</option>
-                  <option data-i18n="contact.opt2">ربط المخزون ونقاط البيع POS</option>
-                  <option data-i18n="contact.opt3">البوت العراقي لتأكيد العناوين</option>
-                  <option data-i18n="contact.opt4">حلول المؤسسات المخصصة Enterprise</option>
+                <label class="form-label" data-i18n="contact.lbl_email">البريد الإلكتروني المهني</label>
+                <input type="email" id="contact-email" class="form-control" required placeholder="name@company.com" data-i18n-placeholder="contact.ph_email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.lbl_phone">رقم الهاتف (الواتساب)</label>
+                <input type="tel" id="contact-phone" class="form-control" placeholder="+964 780 000 0000" data-i18n-placeholder="contact.ph_phone">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" data-i18n="contact.lbl_service">نوع الخدمة أو الباقة المطلوبة</label>
+                <select id="contact-select" class="form-control">
+                  <option value="zaincash" data-i18n="contact.opt_zaincash">تسوية زين كاش وكي كارد</option>
+                  <option value="pos" data-i18n="contact.opt_pos">مزامنة المخزون والـ POS (Odoo/SAP)</option>
+                  <option value="chatbot" data-i18n="contact.opt_chatbot">شات بوت الذكاء الاصطناعي باللهجة العراقية</option>
+                  <option value="logistics" data-i18n="contact.opt_logistics">أتمتة شركات التوصيل والمانفيست</option>
+                  <option value="enterprise" data-i18n="contact.opt_enterprise">باقة المؤسسات والربط المخصص</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label class="form-label" data-i18n="contact.lbl_message">تفاصيل استفسارك</label>
-                <textarea class="form-control" placeholder="اشرح لنا طبيعة متجرك أو النظام المراد ربطه..." data-i18n-placeholder="contact.placeholder_message"></textarea>
+                <label class="form-label" data-i18n="contact.lbl_message">تفاصيل الاستفسار أو المتجر</label>
+                <textarea id="contact-msg" class="form-control" rows="4" placeholder="اشرح لنا طبيعة متجرك أو النظام المراد ربطه..." data-i18n-placeholder="contact.ph_msg"></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" data-i18n="contact.btn_submit">
                 إرسال الطلب الآن
               </button>
             </form>
+
+            <div id="form-success-box" class="form-success-box">
+              <svg class="icon-svg icon-svg-xl" style="color: var(--color-success); margin-bottom: 0.5rem;" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <h4 style="color: var(--color-success); margin-bottom: 0.25rem;" data-i18n="contact.succ_title">تم استلام طلبك بنجاح!</h4>
+              <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;" data-i18n="contact.succ_sub">سيتواصل معك مهندس من فريق الجادرية خلال 30 دقيقة. رقم التذكرة: #RABT-88912</p>
+            </div>
           </div>
 
           <!-- Office Details & Location -->
@@ -230,5 +262,36 @@
   </footer>
 
   <script src="shared-engine.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const plan = params.get('plan');
+      const service = params.get('service');
+      const banner = document.getElementById('prefill-banner');
+      const text = document.getElementById('prefill-text');
+      const select = document.getElementById('contact-select');
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+
+      if (plan) {
+        banner.classList.add('show');
+        text.textContent = isAr ? `تم التوجيه لحجز باقة: ${plan.toUpperCase()}` : `Directing to confirm plan: ${plan.toUpperCase()}`;
+        if (plan === 'starter' || plan === 'growth' || plan === 'enterprise') {
+          select.value = 'enterprise';
+        }
+      } else if (service) {
+        banner.classList.add('show');
+        text.textContent = isAr ? `تم التوجيه لحجز خدمة: ${service.toUpperCase()}` : `Directing to request service: ${service.toUpperCase()}`;
+        if (select.querySelector(`option[value="${service}"]`)) {
+          select.value = service;
+        }
+      }
+    });
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contact-form').style.display = 'none';
+      document.getElementById('form-success-box').classList.add('show');
+    }
+  </script>
 </body>
 </html>

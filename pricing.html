@@ -3,9 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الأسعار والباقات | رَبْـط - خطط أتمتة التجارة والتكامل 2026</title>
-  <meta name="description" content="خطط وتكاليف شفافة لأتمتة المتاجر الإلكترونية، بوابات الدفع زين كاش وكي كارد، ومزامنة المخزون في العراق.">
+  <title data-i18n="pricing.hero_title">باقات الأسعار والتكاليف | رَبْـط للتكامل البرمجي</title>
+  <meta name="description" content="خطط وتكاليف شفافة لأتمتة المتاجر الإلكترونية، بوابات الدفع زين كاش وكي كارد، ومزامنة نقاط البيع والتوصيل في العراق.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Pricing Matrix & Card Interactivity Enhancements */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+      align-items: stretch;
+    }
+    @media (max-width: 992px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .pricing-card {
+      cursor: pointer;
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+    .pricing-card.selected-plan {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px var(--color-primary), var(--shadow-lg);
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .matrix-table-wrap {
+      margin-top: 4rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      overflow-x: auto;
+      box-shadow: var(--shadow-md);
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      min-width: 650px;
+    }
+    .matrix-table th, .matrix-table td {
+      padding: 1.25rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      word-wrap: break-word;
+    }
+    .matrix-table th:first-child, .matrix-table td:first-child {
+      width: 37%;
+      text-align: start;
+    }
+    .matrix-table th:nth-child(n+2), .matrix-table td:nth-child(n+2) {
+      width: 21%;
+      text-align: center;
+    }
+    .matrix-table th {
+      background: var(--bg-subtle);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    /* Plan Selection Quick Modal / Toast */
+    .plan-toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--color-primary);
+      color: #ffffff;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      z-index: 1000;
+      opacity: 0;
+      transition: all var(--transition-normal);
+      pointer-events: none;
+    }
+    .plan-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -64,13 +150,19 @@
         </p>
 
         <!-- Monthly / Annual Toggle Switch -->
-        <div class="pricing-toggle-wrap">
-          <span style="font-weight: 600;" data-i18n="pricing.monthly">دفعت شهرية</span>
-          <label class="pricing-switch">
-            <input type="checkbox" id="pricing-checkbox">
-            <span class="pricing-slider"></span>
-          </labe            <!-- Tier 1: Starter -->
-          <div class="pricing-card">
+        <div class="pricing-toggle-wrap" style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 2rem;">
+          <span style="font-weight: 600;" data-i18n="pricing.monthly">دفعة شهرية</span>
+          <label class="pricing-switch" style="position: relative; display: inline-block; width: 50px; height: 26px;">
+            <input type="checkbox" id="pricing-checkbox" style="opacity: 0; width: 0; height: 0;">
+            <span class="pricing-slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--border-color); transition: .4s; border-radius: 34px;"></span>
+          </label>
+          <span style="font-weight: 600; color: var(--color-primary);" data-i18n="pricing.annual">دفعة سنوية (خصم 20%)</span>
+        </div>
+
+        <!-- 3 Tier Pricing Cards Grid -->
+        <div class="pricing-grid">
+          <!-- Tier 1: Starter -->
+          <div class="pricing-card" data-plan="starter" onclick="selectPricingPlan('Starter Automation', '$49')">
             <div class="pricing-plan-name" data-i18n="pricing.p1_name">باقة المتاجر الناشئة</div>
             <div class="pricing-plan-desc" data-i18n="pricing.p1_desc">مثالية للمتاجر الصغرى التي تبدأ أتمتة الدفع الشائع والتوصيل.</div>
             <div class="pricing-price">
@@ -96,12 +188,12 @@
                 <span data-i18n="pricing.p1_f4">دعم عبر البريد والواتساب</span>
               </li>
             </ul>
-            <a href="contact.html" class="btn btn-secondary btn-lg" style="width: 100%;" data-i18n="pricing.p1_cta">اختر الباقة الناشئة</a>
+            <a href="contact.html?plan=starter" class="btn btn-secondary btn-lg" style="width: 100%; margin-top: auto;" data-i18n="pricing.p1_cta">اختر الباقة الناشئة</a>
           </div>
 
           <!-- Tier 2: Growth (Featured) -->
-          <div class="pricing-card featured">
-            <span class="pricing-badge" data-i18n="pricing.p2_badge">الأكثر شعبية ونمواً</span>
+          <div class="pricing-card featured" data-plan="growth" onclick="selectPricingPlan('Growth E-Commerce', '$129')" style="border-color: var(--color-primary); background: rgba(37, 99, 235, 0.04);">
+            <span class="badge badge-primary" style="margin-bottom: 0.75rem; width: fit-content;" data-i18n="pricing.p2_badge">الأكثر شعبية ونمواً</span>
             <div class="pricing-plan-name" data-i18n="pricing.p2_name">باقة النمو المتكاملة</div>
             <div class="pricing-plan-desc" data-i18n="pricing.p2_desc">للحركات التجارية المتنامية والمتاجر متعددة الفروع.</div>
             <div class="pricing-price">
@@ -131,11 +223,11 @@
                 <span data-i18n="pricing.p2_f5">دعم هاتف ذو أولوية 24/7</span>
               </li>
             </ul>
-            <a href="contact.html" class="btn btn-primary btn-lg" style="width: 100%;" data-i18n="pricing.p2_cta">جرب باقة النمو مجاناً</a>
+            <a href="contact.html?plan=growth" class="btn btn-primary btn-lg" style="width: 100%; margin-top: auto;" data-i18n="pricing.p2_cta">جرب باقة النمو مجاناً</a>
           </div>
 
           <!-- Tier 3: Enterprise -->
-          <div class="pricing-card">
+          <div class="pricing-card" data-plan="enterprise" onclick="selectPricingPlan('Enterprise Infrastructure', '$299')">
             <div class="pricing-plan-name" data-i18n="pricing.p3_name">باقة المؤسسات والشركات</div>
             <div class="pricing-plan-desc" data-i18n="pricing.p3_desc">سعة لا محدودة مع بنية تحتية مخصصة ومطابقة حسابات معقدة.</div>
             <div class="pricing-price">
@@ -161,9 +253,8 @@
                 <span data-i18n="pricing.p3_f4">مدير حسابات فني خاص في بغداد</span>
               </li>
             </ul>
-            <a href="contact.html" class="btn btn-secondary btn-lg" style="width: 100%;" data-i18n="pricing.p3_cta">تواصل مع قسم المبيعات</a>
+            <a href="contact.html?plan=enterprise" class="btn btn-secondary btn-lg" style="width: 100%; margin-top: auto;" data-i18n="pricing.p3_cta">تواصل مع قسم المبيعات</a>
           </div>
-
         </div>
 
         <!-- Feature Comparison Matrix Table -->
@@ -214,7 +305,7 @@
       <div class="container">
         <div class="section-header">
           <span class="badge badge-primary" data-i18n="pricing.faq_badge">الأسئلة الشائعة</span>
-          <h2 data-i18n="pricing.faq_title">إجابات على استفساراتك الفنية والتجارية</h2>
+          <h2 class="section-title" data-i18n="pricing.faq_title">إجابات على استفساراتك الفنية والتجارية</h2>
         </div>
 
         <div class="faq-list">
@@ -234,7 +325,7 @@
               <svg class="icon-svg faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="faq-answer" data-i18n="pricing.faq_a2">
-              يتم الاتصال مباشرة عبر القنوات المعتمدة تشفيرياً مع البنوك والمافظ الإلكترونية دون تخزين أي بيانات حساسة، مع استخدام تشفير AES-256 ومطابقة التوقيع الرقمي (Signature Verification).
+              يتم الاتصال مباشرة عبر القنوات المعتمدة تشفيرياً مع البنوك والمحافظ الإلكترونية دون تخزين أي بيانات حساسة، مع استخدام تشفير AES-256 ومطابقة التوقيع الرقمي (Signature Verification).
             </div>
           </div>
 
@@ -249,34 +340,15 @@
           </div>
         </div>
       </div>
-    </section>�ت سلة، زد، Odoo، ووكمرس، كما نوفر RESTful APIs سهلة الدمج لأي تطبيق مخصص.
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <span>كيف تضمنون أمان التحويلات المالية عبر زين كاش وكي كارد؟</span>
-              <svg class="icon-svg faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </div>
-            <div class="faq-answer">
-              يتم الاتصال مباشرة عبر القنوات المعتمدة تشفيرياً مع البنوك والمحافظ الإلكترونية دون تخزين أي بيانات حساسة، مع استخدام تشفير AES-256 ومطابقة التوقيع الرقمي (Signature Verification).
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="faq-question">
-              <span>ما هي المدة الاستغراقية لبدء التشغيل الفعلي (Go-Live)؟</span>
-              <svg class="icon-svg faq-icon" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </div>
-            <div class="faq-answer">
-              تستغرق عملية الإعداد والتفعيل للمتاجر القياسية أقل من 24 ساعة. بالنسبة للمؤسسات الكبرى التي تتطلب دمج SAP أو Oracle، يتطلب ذلك من 3 إلى 5 أيام عمل فقط.
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
   </main>
+
+  <!-- Interactive Plan Selection Toast Notification -->
+  <div id="plan-toast" class="plan-toast">
+    <svg class="icon-svg" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span id="plan-toast-msg">تم اختيار باقة النمو المتكاملة!</span>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
@@ -339,5 +411,23 @@
   </footer>
 
   <script src="shared-engine.js"></script>
+  <script>
+    function selectPricingPlan(planName, price) {
+      document.querySelectorAll('.pricing-card').forEach(c => c.classList.remove('selected-plan'));
+      event.currentTarget.classList.add('selected-plan');
+
+      const toast = document.getElementById('plan-toast');
+      const toastMsg = document.getElementById('plan-toast-msg');
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+      
+      if (toast && toastMsg) {
+        toastMsg.textContent = isAr 
+          ? `تم تحديد ${planName} (${price})! جارٍ التوجيه للتأكيد...` 
+          : `Selected ${planName} (${price})! Directing to checkout...`;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3500);
+      }
+    }
+  </script>
 </body>
 </html>

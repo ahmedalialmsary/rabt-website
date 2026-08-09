@@ -3,9 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>التجربة التفاعلية والمحاكاة | رَبْـط - مقارنة الأتمتة 2026</title>
-  <meta name="description" content="تجربة تفاعلية حية لمقارنة الأداء التجاري والمالي قبل وبعد نظام رَبْـط: معالجة فورية وزمن تنفيذ 12ms.">
+  <title data-i18n="demo.page_title">التجربة التفاعلية والـ API | رَبْـط</title>
+  <meta name="description" content="جرب محاكاة المعاملات الحية وأتمتة بوابات الدفع ومزامنة المخزون في العراق مباشرة عبر منصة رَبْـط التفاعلية.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .demo-console-card {
+      background: #0f172a;
+      color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      font-family: 'Fira Code', monospace, sans-serif;
+      box-shadow: var(--shadow-xl);
+    }
+    .demo-tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .demo-tab {
+      background: rgba(255, 255, 255, 0.05);
+      border: none;
+      color: #94a3b8;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all var(--transition-fast);
+    }
+    .demo-tab.active {
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+    .sim-log-box {
+      min-height: 200px;
+      max-height: 320px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .sim-line {
+      display: flex;
+      gap: 0.75rem;
+      animation: fadeIn 0.3s ease;
+    }
+    .sim-time {
+      color: #64748b;
+    }
+    .sim-tag-info { color: #38bdf8; }
+    .sim-tag-success { color: #4ade80; }
+    .sim-tag-warn { color: #fbbf24; }
+  </style>
 </head>
 <body>
 
@@ -52,152 +104,123 @@
 
   <main class="main-content">
 
-    <!-- Demo Hero Header -->
-    <section class="hero-section" style="padding: 4rem 0 2rem;">
+    <!-- Demo Hero Section -->
+    <section class="hero-section" style="padding: 4rem 0 2.5rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
-          <span class="badge badge-emerald" data-i18n="demo.hero_badge">محاكاة واقعية للمقارنة</span>
+          <span class="badge badge-primary" data-i18n="demo.hero_badge">المحاكاة الهندسية التفاعلية</span>
         </div>
-        <h1 class="hero-title" data-i18n="demo.hero_title">شاهد الفرق الفعلي قبل وبعد نظام رَبْـط</h1>
+        <h1 class="hero-title" data-i18n="demo.hero_title">تجربة أتمتة رَبْـط الحية ومحاكاة الطلبات</h1>
         <p class="hero-subtitle" data-i18n="demo.hero_subtitle">
-          جرب كيف تحول رَبْـط المعاملات المالية المربكة واليدوية إلى عملية فورية تكتمل خلال ثوانٍ.
+          اختبر سرعة المعالجة وقدرة المحرك على ربط المتاجر، زين كاش، والمخازن بلحظة واحدة مع مراقبة الإشعارات التلقائية.
         </p>
       </div>
     </section>
 
-    <!-- Interactive Comparison Showcase Widget -->
-    <section class="section-padding" style="padding-top: 0;">
-      <div class="container container-narrow">
-        
-        <div class="showcase-widget">
-                   <!-- Panel Before -->
-            <div class="comparison-panel active" id="panel-before">
-              <div class="comparison-card">
-                <div class="comparison-card-title" style="color: var(--color-error);">
-                  <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-                  <span data-i18n="demo.card_before1_title">التأخير والأخطاء اليدويّة</span>
-                </div>
-                <ul class="comparison-list">
-                  <li class="comparison-item">
-                    <svg class="icon-svg" style="color: var(--color-error);" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    <div>
-                      <strong data-i18n="demo.before_t1">تحقق يدوي من زين كاش (ساعتان تأخير)</strong>
-                      <p style="font-size: 0.85rem;" data-i18n="demo.before_d1">الزبون يرسل لقطة شاشة للحوالة، والموظف يتحقق يدوياً من تطبيق المحفظة.</p>
-                    </div>
-                  </li>
-                  <li class="comparison-item">
-                    <svg class="icon-svg" style="color: var(--color-error);" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    <div>
-                      <strong data-i18n="demo.before_t2">خطأ في المخزون ونفاذ القطع</strong>
-                      <p style="font-size: 0.85rem;" data-i18n="demo.before_d2">طلب نفس القطعة من المحل والجريد في وقت واحد مما يسبب إحراجاً مع الزبون.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+    <!-- Comparison Cards: Before vs After RABT -->
+    <section class="section-padding">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
 
-              <div class="comparison-card">
-                <div class="comparison-card-title" style="color: var(--color-error);">
-                  <svg class="icon-svg" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
-                  <span data-i18n="demo.card_before2_title">ارتفاع التكاليف والراجع</span>
-                </div>
-                <ul class="comparison-list">
-                  <li class="comparison-item">
-                    <svg class="icon-svg" style="color: var(--color-error);" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    <div>
-                      <strong data-i18n="demo.before_t3">ارتفاع نسبة الشحنات المرجعة</strong>
-                      <p style="font-size: 0.85rem;" data-i18n="demo.before_d3">عدم تأكيد العنوان الدقيق يؤدي لعدم وصول سائق التوصيل ورجوع الطلب.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Panel After -->
-            <div class="comparison-panel" id="panel-after">
-              <div class="comparison-card" style="border-color: rgba(16, 185, 129, 0.3);">
-                <div class="comparison-card-title" style="color: var(--color-success);">
-                  <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="demo.card_after1_title">سرعة ودقة فائقة</span>
-                </div>
-                <ul class="comparison-list">
-                  <li class="comparison-item">
-                    <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <div>
-                      <strong data-i18n="demo.after_t1">تأكيد مالي فوري خلال 15 ثانية</strong>
-                      <p style="font-size: 0.85rem;" data-i18n="demo.after_d1">إشعار فوري وتأكيد تلقائي للطلب بمجرد إتمام التحويل عبر API زين كاش وكي كارد.</p>
-                    </div>
-                  </li>
-                  <li class="comparison-item">
-                    <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <div>
-                      <strong data-i18n="demo.after_t2">مزامنة لحظية للمخزون في المحل والمتجر</strong>
-                      <p style="font-size: 0.85rem;" data-i18n="demo.after_d2">خصم تلقائي لحظي يضمن عدم تكرار بيع المنتج المباع في أي منصة.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="comparison-card" style="border-color: rgba(16, 185, 129, 0.3);">
-                <div class="comparison-card-title" style="color: var(--color-success);">
-                  <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="demo.card_after2_title">أقل راجع وأعلى أرباح</span>
-                </div>
-                <ul class="comparison-list">
-                  <li class="comparison-item">
-                    <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    <div>
-                      <strong data-i18n="demo.after_t3">تأكيد العنوان عبر الذكاء الاصطناعي</strong>
-                      <p style="font-size: 0.85rem;" data-i18n="demo.after_d3">شات بوت يحدد الموقع بدقة ويصدر البوليصة لشركة التوصيل مباشرة.</p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <!-- Before Card -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-xl); padding: 2rem;">
+            <span class="badge badge-danger" style="margin-bottom: 1rem;" data-i18n="demo.card_before_badge">قبل استخدام رَبْـط</span>
+            <h3 style="margin-bottom: 1rem;" data-i18n="demo.card_before_title">إرهاق العمل اليدوي وأخطاء الحسابات</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="display: flex; gap: 0.75rem; font-size: 0.95rem;">
+                <svg class="icon-svg" style="color: var(--color-danger); flex-shrink: 0;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <span data-i18n="demo.b1">مطابقة يدوية بطيئة لإشعارات زين كاش وكي كارد تستغرق ساعات.</span>
+              </li>
+              <li style="display: flex; gap: 0.75rem; font-size: 0.95rem;">
+                <svg class="icon-svg" style="color: var(--color-danger); flex-shrink: 0;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <span data-i18n="demo.b2">بيع منتجات نافدة من المحل لعدم وجود مزامنة لحظية مع الـ POS.</span>
+              </li>
+              <li style="display: flex; gap: 0.75rem; font-size: 0.95rem;">
+                <svg class="icon-svg" style="color: var(--color-danger); flex-shrink: 0;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                <span data-i18n="demo.b3">ارتفاع نسبة الشحنات المرجعة بسبب خطأ كتابة العناوين اليدوي.</span>
+              </li>
+            </ul>
           </div>
-        </div>
 
+          <!-- After Card -->
+          <div style="background: var(--bg-card); border: 1px solid rgba(16, 185, 129, 0.4); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-md);">
+            <span class="badge badge-emerald" style="margin-bottom: 1rem;" data-i18n="demo.card_after_badge">بعد تفعيل منصة رَبْـط</span>
+            <h3 style="margin-bottom: 1rem;" data-i18n="demo.card_after_title">أتمتة شاملة 100% بدون أخطاء</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+              <li style="display: flex; gap: 0.75rem; font-size: 0.95rem;">
+                <svg class="icon-svg" style="color: var(--color-success); flex-shrink: 0;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="demo.a1">مطابقة فورية في 500 ملي ثانية مع تحديث حالة الطلب تلقائياً.</span>
+              </li>
+              <li style="display: flex; gap: 0.75rem; font-size: 0.95rem;">
+                <svg class="icon-svg" style="color: var(--color-success); flex-shrink: 0;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="demo.a2">خصم المخزون التلقائي خلال 12ms عبر شبكة الكاشير والمحل.</span>
+              </li>
+              <li style="display: flex; gap: 0.75rem; font-size: 0.95rem;">
+                <svg class="icon-svg" style="color: var(--color-success); flex-shrink: 0;" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span data-i18n="demo.a3">تأكيد الجغرافيا والـ GPS عبر شات بوت العناوين العراقي.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
     </section>
 
-    <!-- Live Interactive Simulator Console -->
+    <!-- Interactive Live Sandbox Console -->
     <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
-      <div class="container container-narrow">
-        <div class="section-header" style="margin-bottom: 2rem;">
-          <span class="badge badge-primary" data-i18n="demo.sim_badge">المحاكاة الحية</span>
-          <h2 data-i18n="demo.sim_title">مشغل محاكاة الطلب الحي (Live Transaction Simulator)</h2>
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="demo.sim_badge">المحاكاة البرمجية الحية</span>
+          <h2 class="section-title" data-i18n="demo.sim_title">مشغل محاكاة التدفق والمراقبة (Interactive Sandbox)</h2>
         </div>
 
-        <div class="sim-container">
-          <div class="sim-controls">
-            <button class="btn btn-primary" id="sim-start-btn">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+            <button class="btn btn-primary" onclick="runSandboxSimulation()" data-i18n="demo.sim_start_btn">
               <svg class="icon-svg" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              <span data-i18n="demo.sim_start_btn">تشغيل تجربة طلب حية</span>
+              <span>تشغيل تجربة طلب حية</span>
             </button>
-            <button class="btn btn-secondary" id="sim-clear-btn">
+            <button class="btn btn-secondary" onclick="clearSandboxConsole()" data-i18n="demo.sim_clear_btn">
               <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-              <span data-i18n="demo.sim_clear_btn">مسح السجل</span>
+              <span>مسح السجل</span>
             </button>
           </div>
 
-          <div class="sim-log-box" id="sim-log">
-            <div class="sim-log-line"><span class="sim-log-time">[SYSTEM]</span> <span data-i18n="demo.sim_ready">جاهز لتشغيل محاكاة المعاملة المالية. اضغط "تشغيل تجربة طلب حية" أعلاه...</span></div>
-          </div>
-        </div>
-      </div>
-    </section>ontainer">
-          <div class="sim-controls">
-            <button class="btn btn-primary" id="sim-start-btn">
-              <svg class="icon-svg" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-              <span data-i18n="demo.sim_start_btn">تشغيل تجربة طلب حية</span>
-            </button>
-            <button class="btn btn-secondary" id="sim-clear-btn">
-              <svg class="icon-svg" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-              <span data-i18n="demo.sim_clear_btn">مسح السجل</span>
-            </button>
-          </div>
+          <div class="demo-console-card">
+            <div class="demo-tab-bar">
+              <button class="demo-tab active" onclick="switchConsoleTab('console', this)">Console Stream</button>
+              <button class="demo-tab" onclick="switchConsoleTab('webhook', this)">Webhook Payload (JSON)</button>
+              <button class="demo-tab" onclick="switchConsoleTab('curl', this)">cURL Command</button>
+            </div>
 
-          <div class="sim-log-box" id="sim-log">
-            <div class="sim-log-line"><span class="sim-log-time">[SYSTEM]</span> Ready to execute transaction simulation. Click "Run Live Transaction Test" above...</div>
+            <div id="tab-console" class="sim-log-box">
+              <div class="sim-line">
+                <span class="sim-time">[00:00:00]</span>
+                <span class="sim-tag-info">[READY]</span>
+                <span>جاهز لتشغيل محاكاة المعاملة البرمجية. اضغط "تشغيل تجربة طلب حية" أعلاه...</span>
+              </div>
+            </div>
+
+            <div id="tab-webhook" style="display: none; font-family: monospace; font-size: 0.85rem; color: #38bdf8;">
+              <pre style="margin: 0; white-space: pre-wrap;">{
+  "event": "order.checkout_settled",
+  "timestamp": "2026-08-08T20:30:00Z",
+  "order_id": "ORD-BAGHDAD-99104",
+  "amount_iqd": 125000,
+  "gateway": "ZAINCASH_ENTERPRISE",
+  "latency_ms": 12,
+  "pos_synced": true,
+  "waybill_status": "PRINTED_AND_DISPATCHED"
+}</pre>
+            </div>
+
+            <div id="tab-curl" style="display: none; font-family: monospace; font-size: 0.85rem; color: #4ade80;">
+              <pre style="margin: 0; white-space: pre-wrap;">curl -X POST https://api.rabt.iq/v1/checkout/verify \
+  -H "Authorization: Bearer rbt_live_secret_99104" \
+  -H "Content-Type: application/json" \
+  -d '{"order_id":"ORD-BAGHDAD-99104","gateway":"ZainCash"}'</pre>
+            </div>
+
           </div>
         </div>
       </div>
@@ -266,5 +289,46 @@
   </footer>
 
   <script src="shared-engine.js"></script>
+  <script>
+    function switchConsoleTab(tab, btn) {
+      document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.getElementById('tab-console').style.display = tab === 'console' ? 'flex' : 'none';
+      document.getElementById('tab-webhook').style.display = tab === 'webhook' ? 'block' : 'none';
+      document.getElementById('tab-curl').style.display = tab === 'curl' ? 'block' : 'none';
+    }
+
+    function clearSandboxConsole() {
+      const box = document.getElementById('tab-console');
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+      box.innerHTML = `<div class="sim-line"><span class="sim-time">[SYSTEM]</span><span class="sim-tag-info">[CLEARED]</span><span>${isAr ? 'تم مسح السجل. جاهز للمحاكاة...' : 'Log cleared. Ready for simulation...'}</span></div>`;
+    }
+
+    function runSandboxSimulation() {
+      const box = document.getElementById('tab-console');
+      const isAr = document.documentElement.getAttribute('lang') === 'ar';
+      box.innerHTML = '';
+
+      const steps = [
+        { time: "00:00.01", tag: "[CHECKOUT]", type: "info", text_ar: "استلام طلب شراء من المتجر الإلكتروني (#ORD-99104)", text_en: "Webstore order checkout received (#ORD-99104)" },
+        { time: "00:00.12", tag: "[GATEWAY]", type: "success", text_ar: "مطابقة رصيد زين كاش والتحقق التلقائي (200 OK - 12ms)", text_en: "ZainCash wallet verified automatically (200 OK - 12ms)" },
+        { time: "00:00.18", tag: "[POS ENGINE]", type: "success", text_ar: "خصم المخزون التلقائي من الفرع والجَريد (SKU-4912 -2)", text_en: "POS inventory deducted across multi-branch (SKU-4912 -2)" },
+        { time: "00:00.35", tag: "[AI CHATBOT]", type: "warn", text_ar: "إرسال رسالة تأكيد العنوان بالعراقي للزبون عبر WhatsApp", text_en: "Iraqi address confirmation pin dispatched via WhatsApp" },
+        { time: "00:00.50", tag: "[LOGISTICS]", type: "success", text_ar: "إصدار بوليصة الشحن والمانفيست لشركة التوصيل #IQ-99104", text_en: "Waybill printed & courier manifest generated #IQ-99104" }
+      ];
+
+      steps.forEach((step, idx) => {
+        setTimeout(() => {
+          const line = document.createElement('div');
+          line.className = 'sim-line';
+          const tagClass = step.type === 'success' ? 'sim-tag-success' : (step.type === 'warn' ? 'sim-tag-warn' : 'sim-tag-info');
+          line.innerHTML = `<span class="sim-time">[${step.time}]</span><span class="${tagClass}">${step.tag}</span><span>${isAr ? step.text_ar : step.text_en}</span>`;
+          box.appendChild(line);
+          box.scrollTop = box.scrollHeight;
+        }, idx * 400);
+      });
+    }
+  </script>
 </body>
 </html>
