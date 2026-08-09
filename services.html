@@ -91,7 +91,7 @@
 
   <!-- Navigation Header -->
   <header class="navbar">
-    <div class="container">
+    <div class="container header-content">
       <a href="index.html" class="brand-logo">
         <div class="brand-logo-icon">
           <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
@@ -102,140 +102,130 @@
         <span data-i18n="nav.brand">رَبْـط</span>
       </a>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a></li>
-        <li><a href="services.html" class="nav-link active" data-i18n="nav.services">الخدمات والحلول</a></li>
-        <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
-        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
-        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
-        <li class="nav-dropdown">
-          <button class="nav-dropdown-btn" aria-expanded="false">
-            <span data-i18n="nav.more">المزيد</span>
-            <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
-          </button>
-          <div class="nav-dropdown-menu">
-            <div class="nav-dropdown-group">
-              <div class="nav-dropdown-header" data-i18n="nav.cat_product">المنتج والحلول</div>
-              <a href="features-index.html" class="nav-dropdown-item">
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        <svg class="icon-svg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list" id="nav-links">
+          <li><a href="index.html" class="nav-link " data-i18n="nav.home">الرئيسية</a></li>
+
+          <!-- Features & Solutions Dropdown -->
+          <li class="nav-dropdown ">
+            <button class="nav-dropdown-btn" aria-expanded="false">
+              <span data-i18n="nav.cat_features">الميزات والحلول</span>
+              <svg class="icon-svg" style="width:12px;height:12px;margin-right:4px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="features-index.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.features">دليل الميزات الهندسية</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.features_sub">8 ميزات تخصصية مستقلة</span>
                 </div>
               </a>
-              <a href="integrations-index.html" class="nav-dropdown-item">
-                <div>
-                  <strong data-i18n="nav.integrations">دليل القنوات والتكاملات</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.integrations_sub">واتساب، إنستغرام، فيسبوك وERP</span>
-                </div>
-              </a>
-              <a href="solutions-index.html" class="nav-dropdown-item">
+              <a href="solutions-index.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.solutions_idx">دليل الحلول حسب القطاع</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.solutions_sub">متاجر D2C، خدمات، ومؤسسات كبرى</span>
                 </div>
               </a>
-            </div>
-
-            <div class="nav-dropdown-group">
-              <div class="nav-dropdown-header" data-i18n="nav.cat_resources">الموارد والدعم</div>
-              <a href="blog.html" class="nav-dropdown-item">
+              <a href="service-payments.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.blog">المدونة الهندسية</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.blog_sub">دلاءل ومقالات تقنية تخصصية</span>
+                  <strong data-i18n="nav.sol_payments">تسوية بوابات الدفع والمحافظ</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_payments_sub">زين كاش، كي كارد، FIB بتوقيع HMAC</span>
                 </div>
               </a>
-              <a href="help-center.html" class="nav-dropdown-item">
+              <a href="service-pos.html" class="nav-dropdown-item ">
+                <div>
+                  <strong data-i18n="nav.sol_pos">مزامنة المخزون والـ POS</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_pos_sub">ربط كاشير الفرع الفيزيائي بزمن 12ms</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- Channels & Integrations Dropdown -->
+          <li class="nav-dropdown ">
+            <button class="nav-dropdown-btn" aria-expanded="false">
+              <span data-i18n="nav.cat_channels">القنوات والتكاملات</span>
+              <svg class="icon-svg" style="width:12px;height:12px;margin-right:4px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="integrations/whatsapp.html" class="nav-dropdown-item ">
+                <div>
+                  <strong data-i18n="nav.ch_wa">تكامل واتساب للأعمال (WhatsApp Cloud API)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_wa_sub">رد آلي بالعامية واستخراج الـ GPS Pin</span>
+                </div>
+              </a>
+              <a href="integrations/instagram.html" class="nav-dropdown-item ">
+                <div>
+                  <strong data-i18n="nav.ch_ig">تكامل إنستغرام ماسنجر (Direct API)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_ig_sub">أتمتة الـ Direct وتعليقات المنشورات</span>
+                </div>
+              </a>
+              <a href="integrations/facebook.html" class="nav-dropdown-item ">
+                <div>
+                  <strong data-i18n="nav.ch_fb">تكامل فيسبوك ماسنجر (Messenger API)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_fb_sub">أتمتة عملاء إعلانات Click-to-Messenger</span>
+                </div>
+              </a>
+              <a href="integrations/pos-erp.html" class="nav-dropdown-item ">
+                <div>
+                  <strong data-i18n="nav.ch_pos">أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_pos_sub">مزامنة كاشير المحل والفواتير المركزية</span>
+                </div>
+              </a>
+              <a href="integrations-index.html" class="nav-dropdown-item " style="border-top:1px solid var(--border-color);margin-top:4px;padding-top:8px;">
+                <div>
+                  <strong data-i18n="nav.ch_all" style="color:var(--color-primary);">دليل شبكة التكاملات الكامل ➔</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_all_sub">سلة، ووكمرس، شركات التوصيل وشركاء الربط</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- Pricing -->
+          <li><a href="pricing.html" class="nav-link " data-i18n="nav.pricing">الأسعار والباقات</a></li>
+
+          <!-- Resources Dropdown -->
+          <li class="nav-dropdown ">
+            <button class="nav-dropdown-btn" aria-expanded="false">
+              <span data-i18n="nav.cat_resources">الموارد والدعم</span>
+              <svg class="icon-svg" style="width:12px;height:12px;margin-right:4px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="blog.html" class="nav-dropdown-item ">
+                <div>
+                  <strong data-i18n="nav.blog">المدونة الهندسية</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.blog_sub">مقالات ودلائل تقنية تخصصية</span>
+                </div>
+              </a>
+              <a href="help-center.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.help">مركز مساعدة التجار</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.help_sub">أدلة التشغيل وتصحيح الأخطاء</span>
                 </div>
               </a>
-              <a href="demo.html" class="nav-dropdown-item">
+              <a href="demo.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والتحاكاة الحية</span>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والمحاكاة الحية</span>
                 </div>
               </a>
             </div>
+          </li>
 
-            <div class="nav-dropdown-group">
-              <div class="nav-dropdown-header" data-i18n="nav.cat_legal">القانونية والأمان</div>
-              <a href="privacy.html" class="nav-dropdown-item">
-                <div>
-                  <strong data-i18n="nav.privacy">سياسة الخصوصية والأمان</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.privacy_sub">التوافق مع نظام التجارة 2025</span>
-                </div>
-              </a>
-              <a href="terms.html" class="nav-dropdown-item">
-                <div>
-                  <strong data-i18n="nav.terms">الشروط والأحكام</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.terms_sub">قواعد الاستخدام والضمان المالي</span>
-                </div>
-              </a>
-              <a href="sla.html" class="nav-dropdown-item">
-                <div>
-                  <strong data-i18n="nav.sla">اتفاقية مستوى الخدمة SLA</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.sla_sub">ضمان التشغيل 99.99% وزمن الاستجابة</span>
-                </div>
-              </a>
-            </div>
-          </div>
-            </a>
-            <a href="integrations-index.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.integrations">دليل القنوات والتكاملات</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.integrations_sub">واتساب، سلة، أودو وشركات التوصيل</span>
-              </div>
-            </a>
-            <a href="solutions-index.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.solutions_idx">دليل الحلول حسب القطاع</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.solutions_sub">متاجر D2C، خدمات، ومؤسسات كبرى</span>
-              </div>
-            </a>
-            <a href="help-center.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.help">مركز مساعدة التجار</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.help_sub">أدلة التشغيل وتصحيح الأخطاء</span>
-              </div>
-            </a>
-            <a href="privacy.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.privacy">سياسة الخصوصية والأمان</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.privacy_sub">التوافق مع نظام التجارة 2025</span>
-              </div>
-            </a>
-            <a href="terms.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.terms">الشروط والأحكام</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.terms_sub">قواعد الاستخدام والضمان المالي</span>
-              </div>
-            </a>
-            <a href="sla.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.sla">اتفاقية مستوى الخدمة SLA</strong>
-                <span class=nav-dropdown-item-desc data-i18n=nav.sla_sub>ضمان التشغيل 99.99% وزمن الاستجابة</span>
-              </div>
-            </a>
-            <a href="blog.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.blog">المدونة الهندسية</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.blog_sub">دلاءل ومقالات تقنية تخصصية</span>
-              </div>
-            </a>
-            <a href="demo.html" class="nav-dropdown-item">
-              <div>
-                <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
-                <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والتحاكاة الحية</span>
-              </div>
-            </a>
-          </div>
-        </li>
-      </ul>
+          <!-- About -->
+          <li><a href="about.html" class="nav-link " data-i18n="nav.about">عن الشركة</a></li>
+
+          <!-- Contact -->
+          <li><a href="contact.html" class="nav-link " data-i18n="nav.contact">تواصل معنا</a></li>
+        </ul>
+      </nav>
 
       <div class="nav-actions">
         <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
-          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
           <span id="lang-switch-label">English</span>
         </button>
 
@@ -243,11 +233,7 @@
           <span id="theme-toggle-icon"></span>
         </button>
 
-        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">ابدأ الآن مجاناً</a>
-
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
-          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">استكشف ربط منصتك</a>
       </div>
     </div>
   </header>

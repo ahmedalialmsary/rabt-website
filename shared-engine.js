@@ -1228,7 +1228,23 @@ const translations = {
     "demo.b3": "تأخير التأكد من تحويلات زين كاش وإلغاء الزبائن للطلبات.",
     "demo.a1": "تصدير الفاتورة وبوليصة التوصيل بـ 30 ثانية أوتوماتيكياً.",
     "demo.a2": "دقة 100% في استخراج موقع الـ GPS Pin من الواتساب.",
-    "demo.a3": "تأكيد مالي لحظي لـ زين كاش وكي كارد عبر Webhooks."
+    "demo.a3": "تأكيد مالي لحظي لـ زين كاش وكي كارد عبر Webhooks.",
+    "nav.cat_features": "الميزات والحلول",
+    "nav.cat_channels": "القنوات والتكاملات",
+    "nav.sol_payments": "تسوية بوابات الدفع والمحافظ",
+    "nav.sol_payments_sub": "زين كاش، كي كارد، FIB بتوقيع HMAC",
+    "nav.sol_pos": "مزامنة المخزون والـ POS",
+    "nav.sol_pos_sub": "ربط كاشير الفرع الفيزيائي بزمن 12ms",
+    "nav.ch_wa": "تكامل واتساب للأعمال (WhatsApp Cloud API)",
+    "nav.ch_wa_sub": "رد آلي بالعامية واستخراج الـ GPS Pin",
+    "nav.ch_ig": "تكامل إنستغرام ماسنجر (Direct API)",
+    "nav.ch_ig_sub": "أتمتة الـ Direct وتعليقات المنشورات",
+    "nav.ch_fb": "تكامل فيسبوك ماسنجر (Messenger API)",
+    "nav.ch_fb_sub": "أتمتة عملاء إعلانات Click-to-Messenger",
+    "nav.ch_pos": "أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP)",
+    "nav.ch_pos_sub": "مزامنة كاشير المحل والفواتير المركزية",
+    "nav.ch_all": "دليل شبكة التكاملات الكامل ➔",
+    "nav.ch_all_sub": "سلة، ووكمرس، شركات التوصيل وشركاء الربط"
   },
   "en": {
     "nav.brand": "RABT",
@@ -2459,7 +2475,23 @@ const translations = {
     "demo.b3": "Delayed payment verification leading to order cancellations.",
     "demo.a1": "Automated invoice and waybill generation in 30 seconds.",
     "demo.a2": "100% accuracy via automated Google Maps GPS Pin extraction.",
-    "demo.a3": "Instant financial validation for ZainCash & QiCard via Webhooks."
+    "demo.a3": "Instant financial validation for ZainCash & QiCard via Webhooks.",
+    "nav.cat_features": "Features & Solutions",
+    "nav.cat_channels": "Channels & Integrations",
+    "nav.sol_payments": "Payment Gateway Settlement",
+    "nav.sol_payments_sub": "ZainCash, QiCard, FIB with HMAC signatures",
+    "nav.sol_pos": "Inventory & POS Sync",
+    "nav.sol_pos_sub": "Physical cashier branch sync in 12ms",
+    "nav.ch_wa": "WhatsApp Business Cloud API",
+    "nav.ch_wa_sub": "Iraqi dialect bot & GPS pin extraction",
+    "nav.ch_ig": "Instagram Direct Messenger API",
+    "nav.ch_ig_sub": "Direct DM & comment automation",
+    "nav.ch_fb": "Facebook Messenger API",
+    "nav.ch_fb_sub": "Click-to-Messenger ad automation",
+    "nav.ch_pos": "POS & ERP Systems (Odoo/SAP)",
+    "nav.ch_pos_sub": "Cashier & centralized invoice sync",
+    "nav.ch_all": "Full Integrations Directory ➔",
+    "nav.ch_all_sub": "Salla, WooCommerce, Courier Fleets"
   }
 };
 
@@ -2568,10 +2600,11 @@ function setLanguage(lang) {
 // Mobile Navigation
 function initMobileMenu() {
   const menuBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-active');
+  const navMenu = document.getElementById('nav-menu') || document.getElementById('nav-links');
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('mobile-active');
     });
   }
 }
@@ -2761,7 +2794,7 @@ function initBlogFilter() {
 
 
 function renderNavbar() {
-  const header = document.querySelector('header.header');
+  const header = document.querySelector('header.navbar, header.header, header');
   if (!header) return;
 
   const path = window.location.pathname;
@@ -2771,13 +2804,13 @@ function renderNavbar() {
   const page = path.split('/').pop() || 'index.html';
 
   const isHome = page === 'index.html' || page === '';
-  const isServices = page === 'services.html' || page.startsWith('service-');
   const isPricing = page === 'pricing.html';
   const isAbout = page === 'about.html';
   const isContact = page === 'contact.html';
 
-  const isProduct = page === 'features-index.html' || page === 'integrations-index.html' || page === 'solutions-index.html' || page.startsWith('feature-') || page.startsWith('integration-') || page.startsWith('solution-');
-  const isResources = page === 'blog.html' || page === 'help-center.html' || page === 'demo.html';
+  const isFeaturesActive = page === 'features-index.html' || page === 'solutions-index.html' || page.startsWith('feature-') || page.startsWith('solution-') || page.startsWith('service-');
+  const isChannelsActive = page === 'integrations-index.html' || page === 'whatsapp.html' || page === 'instagram.html' || page === 'facebook.html' || page === 'pos-erp.html' || page.startsWith('integration-');
+  const isResourcesActive = page === 'blog.html' || page === 'help-center.html' || page === 'demo.html';
 
   header.innerHTML = `
     <div class="container header-content">
@@ -2798,15 +2831,12 @@ function renderNavbar() {
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-list" id="nav-links">
           <li><a href="${prefix}index.html" class="nav-link ${isHome ? 'active' : ''}" data-i18n="nav.home">الرئيسية</a></li>
-          <li><a href="${prefix}services.html" class="nav-link ${isServices ? 'active' : ''}" data-i18n="nav.services">الخدمات والحلول</a></li>
-          <li><a href="${prefix}pricing.html" class="nav-link ${isPricing ? 'active' : ''}" data-i18n="nav.pricing">الأسعار والباقات</a></li>
-          <li><a href="${prefix}about.html" class="nav-link ${isAbout ? 'active' : ''}" data-i18n="nav.about">عن الشركة</a></li>
-          <li><a href="${prefix}contact.html" class="nav-link ${isContact ? 'active' : ''}" data-i18n="nav.contact">تواصل معنا</a></li>
 
-          <li class="nav-dropdown ${isProduct ? 'active' : ''}">
+          <!-- Features & Solutions Dropdown -->
+          <li class="nav-dropdown ${isFeaturesActive ? 'active' : ''}">
             <button class="nav-dropdown-btn" aria-expanded="false">
-              <span data-i18n="nav.cat_product">المنتج والحلول</span>
-              <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+              <span data-i18n="nav.cat_features">الميزات والحلول</span>
+              <svg class="icon-svg" style="width:12px;height:12px;margin-right:4px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
             </button>
             <div class="nav-dropdown-menu">
               <a href="${prefix}features-index.html" class="nav-dropdown-item ${page === 'features-index.html' ? 'active' : ''}">
@@ -2815,25 +2845,75 @@ function renderNavbar() {
                   <span class="nav-dropdown-item-desc" data-i18n="nav.features_sub">8 ميزات تخصصية مستقلة</span>
                 </div>
               </a>
-              <a href="${prefix}integrations-index.html" class="nav-dropdown-item ${page === 'integrations-index.html' ? 'active' : ''}">
-                <div>
-                  <strong data-i18n="nav.integrations">دليل القنوات والتكاملات</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.integrations_sub">واتساب، إنستغرام، فيسبوك وERP</span>
-                </div>
-              </a>
               <a href="${prefix}solutions-index.html" class="nav-dropdown-item ${page === 'solutions-index.html' ? 'active' : ''}">
                 <div>
                   <strong data-i18n="nav.solutions_idx">دليل الحلول حسب القطاع</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.solutions_sub">متاجر D2C، خدمات، ومؤسسات كبرى</span>
                 </div>
               </a>
+              <a href="${prefix}service-payments.html" class="nav-dropdown-item ${page === 'service-payments.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.sol_payments">تسوية بوابات الدفع والمحافظ</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_payments_sub">زين كاش، كي كارد، FIB بتوقيع HMAC</span>
+                </div>
+              </a>
+              <a href="${prefix}service-pos.html" class="nav-dropdown-item ${page === 'service-pos.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.sol_pos">مزامنة المخزون والـ POS</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_pos_sub">ربط كاشير الفرع الفيزيائي بزمن 12ms</span>
+                </div>
+              </a>
             </div>
           </li>
 
-          <li class="nav-dropdown ${isResources ? 'active' : ''}">
+          <!-- Channels & Integrations Dropdown -->
+          <li class="nav-dropdown ${isChannelsActive ? 'active' : ''}">
+            <button class="nav-dropdown-btn" aria-expanded="false">
+              <span data-i18n="nav.cat_channels">القنوات والتكاملات</span>
+              <svg class="icon-svg" style="width:12px;height:12px;margin-right:4px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="${prefix}integrations/whatsapp.html" class="nav-dropdown-item ${page === 'whatsapp.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.ch_wa">تكامل واتساب للأعمال (WhatsApp Cloud API)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_wa_sub">رد آلي بالعامية واستخراج الـ GPS Pin</span>
+                </div>
+              </a>
+              <a href="${prefix}integrations/instagram.html" class="nav-dropdown-item ${page === 'instagram.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.ch_ig">تكامل إنستغرام ماسنجر (Direct API)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_ig_sub">أتمتة الـ Direct وتعليقات المنشورات</span>
+                </div>
+              </a>
+              <a href="${prefix}integrations/facebook.html" class="nav-dropdown-item ${page === 'facebook.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.ch_fb">تكامل فيسبوك ماسنجر (Messenger API)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_fb_sub">أتمتة عملاء إعلانات Click-to-Messenger</span>
+                </div>
+              </a>
+              <a href="${prefix}integrations/pos-erp.html" class="nav-dropdown-item ${page === 'pos-erp.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.ch_pos">أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP)</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_pos_sub">مزامنة كاشير المحل والفواتير المركزية</span>
+                </div>
+              </a>
+              <a href="${prefix}integrations-index.html" class="nav-dropdown-item ${page === 'integrations-index.html' ? 'active' : ''}" style="border-top:1px solid var(--border-color);margin-top:4px;padding-top:8px;">
+                <div>
+                  <strong data-i18n="nav.ch_all" style="color:var(--color-primary);">دليل شبكة التكاملات الكامل ➔</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.ch_all_sub">سلة، ووكمرس، شركات التوصيل وشركاء الربط</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- Pricing -->
+          <li><a href="${prefix}pricing.html" class="nav-link ${isPricing ? 'active' : ''}" data-i18n="nav.pricing">الأسعار والباقات</a></li>
+
+          <!-- Resources Dropdown -->
+          <li class="nav-dropdown ${isResourcesActive ? 'active' : ''}">
             <button class="nav-dropdown-btn" aria-expanded="false">
               <span data-i18n="nav.cat_resources">الموارد والدعم</span>
-              <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+              <svg class="icon-svg" style="width:12px;height:12px;margin-right:4px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
             </button>
             <div class="nav-dropdown-menu">
               <a href="${prefix}blog.html" class="nav-dropdown-item ${page === 'blog.html' ? 'active' : ''}">
@@ -2856,6 +2936,12 @@ function renderNavbar() {
               </a>
             </div>
           </li>
+
+          <!-- About -->
+          <li><a href="${prefix}about.html" class="nav-link ${isAbout ? 'active' : ''}" data-i18n="nav.about">عن الشركة</a></li>
+
+          <!-- Contact -->
+          <li><a href="${prefix}contact.html" class="nav-link ${isContact ? 'active' : ''}" data-i18n="nav.contact">تواصل معنا</a></li>
         </ul>
       </nav>
 
