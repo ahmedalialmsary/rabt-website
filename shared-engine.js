@@ -301,9 +301,10 @@ const translations = {
     "pricing.p3_cta": "تواصل مع قسم المبيعات",
 
     "pricing.matrix_h1": "الميزة / الخاصيّة البرمجيّة",
-    "pricing.matrix_h2": "الناشئة ($49)",
-    "pricing.matrix_h3": "النمو ($129)",
-    "pricing.matrix_h4": "المؤسسات ($299)",
+    "pricing.matrix_h2": "الناشئة ($49 ≈ 65,000 د.ع)",
+    "pricing.matrix_h3": "النمو ($129 ≈ 170,000 د.ع)",
+    "pricing.matrix_h4": "المؤسسات ($299 ≈ 395,000 د.ع)",
+    "pricing.iqd_note": "الأسعار بالدينار العراقي تقريبية وفق سعر الصرف الرسمي (1 دولار = 1320 دينار)، والتعامل الفعلي يكون بالدولار الأمريكي أو ما يعادله.",
     "pricing.matrix_r1_f": "سرعة التحقق الفوري (Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.))",
     "pricing.matrix_r1_c1": "500ms (تحقق فوري عبر Webhook)",
     "pricing.matrix_r1_c2": "200ms (أولوية معالجة في الخادم)",
@@ -1359,9 +1360,10 @@ const translations = {
     "pricing.p3_cta": "Contact Enterprise Sales",
 
     "pricing.matrix_h1": "Feature / API Capability",
-    "pricing.matrix_h2": "Starter ($49)",
-    "pricing.matrix_h3": "Growth ($129)",
-    "pricing.matrix_h4": "Enterprise ($299)",
+    "pricing.matrix_h2": "Starter ($49 ≈ 65,000 IQD)",
+    "pricing.matrix_h3": "Growth ($129 ≈ 170,000 IQD)",
+    "pricing.matrix_h4": "Enterprise ($299 ≈ 395,000 IQD)",
+    "pricing.iqd_note": "Prices in Iraqi Dinars are approximate based on official exchange rate ($1 = 1,320 IQD). Billing is in USD or equivalent.",
     "pricing.matrix_r1_f": "Instant API Settlement Latency",
     "pricing.matrix_r2_f": "Physical POS Cashier Sync",
     "pricing.matrix_r2_c1": "1 Branch",
@@ -2265,14 +2267,19 @@ function initInteractivity() {
   if (priceToggle) {
     priceToggle.addEventListener('change', (e) => {
       const isAnnual = e.target.checked;
-      const prices = document.querySelectorAll('.pricing-price-val');
-      prices.forEach(p => {
-        const basePrice = parseInt(p.getAttribute('data-monthly'));
-        if (isAnnual) {
-          // 20% discount
-          p.textContent = Math.round(basePrice * 0.8);
-        } else {
-          p.textContent = basePrice;
+      const cards = document.querySelectorAll('.pricing-card');
+      cards.forEach(card => {
+        const valElem = card.querySelector('.pricing-price-val');
+        const iqdElem = card.querySelector('.pricing-iqd-num');
+        if (valElem) {
+          const baseMonthlyUSD = parseInt(valElem.getAttribute('data-monthly'));
+          const currentUSD = isAnnual ? Math.round(baseMonthlyUSD * 0.8) : baseMonthlyUSD;
+          valElem.textContent = currentUSD;
+          if (iqdElem) {
+            const rawIQD = currentUSD * 1320;
+            const roundedIQD = Math.round(rawIQD / 1000) * 1000;
+            iqdElem.textContent = roundedIQD.toLocaleString('en-US');
+          }
         }
       });
     });
