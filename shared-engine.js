@@ -70,8 +70,8 @@ const translations = {
     "home.tag_zaincash": "زين كاش",
     "home.tag_qicard": "كي كارد",
     "home.tag_delivery": "أساطيل التوصيل",
-    "home.metrics_1_val": "+5,000,000",
-    "home.metrics_1_lbl": "معاملة مالية مؤتمتة",
+    "home.metrics_1_val": "+10,000",
+    "home.metrics_1_lbl": "عملية مزامنة يومية متصلة",
     "home.metrics_2_val": "12ms",
     "home.metrics_2_lbl": "متوسط زمن معالجة الطلب",
     "home.metrics_3_val": "99.99%",
@@ -89,7 +89,7 @@ const translations = {
     "home.faq_badge": "الأسئلة الشائعة",
     "home.faq_title": "استفسارات واقعية قبل البدء في الأتمتة",
     "home.faq_q1": "كم يستغرق تركيب النظام وتفعيله لمتجري الإلكتروني؟",
-    "home.faq_a1": "يستغرق تفعيل النظام للمتاجر القياسية (سلة، زد، ووكمرس) أقل من 24 ساعة عبر إضافات جاهزة. أما للمؤسسات التي تمتلك أنظمة ERP مخصصة مثل Odoo أو SAP، فيحتاج الربط من يومين إلى 4 أيام عمل بتنسيق مباشر من فريقنا في بغداد.",
+    "home.faq_a1": "يستغرق تفعيل النظام للمتاجر القياسية (سلة، زد، ووكمرس) 15 دقيقة فقط عبر إضافات جاهزة. أما للمؤسسات التي تمتلك أنظمة ERP مخصصة مثل Odoo أو SAP، فيحتاج الربط من 24 إلى 48 ساعة بتنسيق مباشر من فريقنا في بغداد.",
     "home.faq_q2": "هل يحتاج الربط إلى خبرة تقنية أو مطور برمجيات من طرفي؟",
     "home.faq_a2": "لا إطلاقاً! فريق مهندسي رَبْـط في الجادرية يتولى الإعداد الكامل من الألف إلى الياء، مع تزويدك بلوحة تحكم بسيطة جداً وتدريب طاقم عملك مجاناً.",
     "home.faq_q3": "ماذا لو كان لدي متجر يعمل فعلياً ومبيعات يومية، هل يمكن النقل إليكم بدون توقف؟",
@@ -248,16 +248,16 @@ const translations = {
     "pricing.p2_badge": "الأكثر شعبية ونمواً",
     "pricing.p2_name": "باقة النمو المتكاملة",
     "pricing.p2_desc": "للحركات التجارية المتنامية والمتاجر متعددة الفروع.",
-    "pricing.p2_price": "129",
+    "pricing.p2_price": "149",
     "pricing.p2_f1": "حتى 5,000 عملية مؤتمتة شهرياً",
     "pricing.p2_f2": "جميع بوابات الدفع (زين كاش، كي كارد، ماستر)",
     "pricing.p2_f3": "مزامنة POS + ERP متقدمة",
     "pricing.p2_f4": "شات بوت تأكيد العناوين بالعراقي",
     "pricing.p2_f5": "دعم هاتف ذو أولوية 24/7",
-    "pricing.p2_cta": "جرب باقة النمو مجاناً",
+    "pricing.p2_cta": "طلب وصول مبكر - النمو",
     "pricing.p3_name": "باقة المؤسسات والشركات",
     "pricing.p3_desc": "سعة لا محدودة مع بنية تحتية مخصصة ومطابقة حسابات معقدة.",
-    "pricing.p3_price": "299",
+    "pricing.p3_price": "349",
     "pricing.p3_f1": "عمليات لا محدودة شهرياً",
     "pricing.p3_f2": "خادم مخصص وقنوات API خاصة",
     "pricing.p3_f3": "تكامل مخصص مع أنظمة SAP / Oracle",
@@ -265,8 +265,8 @@ const translations = {
     "pricing.p3_cta": "تواصل مع قسم المبيعات",
     "pricing.matrix_h1": "الميزة / الخاصيّة البرمجيّة",
     "pricing.matrix_h2": "الناشئة ($49 ≈ 65,000 د.ع)",
-    "pricing.matrix_h3": "النمو ($129 ≈ 170,000 د.ع)",
-    "pricing.matrix_h4": "المؤسسات ($299 ≈ 395,000 د.ع)",
+    "pricing.matrix_h3": "النمو ($149 ≈ 197,000 د.ع)",
+    "pricing.matrix_h4": "المؤسسات ($349 ≈ 460,000 د.ع)",
     "pricing.iqd_note": "الأسعار بالدينار العراقي تقريبية وفق سعر الصرف الرسمي (1 دولار = 1320 دينار)، والتعامل الفعلي يكون بالدولار الأمريكي أو ما يعادله.",
     "pricing.matrix_r1_f": "سرعة التحقق الفوري (Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.))",
     "pricing.matrix_r1_c1": "500 عملية / شهر",
@@ -1490,16 +1490,16 @@ const translations = {
     "pricing.p2_badge": "Most Popular & Fast Growing",
     "pricing.p2_name": "Growth E-Commerce",
     "pricing.p2_desc": "For scaling businesses & multi-channel retail brands.",
-    "pricing.p2_price": "129",
+    "pricing.p2_price": "149",
     "pricing.p2_f1": "Up to 5,000 automated transactions / mo",
     "pricing.p2_f2": "All Payment Gateways (ZainCash, QiCard, Cards)",
     "pricing.p2_f3": "Advanced Multi-Branch POS & ERP Sync",
     "pricing.p2_f4": "Iraqi Dialect WhatsApp AI Chatbot",
     "pricing.p2_f5": "24/7 Priority Phone Support",
-    "pricing.p2_cta": "Try Growth Plan Free",
+    "pricing.p2_cta": "Request Growth Early Access",
     "pricing.p3_name": "Enterprise Infrastructure",
     "pricing.p3_desc": "Unlimited volume with custom dedicated pipelines & ledger rules.",
-    "pricing.p3_price": "299",
+    "pricing.p3_price": "349",
     "pricing.p3_f1": "Unlimited transactions / mo",
     "pricing.p3_f2": "Dedicated server node & high-rate APIs",
     "pricing.p3_f3": "Custom SAP / Oracle / Odoo modules",
@@ -1507,8 +1507,8 @@ const translations = {
     "pricing.p3_cta": "Contact Enterprise Sales",
     "pricing.matrix_h1": "Feature / API Capability",
     "pricing.matrix_h2": "Starter ($49 ≈ 65,000 IQD)",
-    "pricing.matrix_h3": "Growth ($129 ≈ 170,000 IQD)",
-    "pricing.matrix_h4": "Enterprise ($299 ≈ 395,000 IQD)",
+    "pricing.matrix_h3": "Growth ($149 ≈ 197,000 IQD)",
+    "pricing.matrix_h4": "Enterprise ($349 ≈ 460,000 IQD)",
     "pricing.iqd_note": "Prices in Iraqi Dinars are approximate based on official exchange rate ($1 = 1,320 IQD). Billing is in USD or equivalent.",
     "pricing.matrix_r1_f": "Instant API Settlement Latency",
     "pricing.matrix_r2_f": "Physical POS Cashier Sync",
@@ -2512,16 +2512,18 @@ function initTheme() {
   document.documentElement.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
 
-  const themeToggle = document.getElementById('theme-toggle-btn');
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
+  // Use event delegation for theme toggle so dynamic headers work seamlessly
+  document.addEventListener('click', (e) => {
+    const themeBtn = e.target.closest('#theme-toggle-btn, .toggle-btn');
+    if (themeBtn) {
+      e.preventDefault();
       const currentTheme = document.documentElement.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('rabt_theme', newTheme);
       updateThemeIcon(newTheme);
-    });
-  }
+    }
+  });
 }
 
 function updateThemeIcon(theme) {
@@ -2537,21 +2539,23 @@ function updateThemeIcon(theme) {
   }
 }
 
-// Language & Localization Management
+// Language & Localization Management Engine
 function initLanguage() {
   const urlParams = new URLSearchParams(window.location.search);
   const queryLang = urlParams.get('lang');
   const savedLang = queryLang || localStorage.getItem('rabt_lang') || 'ar';
   setLanguage(savedLang);
 
-  const langBtn = document.getElementById('lang-switch-btn');
-  if (langBtn) {
-    langBtn.addEventListener('click', () => {
+  // Event delegation on document: handles clicks on any #lang-switch-btn or .lang-switch-btn
+  document.addEventListener('click', (e) => {
+    const langBtn = e.target.closest('#lang-switch-btn, .lang-switch-btn');
+    if (langBtn) {
+      e.preventDefault();
       const currentLang = document.documentElement.getAttribute('lang') || 'ar';
       const newLang = currentLang === 'ar' ? 'en' : 'ar';
       setLanguage(newLang);
-    });
-  }
+    }
+  });
 }
 
 function setLanguage(lang) {
@@ -2599,14 +2603,16 @@ function setLanguage(lang) {
 
 // Mobile Navigation
 function initMobileMenu() {
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const navMenu = document.getElementById('nav-menu') || document.getElementById('nav-links');
-  if (menuBtn && navMenu) {
-    menuBtn.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
+    const menuBtn = e.target.closest('#mobile-menu-btn, .mobile-menu-btn');
+    if (menuBtn) {
       e.stopPropagation();
-      navMenu.classList.toggle('mobile-active');
-    });
-  }
+      const navMenu = document.getElementById('nav-menu') || document.getElementById('nav-links');
+      if (navMenu) {
+        navMenu.classList.toggle('mobile-active');
+      }
+    }
+  });
 }
 
 // General Interactive Elements
