@@ -163,21 +163,37 @@
                 </svg>
               </div>
               <h2 style="margin-bottom: 1rem;" data-i18n="services.s1_title">1. المطابقة المالية الذكية وبوابات الدفع</h2>
-              <p style="margin-bottom: 1.5rem;" data-i18n="services.s1_desc">
+              <p style="margin-bottom: 1rem;" data-i18n="services.s1_desc">
                 ربط برمجيات المبيعات ببوابات المحافظ الإلكترونية العراقية ZainCash و QiCard والبطاقات المصرفية مع خدمة التسوية الفورية.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+
+              <!-- Problem & Solution Callout Box -->
+              <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s1_prob">
+                  🔴 المشكلة التي تعاني منها: قضاء المحاسبين ساعات يومياً في مراجعة لقطات الشاشات وإشعارات زين كاش وكي كارد اليدوية، مما يؤدي إلى تأخير تجهيز الطلبات ومخاطر قبول تحويلات مزيفة بنفس رقم المعاملة.
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s1_sol">
+                  🟢 كيف يحلها رَبْـط: نربط متجرك برمجياً بـ API البنوك والمحافظ مباشرة. يتلقى النظام إشعار Webhook المشفر بـ HMAC فور التحويل، ويفحص رقم المعاملة في الخادم الرسمي، ثم يغير حالة الطلب تلقائياً إلى (مقبول ومطابق) خلال 500ms.
+                </div>
+              </div>
+
+              <h4 style="margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-muted);">النتائج الملموسة المتوقعة:</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s1_feat1">تحقق فوري من الحوالة خلال 500 ملي ثانية.</span>
+                  <span data-i18n="services.s1_res1">توفير 100% من وقت التدقيق اليدوي للمحاسبين.</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s1_feat2">كشوفات حساب مؤتمتة ومطابقة يومية دقيقة.</span>
+                  <span data-i18n="services.s1_res2">تأكيد فوري مسبق قبل تسليم البضائع للمندوب.</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s1_feat3">حماية كاملة من الاحتيال والإشعارات المزيفة.</span>
+                  <span data-i18n="services.s1_res3">حماية كاملة ضد الإشعارات المزيفة أو صور الفوتوشوب.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
+                  <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span data-i18n="services.s1_res4">كشوفات حساب مجمعة بصيغة Excel لسهولة المطابقة المالية.</span>
                 </li>
               </ul>
               <div class="service-hint-tag">
@@ -210,21 +226,37 @@
                 </svg>
               </div>
               <h2 style="margin-bottom: 1rem;" data-i18n="services.s2_title">2. مزامنة الـ POS والـ ERP في الوقت الفعلي</h2>
-              <p style="margin-bottom: 1.5rem;" data-i18n="services.s2_desc">
+              <p style="margin-bottom: 1rem;" data-i18n="services.s2_desc">
                 ربط نظام الإدارة والمخازن (Odoo, SAP, QuickBooks) ونقاط البيع المحلية مع متجرك الإلكتروني بكفاءة متناهية.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+
+              <!-- Problem & Solution Callout Box -->
+              <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s2_prob">
+                  🔴 المشكلة التي تعاني منها: بيع منتج عبر المتجر الإلكتروني اكتشفت لاحقاً أنه بيع بالفعل قبل دقائق لكاستمر في المحل الفيزيائي، مما يسبب إحراجاً مع الزبون وإرجاع مبالغ التحويلات.
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s2_sol">
+                  🟢 كيف يحلها رَبْـط: نشئ قناة اتصال WebSockets مستمرة بين برنامج الكاشير (Odoo, SAP, QuickBooks) وقاعدة بيانات المتجر. بمجرد قراءة الـ Barcode في المحل، يتحدث الرصيد في المتجر أونلاين فوراً بـ 12ms.
+                </div>
+              </div>
+
+              <h4 style="margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-muted);">النتائج الملموسة المتوقعة:</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s2_feat1">خصم المخزون التلقائي من المحل والجريد الإلكتروني.</span>
+                  <span data-i18n="services.s2_res1">القضاء النهائي على مشكلة نفاد المخزون غير المتوقع.</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s2_feat2">تحديث الأسعار والعروض في جميع المنصات بلحظة واحدة.</span>
+                  <span data-i18n="services.s2_res2">ربط أكثر من 10 فروع محلية بمتجر أونلاين واحد.</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s2_feat3">تنبيهات انخفاض المخزون للقطع الأكثر مبيعاً.</span>
+                  <span data-i18n="services.s2_res3">تحديث تلقائي للأسعار والتخفيضات بكل القنوات بنقرة واحدة.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
+                  <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span data-i18n="services.s2_res4">تنبيهات المبكر قبل نفاذ القطع الأكثر طلباً.</span>
                 </li>
               </ul>
               <div class="service-hint-tag">
@@ -268,21 +300,37 @@
                 </svg>
               </div>
               <h2 style="margin-bottom: 1rem;" data-i18n="services.s3_title">3. شات بوت الذكاء الاصطناعي باللهجة العراقية</h2>
-              <p style="margin-bottom: 1.5rem;" data-i18n="services.s3_desc">
+              <p style="margin-bottom: 1rem;" data-i18n="services.s3_desc">
                 مساعد افتراضي مدرب على فهم المصطلحات والعناوين العراقية (مثل: البياع، الجادرية، حي الجامعة، مقابل جامع...) لتأكيد الشحنات.
               </p>
-              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+
+              <!-- Problem & Solution Callout Box -->
+              <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s3_prob">
+                  🔴 المشكلة التي تعاني منها: العناوين غير الدقيقة بالرسائل (مثل: قرب المحل الفلاني) وضياع مناديب التوصيل في بغداد والمحافظات، مما ينتهي بإرجاع الشحنة وتحمل المتجر تكلفة الشحن المزدوج.
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s3_sol">
+                  🟢 كيف يحلها رَبْـط: ندمج بوت ذكي عبر الواتساب والانستغرام يفهم المصطلحات العراقية. يتواصل البوت تلقائياً فور الطلب ويطلب من الزبون إرسال الـ Pin الجغرافي وقرب نقطة دالة، ثم يصدر خطة التوصيل للمندوب.
+                </div>
+              </div>
+
+              <h4 style="margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-muted);">النتائج الملموسة المتوقعة:</h4>
+              <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem;">
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s3_feat1">تأكيد الموقع الدقيق وتحديد نقاط العلامة الجغرافية.</span>
+                  <span data-i18n="services.s3_res1">تقليل نسبة الشحنات المرجعة (الراجع) بنسبة 40%.</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s3_feat2">تقليل نسبة البضائع المرجعة بنسبة تصل إلى 40%.</span>
+                  <span data-i18n="services.s3_res2">تحديد الإحداثيات الجغرافية دقيقة للمندوب.</span>
                 </li>
                 <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
                   <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <span data-i18n="services.s3_feat3">إعادة استهداف الزبائن ومتابعة الشحنات الآلية.</span>
+                  <span data-i18n="services.s3_res3">خدمة الزبائن التلقائية 24/7 دون الحاجة لموظفين إضافيين.</span>
+                </li>
+                <li style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem;">
+                  <svg class="icon-svg" style="color: var(--color-success);" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span data-i18n="services.s3_res4">زيادة تقييم رضا الزبائن وسرعة الاستجابة.</span>
                 </li>
               </ul>
               <div class="service-hint-tag">
@@ -295,11 +343,11 @@
                 <div style="background: rgba(37, 99, 235, 0.15); color: var(--text-main); padding: 0.75rem 1rem; border-radius: var(--radius-md); max-width: 85%; align-self: flex-start;" data-i18n="services.chat_m1">
                   🤖 هلا بيك علي! طلبك رقم #9910 جاهز. تدلل العنوان بغداد - الجادرية قرب المستشفى؟
                 </div>
-                <div style="background: var(--bg-card); color: var(--text-main); border: 1px solid var(--border-color); padding: 0.75rem 1rem; border-radius: var(--radius-md); max-width: 85%; align-self: flex-end;" data-i18n="services.chat_m2">
-                  👤 اي نعم بالظبط مقابل جامع الجامعة.
+                <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s4_prob">
+                  🔴 المشكلة التي تعاني منها: كتابة المانفيست وطباعة بوليصات التوصيل يدوياً لكل طلب على حدة، وتأخير تسليم الشحنات لشركات الشحن حتى ساعات التأخير.
                 </div>
-                <div style="background: rgba(16, 185, 129, 0.15); color: var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); max-width: 85%; align-self: flex-start; font-weight: 600;" data-i18n="services.chat_m3">
-                  ✅ تمام عيني! انتمتت الشحنة وانطبعت البوليصة لمندوب التوصيل المباشر.
+                <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s4_sol">
+                  🟢 كيف يحلها رَبْـط: يتصل محركنا بـ API شركات التوصيل العراقية كافة. ينشئ النظام بوليصة الشحن مع الباركود الرسمي تلقائياً بنقرة واحدة، ويطبّع المانفيست المجمع جاهزاً للتسليم.
                 </div>
               </div>
             </div>

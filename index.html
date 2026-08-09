@@ -321,6 +321,7 @@
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card1_title">مطابقة فورية للمبالغ والتحويلات</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card1_desc">لا حاجة للتحقق اليدوي من إشعارات زين كاش وكي كارد. يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.</p>
+              <p style="font-size: 0.85rem; color: var(--color-primary); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-right: 3px solid var(--color-primary); margin-top: 0.75rem;" data-i18n="home.bento_card1_how">💡 كيف تعمل الخدمة تقنياً: يرتبط النظام عبر Webhook خاص ببوابة التاجر في زين كاش وكي كارد، ويتحقق تلقائياً من التوقيع الرقمي HMAC لكل معاملة، ثم يحدّث قاعدة بيانات المتجر إلى (تم الدفع) فوراً بدون أي تدخل بشري.</p>
             </div>
             <div class="bento-visual">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.85rem; font-weight: 600;">
@@ -346,6 +347,7 @@
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card2_title">مزامنة المخزون متعدد الفروع</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card2_desc">ربط برنامج الكاشير في محلّك مع متجرك الإلكتروني لمنع بيع المنتجات غير المتوفرة.</p>
+              <p style="font-size: 0.85rem; color: var(--color-primary); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-right: 3px solid var(--color-primary); margin-top: 0.75rem;" data-i18n="home.bento_card2_how">💡 كيف تعمل الخدمة تقنياً: يعتمد المحرك على بروتوكول WebSockets مزدوج الاتجاه ينقل أي حركة بيع من جهاز الكاشير (Odoo, SAP) إلى المتجر الإلكتروني خلال 12 ملي ثانية، مما يمنع ظاهرة البيع المزدوج نهائياً.</p>
             </div>
             <div class="bento-visual">
               <div class="schematic-status-bar">
@@ -385,6 +387,7 @@
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card3_title">الذكاء الاصطناعي باللهجة العراقية</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card3_desc">تأكيد العناوين ورقم الهاتف عبر الواتساب والانستغرام تلقائياً قبل إرسال الشحنة لتقليل نسبة الراجع.</p>
+              <p style="font-size: 0.85rem; color: var(--color-primary); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-right: 3px solid var(--color-primary); margin-top: 0.75rem;" data-i18n="home.bento_card3_how">💡 كيف تعمل الخدمة تقنياً: يستخدم المحرك نموذج ذكاء اصطناعي محلي مُدرَّب على الخرائط والمصطلحات العراقية، ويرسل رسالة واتساب آلية للزبون لتحديد الدبوس الجغرافي وقرب العلامة المشهورة.</p>
             </div>
             <div class="bento-visual">
               <div class="bento-chat-preview">
@@ -419,6 +422,7 @@
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card4_title">تكامل مع كبرى شركات التوصيل</h3>
               <p class="bento-card-desc" data-i18n="home.bento_card4_desc">إصدار المانفيست وطباعة بوليصة الشحن بنقرة واحدة عبر الربط المباشر مع أساطيل التوصيل.</p>
+              <p style="font-size: 0.85rem; color: var(--color-primary); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-right: 3px solid var(--color-primary); margin-top: 0.75rem;" data-i18n="home.bento_card4_how">💡 كيف تعمل الخدمة تقنياً: يتصل النظام بـ REST APIs الخاصة بأساطيل التوصيل في بغداد والمحافظات، ليقوم بتوليد المانفيست المجمع وطباعة ملصق الشحن Barcode بنقرة واحدة.</p>
             </div>
             <div class="bento-visual">
               <div class="delivery-manifest-card">
@@ -437,6 +441,74 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive FAQ Section -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container" style="max-width: 900px;">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="home.faq_badge">الأسئلة الشائعة</span>
+          <h2 class="section-title" data-i18n="home.faq_title">استفسارات واقعية قبل البدء في الأتمتة</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+          <details style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all var(--transition-fast);">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center;" data-i18n="home.faq_q1">
+              كم يستغرق تركيب النظام وتفعيله لمتجري الإلكتروني؟
+            </summary>
+            <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a1">
+              يستغرق تفعيل النظام للمتاجر القياسية (سلة، زد، ووكمرس) أقل من 24 ساعة عبر إضافات جاهزة. أما للمؤسسات التي تمتلك أنظمة ERP مخصصة مثل Odoo أو SAP، فيحتاج الربط من يومين إلى 4 أيام عمل بتنسيق مباشر من فريقنا في بغداد.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all var(--transition-fast);">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center;" data-i18n="home.faq_q2">
+              هل يحتاج الربط إلى خبرة تقنية أو مطور برمجيات من طرفي؟
+            </summary>
+            <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a2">
+              لا إطلاقاً! فريق مهندسي رَبْـط في الجادرية يتولى الإعداد الكامل من الألف إلى الياء، مع تزويدك بلوحة تحكم بسيطة جداً وتدريب طاقم عملك مجاناً.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all var(--transition-fast);">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center;" data-i18n="home.faq_q3">
+              ماذا لو كان لدي متجر يعمل فعلياً ومبيعات يومية، هل يمكن النقل إليكم بدون توقف؟
+            </summary>
+            <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a3">
+              نعم، نضمن لك انتقالاً سلساً 100% بدون أي انقطاع في الخدمة (Zero Downtime)، حيث نقوم باختبار قنوات الربط الموازية في بيئة تجريبية Sandbox ثم تحويل المبيعات للحية فور تأكيد استقرارها.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all var(--transition-fast);">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center;" data-i18n="home.faq_q4">
+              كيف يتأكد النظام من مطابقة الحسابات وعدم وجود إشعارات دفع مزيفة؟
+            </summary>
+            <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a4">
+              يتصل محرك رَبْـط مباشرة بالخوادم الرسمية لـ زين كاش وكي كارد عبر تشفير AES-256 ومطابقة التوقيع الرقمي (HMAC Validation). يرفض النظام أي إشعار فوتوشوب أو لقطة شاشة مزيفة تلقائياً.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all var(--transition-fast);">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center;" data-i18n="home.faq_q5">
+              ماذا يحدث إذا انقطع اتصال الإنترنت في كاشير المحل الفيزيائي؟
+            </summary>
+            <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a5">
+              يحتوي النظام على ذاكرة تخزين مؤقتة (Offline Queue Buffer). عند انقطاع الإنترنت، تُسجل المبيعات محلياً في الكاشير، وفور عودة التغطية تُرفع التعديلات للمتجر الإلكتروني تلقائياً خلال ملي ثوانٍ.
+            </p>
+          </details>
+
+          <details style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; cursor: pointer; transition: all var(--transition-fast);">
+            <summary style="font-weight: 700; font-size: 1.05rem; color: var(--text-main); display: flex; justify-content: space-between; align-items: center;" data-i18n="home.faq_q6">
+              هل التجميع وتوليد بوليصة التوصيل يتوافق مع شركات التوصيل العراقية؟
+            </summary>
+            <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a6">
+              نعم، محرك رَبْـط مرتبط برمجياً بأغلب أساطيل التوصيل العاملة في بغداد، أربيل، البصرة، وباقي المحافظات، ويصدر بوليصة الشحن مع الباركود الرسمي المعتمد لديهم.
+            </p>
+          </details>
+
         </div>
       </div>
     </section>
