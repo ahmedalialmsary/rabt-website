@@ -2465,6 +2465,7 @@ const translations = {
 
 // --- Shared Engine State & Controllers ---
 document.addEventListener('DOMContentLoaded', () => {
+  renderNavbar();
   initTheme();
   initLanguage();
   initMobileMenu();
@@ -2755,4 +2756,121 @@ function initBlogFilter() {
       });
     });
   });
+}
+
+
+
+function renderNavbar() {
+  const header = document.querySelector('header.header');
+  if (!header) return;
+
+  const path = window.location.pathname;
+  const isSubfolder = path.includes('/integrations/') || path.includes('/features/') || path.includes('/solutions/');
+  const prefix = isSubfolder ? '../' : '';
+
+  const page = path.split('/').pop() || 'index.html';
+
+  const isHome = page === 'index.html' || page === '';
+  const isServices = page === 'services.html' || page.startsWith('service-');
+  const isPricing = page === 'pricing.html';
+  const isAbout = page === 'about.html';
+  const isContact = page === 'contact.html';
+
+  const isProduct = page === 'features-index.html' || page === 'integrations-index.html' || page === 'solutions-index.html' || page.startsWith('feature-') || page.startsWith('integration-') || page.startsWith('solution-');
+  const isResources = page === 'blog.html' || page === 'help-center.html' || page === 'demo.html';
+
+  header.innerHTML = `
+    <div class="container header-content">
+      <a href="${prefix}index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </div>
+        <span data-i18n="nav.brand">رَبْـط</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        <svg class="icon-svg" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list" id="nav-links">
+          <li><a href="${prefix}index.html" class="nav-link ${isHome ? 'active' : ''}" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="${prefix}services.html" class="nav-link ${isServices ? 'active' : ''}" data-i18n="nav.services">الخدمات والحلول</a></li>
+          <li><a href="${prefix}pricing.html" class="nav-link ${isPricing ? 'active' : ''}" data-i18n="nav.pricing">الأسعار والباقات</a></li>
+          <li><a href="${prefix}about.html" class="nav-link ${isAbout ? 'active' : ''}" data-i18n="nav.about">عن الشركة</a></li>
+          <li><a href="${prefix}contact.html" class="nav-link ${isContact ? 'active' : ''}" data-i18n="nav.contact">تواصل معنا</a></li>
+
+          <li class="nav-dropdown ${isProduct ? 'active' : ''}">
+            <button class="nav-dropdown-btn" aria-expanded="false">
+              <span data-i18n="nav.cat_product">المنتج والحلول</span>
+              <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="${prefix}features-index.html" class="nav-dropdown-item ${page === 'features-index.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.features">دليل الميزات الهندسية</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.features_sub">8 ميزات تخصصية مستقلة</span>
+                </div>
+              </a>
+              <a href="${prefix}integrations-index.html" class="nav-dropdown-item ${page === 'integrations-index.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.integrations">دليل القنوات والتكاملات</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.integrations_sub">واتساب، إنستغرام، فيسبوك وERP</span>
+                </div>
+              </a>
+              <a href="${prefix}solutions-index.html" class="nav-dropdown-item ${page === 'solutions-index.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.solutions_idx">دليل الحلول حسب القطاع</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.solutions_sub">متاجر D2C، خدمات، ومؤسسات كبرى</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li class="nav-dropdown ${isResources ? 'active' : ''}">
+            <button class="nav-dropdown-btn" aria-expanded="false">
+              <span data-i18n="nav.cat_resources">الموارد والدعم</span>
+              <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+            </button>
+            <div class="nav-dropdown-menu">
+              <a href="${prefix}blog.html" class="nav-dropdown-item ${page === 'blog.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.blog">المدونة الهندسية</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.blog_sub">مقالات ودلائل تقنية تخصصية</span>
+                </div>
+              </a>
+              <a href="${prefix}help-center.html" class="nav-dropdown-item ${page === 'help-center.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.help">مركز مساعدة التجار</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.help_sub">أدلة التشغيل وتصحيح الأخطاء</span>
+                </div>
+              </a>
+              <a href="${prefix}demo.html" class="nav-dropdown-item ${page === 'demo.html' ? 'active' : ''}">
+                <div>
+                  <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والمحاكاة الحية</span>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
+          <span id="lang-switch-label">English</span>
+        </button>
+
+        <button class="toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span id="theme-toggle-icon"></span>
+        </button>
+
+        <a href="${prefix}contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">استكشف ربط منصتك</a>
+      </div>
+    </div>
+  `;
 }
