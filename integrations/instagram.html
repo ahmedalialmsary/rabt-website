@@ -4,25 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="iig.page_title">تكامل إنستغرام ماسنجر (Instagram Direct API) - رَبْـط</title>
-  <meta name="description" content="أتمتة الرد على رسائل الخاص Direct وتعليقات المنشورات على حساب إنستغرام متجرك تحويل المتابعين لمبيعات فورية.">
+  <meta name="description" content="أتمتة مبيعات إنستغرام: الرد على تعليقات المنشورات، إرسال كروت المنتجات في الخاص، وروابط الدفع الفورية.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Instagram Mock UI Styling */
     .ig-chat-frame {
       background: #121212;
       border: 1px solid rgba(124, 58, 237, 0.3);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      box-shadow: var(--shadow-lg), 0 0 35px rgba(124, 58, 237, 0.15);
-      max-width: 780px;
-      margin: 0 auto;
+      box-shadow: var(--shadow-lg), 0 0 30px rgba(124, 58, 237, 0.12);
+      max-width: 760px;
+      margin: 0 auto 2rem;
     }
     .ig-chat-header {
       background: #1e1e1e;
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -31,11 +30,11 @@
     .ig-profile {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
     }
     .ig-avatar {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
       padding: 2px;
@@ -53,10 +52,9 @@
       justify-content: center;
       color: #fff;
       font-weight: 800;
-      font-size: 1.1rem;
     }
     .ig-user-info h4 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #f5f5f5;
       margin: 0;
       display: flex;
@@ -64,25 +62,22 @@
       gap: 0.35rem;
     }
     .ig-user-info p {
-      font-size: 0.775rem;
+      font-size: 0.75rem;
       color: #a8a8a8;
       margin: 0;
     }
     .ig-chat-body {
-      padding: 1.5rem 1.25rem;
+      padding: 1.25rem;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
-      max-height: 580px;
-      overflow-y: auto;
+      gap: 1rem;
     }
     .ig-msg {
       max-width: 82%;
-      padding: 0.85rem 1.1rem;
-      border-radius: 18px;
-      font-size: 0.925rem;
-      line-height: 1.55;
-      position: relative;
+      padding: 0.75rem 1rem;
+      border-radius: 16px;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
     .ig-msg-in {
       align-self: flex-start;
@@ -96,35 +91,18 @@
       color: #ffffff;
       border-bottom-left-radius: 4px;
     }
-    .ig-product-card {
-      background: #1a1a1a;
-      border: 1px solid rgba(255, 255, 255, 0.12);
+    .why-wins-box {
+      background: rgba(124, 58, 237, 0.1);
+      border: 1px solid rgba(124, 58, 237, 0.3);
       border-radius: var(--radius-md);
-      padding: 0.85rem;
-      margin-top: 0.65rem;
-      display: flex;
-      gap: 0.85rem;
-      align-items: center;
-    }
-    .ig-product-img {
-      width: 60px;
-      height: 60px;
-      border-radius: var(--radius-sm);
-      object-fit: cover;
-      background: var(--bg-card);
-    }
-    .step-card-num {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-accent-purple), var(--color-primary));
-      color: #fff;
+      padding: 0.85rem 1.1rem;
+      color: #c084fc;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 1rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+      gap: 0.5rem;
     }
   </style>
 </head>
@@ -231,359 +209,288 @@
   <main class="main-content">
 
     <!-- 1. Hero Section -->
-    <section class="hero-section" style="padding: 4.5rem 0 3.5rem;">
+    <section class="hero-section" style="padding: 4rem 0 3rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
-          <span class="badge badge-accent" data-i18n="iig.hero_badge">تكامل قنوات التواصل المباشر #2</span>
+          <span class="badge badge-accent" data-i18n="iig.hero_badge">تكامل إنستغرام ماسنجر الرسمي</span>
         </div>
         <h1 class="hero-title" data-i18n="iig.hero_title">تكامل إنستغرام ماسنجر (Instagram Direct API)</h1>
-        <p class="hero-subtitle" data-i18n="iig.hero_subtitle" style="max-width: 820px; font-size: 1.2rem; font-weight: 500;">
-          حوّل تعليقات المنشورات ورسائل الخاص Direct إلى مبيعات فورية دون تفويت أي استفسار، مع أتمتة إرسال كروت المنتجات وروابط بوابات الدفع المحلية.
+        <p class="hero-subtitle" data-i18n="iig.hero_subtitle" style="max-width: 820px; font-size: 1.25rem; font-weight: 600; color: var(--text-main);">
+          حوّل تعليقات المنشورات ورسائل الخاص Direct إلى مبيعات فورية مع أتمتة إرسال كروت المنتجات ورابط الدفع دون تفويت أي استفسار.
         </p>
 
         <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
           <a href="../contact.html?channel=instagram" class="btn btn-primary btn-lg" data-i18n="iig.btn_cta">ربط إنستغرام لمتجرك الآن</a>
-          <a href="#mock-demo" class="btn btn-secondary btn-lg" data-i18n="iig.btn_demo">شاهد محاكاة الـ Direct ➔</a>
-        </div>
-
-        <!-- Metric Card -->
-        <div style="margin-top: 3rem; background: var(--bg-card); border: 1.5px solid rgba(124, 58, 237, 0.3); border-radius: var(--radius-xl); padding: 1.75rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: right;">
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iig.stat1_label">النموذج الرسمي</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-accent-purple); margin-top: 0.25rem;" data-i18n="iig.stat1_val">Instagram Messaging Graph API</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iig.stat2_label">أتمتة التعليقات</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-success); margin-top: 0.25rem;" data-i18n="iig.stat2_val">فورية (Comment-to-DM)</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iig.stat3_label">معدل تحويل المتابعين</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;" data-i18n="iig.stat3_val">+38% زيادة في المبيعات</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iig.stat4_label">توفير وقت خدمة العملاء</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-warning); margin-top: 0.25rem;" data-i18n="iig.stat4_val">أكثر من 85% أوتوماتيكي</div>
-          </div>
+          <a href="#mock-demo" class="btn btn-secondary btn-lg" data-i18n="iig.btn_demo">شاهد الأمثلة الحية ➔</a>
         </div>
       </div>
     </section>
 
-    <!-- 2. القدرات الأساسية (Core Capabilities) -->
+    <!-- 2. Key Capabilities -->
     <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-accent" data-i18n="iig.cap_badge">قدرات أتمتة إنستغرام</span>
-          <h2 class="section-title" data-i18n="iig.cap_title">القدرات الأساسية لتكامل الإنستغرام</h2>
-          <p class="section-subtitle" data-i18n="iig.cap_sub">6 تقنيات متطورة تحوّل حساب إنستغرام متجرك إلى نافذة بيع تفاعلية على مدار الساعة</p>
+          <span class="badge badge-accent" data-i18n="iig.cap_badge">القدرات الأساسية</span>
+          <h2 class="section-title" data-i18n="iig.cap_title">6 قدرات حاسمة لأتمتة إنستغرام</h2>
         </div>
 
-        <div class="bento-grid">
-
-          <!-- Cap 1 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iig.c1_title">1. الرد الفوري من التعليقات إلى الخاص</h3>
-            <p class="bento-card-desc" data-i18n="iig.c1_desc">
-              التقاط تعليقات المنشورات مثل ("بكام هذا؟"، "شلون أطلب؟") وإرسال تفاصيل المنتج والخصومات فوراً في رسالة Direct خفية.
-            </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-accent-purple);" data-i18n="iig.k1_title">1. الرد الفوري من التعليقات للخاص</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.k1_desc">يلقط تعليق "بكام هذا؟" ويرسل تفاصيل كارت المنتج في الخاص فوراً.</p>
           </div>
 
-          <!-- Cap 2 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iig.c2_title">2. كروت المنتجات التفاعلية (Product Carousel)</h3>
-            <p class="bento-card-desc" data-i18n="iig.c2_desc">
-              عرض المنتجات بصور عالية الدقة وأزرار شراء مباشرة "إضافة للسلة" داخل محادثة الـ Direct دون الحاجة لمغادرة التطبيق.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-success);" data-i18n="iig.k2_title">2. كروت المنتجات التفاعلية Carousel</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.k2_desc">يعرض المنتجات بصور عالية وأزرار شراء مباشرة داخل محادثة الـ Direct.</p>
           </div>
 
-          <!-- Cap 3 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iig.c3_title">3. أتمتة منشن الستوري (Story Mention Automation)</h3>
-            <p class="bento-card-desc" data-i18n="iig.c3_desc">
-              إرسال رسالة شكر وكوبون خصم تشجيعي أوتوماتيكياً للعميل فور قيامه بالإشارة لصفحة متجرك في الستوري.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-warning);" data-i18n="iig.k3_title">3. أتمتة منشن الستوري</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.k3_desc">يرسل رسالة شكر وكوبون خصم تلقائياً للزبون فور الإشارة لمتجرك بالستوري.</p>
           </div>
 
-          <!-- Cap 4 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iig.c4_title">4. روابط الدفع المحلي (زين كاش / كي كارد)</h3>
-            <p class="bento-card-desc" data-i18n="iig.c4_desc">
-              تأكيد الدفع وإرسال روابط المحافظ الإلكترونية العراقية مباشرة بالـ DM واستلام إشعار التأكيد اللحظي.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-primary);" data-i18n="iig.k4_title">4. تكامل روابط الدفع المحلي</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.k4_desc">يرسل روابط محفظة زين كاش وكي كارد داخل الشات ويتلقى تأكيد التحويل.</p>
           </div>
 
-          <!-- Cap 5 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(13, 148, 136, 0.15); color: var(--color-accent-teal);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iig.c5_title">5. مزامنة مخزون Instagram Catalog</h3>
-            <p class="bento-card-desc" data-i18n="iig.c5_desc">
-              تحديث المخزون والأسعار تلقائياً مع نظام الـ ERP أو متجر سلة/ووردبريس لمنع بيع المنتجات النافذة.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-accent-teal);" data-i18n="iig.k5_title">5. مزامنة Instagram Catalog</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.k5_desc">يحدّث الكميات أوتوماتيكياً مع نظام الـ ERP لتجنب بيع منتجات نافذة.</p>
           </div>
 
-          <!-- Cap 6 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(239, 68, 68, 0.15); color: var(--color-error);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iig.c6_title">6. تحويل كبار المتابعين لموظفي المبيعات</h3>
-            <p class="bento-card-desc" data-i18n="iig.c6_desc">
-              توجيه المحادثات الاستثنائية وطلبات الجملة فوراً لموظف المبيعات البشري داخل منصة رَبْـط الموحدة.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-error);" data-i18n="iig.k6_title">6. التصعيد الفوري للدعم البشري</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.k6_desc">ينقل الاستفسارات الكبيرة لموظف المبيعات مع كامل سجل المحادثة.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 3. كيف يتم الربط (How Integration Works) -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge badge-primary" data-i18n="iig.steps_badge">آلية الربط البرمجي</span>
-          <h2 class="section-title" data-i18n="iig.steps_title">خطوات ربط حساب إنستغرام التجاري</h2>
-          <p class="section-subtitle" data-i18n="iig.steps_sub">تفعيل كامل وموثق رسمياً عبر Meta Graph API خلال 10 دقائق</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">1</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iig.s1_title">ربط الحساب عبر Meta Business</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.s1_desc">
-              منح الصلاحيات الرسمية لصفحة متجرك التجارية عبر بروتوكول Meta Graph API المعتمد.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">2</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iig.s2_title">تفعيل Webhook الخاص والتعليقات</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.s2_desc">
-              ربط مسار الاستقبال اللحظي للرسائل وتعليقات المنشورات مع المحرك الذكي لمنصة رَبْـط.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">3</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iig.s3_title">ربط الكتالوج وقواعد الرد</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.s3_desc">
-              مزامنة قائمة المنتجات وتخصيص قوالب الإجابات على الأسئلة الأكثر تكراراً باللغة العربية.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">4</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iig.s4_title">تشغيل الأتمتة واستلام الأرباح</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.s4_desc">
-              تحويل كل تعليق ومحادثة Direct إلى طلب مؤكد ومربوط مع شركات التوصيل وبوابات الدفع.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. شاهدها في العمل (Mock UI Interactive Demo) -->
-    <section class="section-padding" id="mock-demo" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge badge-accent" data-i18n="iig.demo_badge">محاكاة تفاعلية للـ Instagram Direct</span>
-          <h2 class="section-title" data-i18n="iig.demo_title">شاهد تحويل تعليق المنشور لمبيعة بالخاص</h2>
-          <p class="section-subtitle" data-i18n="iig.demo_sub">سيناريو محاكاة حقيقي لرد البوت على العميل وتحويله لرابط الدفع المحلي</p>
-        </div>
-
-        <div class="ig-chat-frame">
-          <!-- Chat Header -->
-          <div class="ig-chat-header">
-            <div class="ig-profile">
-              <div class="ig-avatar">
-                <div class="ig-avatar-inner">ر</div>
-              </div>
-              <div class="ig-user-info">
-                <h4>
-                  @rabt_store_iq
-                  <svg style="width:16px;height:16px;color:#7c3aed;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </h4>
-                <p>نشط الآن • حساب موثق</p>
-              </div>
-            </div>
-            <div>
-              <span class="badge badge-accent" style="font-size:0.75rem;">Instagram Direct API</span>
-            </div>
-          </div>
-
-          <!-- Chat Body -->
-          <div class="ig-chat-body">
-            
-            <div style="background:#1a1a1a; border: 1px solid rgba(124,58,237,0.3); border-radius: var(--radius-md); padding: 0.75rem 1rem; font-size: 0.825rem; color: #a8a8a8;">
-              💬 <strong>إشعار تعليق تلقائي:</strong> علّق العميل <code>@karrar_baghdad</code> على المنشور: <em>"القميص الكتان الأزرق متوفر؟ شكد سعره مع التوصيل لحي الجامعة؟"</em>
-            </div>
-
-            <!-- Bot Auto DM Response -->
-            <div class="ig-msg ig-msg-out">
-              أهلاً كرار! 👋 شكراً لتواصلك معنا على إنستغرام.
-              <br><br>
-              نعم، <strong>قميص كتان صيفي كلاسيك (أزرق)</strong> متوفر حالياً بجميع المقاسات! 👔
-              
-              <div class="ig-product-card">
-                <div style="width:48px; height:48px; background:rgba(124,58,237,0.2); border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:1.5rem;">👔</div>
-                <div style="flex:1;">
-                  <div style="font-weight:700; color:#fff; font-size:0.875rem;">قميص كتان صيفي - أزرق</div>
-                  <div style="color:#7c3aed; font-weight:700; font-size:0.85rem;">35,000 د.ع <span style="color:#a8a8a8; font-weight:400;">(+5,000 توصيل)</span></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Customer Reply -->
-            <div class="ig-msg ig-msg-in">
-              تمام ممتاز! أريد مقاس L للتوصيل لحي الجامعة بغداد، شلون أقدر أدفع وتأكدون الطلب؟
-            </div>
-
-            <!-- Bot Payment Invoice Link -->
-            <div class="ig-msg ig-msg-out">
-              تدلل كرار! اضغط على رابط الدفع الإلكتروني المباشر عبر <strong>زين كاش / كي كارد</strong> لإتمام وتأكيد شحنتك فوراً:
-              <br><br>
-              🔗 <a href="#" style="color:#a5b4fc; font-weight:700; text-decoration:underline;">https://pay.rabt.iq/ig/inv_88291</a>
-              <br><br>
-              أو اضغط زر [الدفع عند الاستلام] لتسجيل الطلب برقم هاتف وعنوانك.
-            </div>
-
-            <!-- Customer Action -->
-            <div class="ig-msg ig-msg-in">
-              تم الدفع الآن عن طريق زين كاش 👍
-            </div>
-
-            <!-- Bot Confirmation -->
-            <div class="ig-msg ig-msg-out" style="background: linear-gradient(135deg, #059669, #10b981);">
-              ✅ <strong>تم استلام المبلغ بنجاح!</strong>
-              <br>رقم الشحنة: <code>#RBT-IG-9912</code>
-              <br>شكراً لك كرار! تم إرسال الشحنة لشركة التوصيل وسيتواصل معك المندوب عند الوصول.
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. الأسئلة الشائعة (FAQ) -->
+    <!-- 3. Overview (Exactly 2 Paragraphs) -->
     <section class="section-padding">
       <div class="container container-narrow">
         <div class="section-header">
-          <span class="badge badge-accent" data-i18n="iig.faq_badge">الأسئلة التقنية الشائعة</span>
-          <h2 class="section-title" data-i18n="iig.faq_title">أسئلة شائعة حول تكامل إنستغرام</h2>
+          <span class="badge badge-primary" data-i18n="iig.ov_badge">نظرة عامة</span>
+          <h2 class="section-title" data-i18n="iig.ov_title">لماذا تحتاج متجرك أتمتة إنستغرام؟</h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; font-size: 1.05rem; line-height: 1.8;">
+          <p style="margin-bottom: 1.25rem; color: var(--text-main);" data-i18n="iig.ov_p1">
+            <strong>المشكلة بدون رَبْـط:</strong> تضيع مئات التعليقات والرسائل في الـ Direct بسبب التباطؤ في الرد، مما يدفع الزبائن الذين يسألون عن أسعار المنتجات في المنشورات الممولة للشراء من منافسين آخرين.
+          </p>
+          <p style="margin: 0; color: var(--text-main);" data-i18n="iig.ov_p2">
+            <strong>الحل مع رَبْـط:</strong> تحول رَبْـط حساب إنستغرام لمتجرك إلى منصة بيع تلقائية ترد فوراً بالخاص، تعرض كروت المنتجات، وتستلم الأموال برابط محفظة محلي بـ 20 ثانية.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <!-- 4. How It Works (3 Numbered Steps) -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-accent" data-i18n="iig.steps_badge">آلية العمل</span>
+          <h2 class="section-title" data-i18n="iig.steps_title">3 خطوات بسيطة لتشغيل الربط</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          
           <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iig.q1">1. هل يحتاج حساب إنستغرام إلى توثيق خاص أو شروط محددة؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iig.a1">
-              يتطلب الأمر فقط تحويل حساب إنستغرام إلى حساب تجاري (Business Account) وربطه بصفحة فيسبوك الخاصة بمتجرك، دون الحاجة لعدد معين من المتابعين.
-            </p>
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-accent-purple); margin-bottom: 0.5rem;">1</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="iig.sw1_title">الربط مع Instagram Direct API</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.sw1_desc">منح الصلاحيات الرسمية لحساب متجرك التجاري عبر Meta.</p>
           </div>
 
           <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iig.q2">2. هل يرسل البوت روابط قابلة للنقر داخل الـ Direct؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iig.a2">
-              نعم، بروتوكول Meta Graph API المعتمد يتيح إرسال أزرار وروابط تفاعلية نصوص قابلة للنقر للشراء أو فتح الفاتورة مباشرة.
-            </p>
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">2</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="iig.sw2_title">ربط الكتالوج وقواعد الرد</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.sw2_desc">رفع قائمة المنتجات وتخصيص سيناريوهات الرد على التعليقات.</p>
           </div>
 
           <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iig.q3">3. كيف يتعامل النظام مع المنشورات والإعلانات الممولة؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iig.a3">
-              يعمل التكامل بكفاءة كاملة على الإعلانات الممولة (Ads Comments & Click-to-Direct Ads) حيث يتم الرد الفوري على كل الاستفسارات الناتجة عن الحملات الإعلانية.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iig.q4">4. هل يمكن تخصيص ردود مختلفة لكل منتج أو منشور؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iig.a4">
-              نعم، تتيح لك لوحة رَبْـط تحديد ردود خاصة بمنتجات معينة أو قوالب ذكية تكتشف اسم المنتج من الصورة أو النص المكتوب تلقائياً.
-            </p>
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-success); margin-bottom: 0.5rem;">3</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="iig.sw3_title">الانطلاق واستقبال المبيعات</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iig.sw3_desc">تحويل تلقائي لكل استفسار إلى طلب مؤكد ومربوط بشركات التوصيل.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 6. قنوات ذات صلة (Related Channels) -->
-    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <!-- 5. See It In Action (TWO Realistic Conversation Scenarios) -->
+    <section class="section-padding" id="mock-demo">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-primary" data-i18n="iig.rel_badge">شبكة القنوات المكملة</span>
-          <h2 class="section-title" data-i18n="iig.rel_title">قنوات تواصل إضافية يمكنك ربطها بنفس الوقت</h2>
+          <span class="badge badge-accent" data-i18n="iig.demo_badge">شاهدها في العمل</span>
+          <h2 class="section-title" data-i18n="iig.demo_title">مثالان واقعيان لتدفق محادثات إنستغرام</h2>
+          <p class="section-subtitle" data-i18n="iig.demo_sub">سيناريوهان مختلفان يوضحان معالجة تعليق المنشور ومنشن الستوري</p>
         </div>
 
-        <div class="bento-grid">
-
-          <!-- WhatsApp Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        <!-- Scenario 1: Comment-to-Direct & Sale -->
+        <h3 style="text-align: center; margin-bottom: 1rem; color: var(--color-accent-purple); font-size: 1.15rem;">السيناريو الأول: تحويل تعليق منشور إلى مبيعة مدفوعة بالخاص</h3>
+        <div class="ig-chat-frame">
+          <div class="ig-chat-header">
+            <div class="ig-profile">
+              <div class="ig-avatar"><div class="ig-avatar-inner">ر</div></div>
+              <div class="ig-user-info">
+                <h4>@rabt_store_iq ✓</h4>
+                <p>Instagram Direct API</p>
               </div>
-              <h3 class="bento-card-title" data-i18n="iig.rel_wa_title">تكامل واتساب للأعمال</h3>
-              <p class="bento-card-desc" data-i18n="iig.rel_wa_desc">
-                أتمتة تأكيد الطلبات بالعامية العراقية، روابط الدفع والاستدلال بالـ GPS Pin.
-              </p>
             </div>
-            <a href="whatsapp.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل الواتساب ➔</a>
+            <span class="badge badge-accent" style="font-size: 0.725rem;">Automated DM</span>
           </div>
 
-          <!-- Facebook Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="iig.rel_fb_title">تكامل فيسبوك ماسنجر</h3>
-              <p class="bento-card-desc" data-i18n="iig.rel_fb_desc">
-                أتمتة عملاء إعلانات Click-to-Messenger والرد الآلي وتأكيد الطلبات المباشرة.
-              </p>
+          <div class="ig-chat-body">
+            <div style="background:#1a1a1a; border: 1px solid rgba(124,58,237,0.3); border-radius: 8px; padding: 0.6rem 0.85rem; font-size: 0.8rem; color: #a8a8a8;">
+              💬 <strong>إشعار تعليق تلقائي:</strong> علّق العميل <code>@karrar_iq</code>: "القميص الأزرق موجود؟ شكد سعره مع التوصيل لحي الجامعة؟"
             </div>
-            <a href="facebook.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل فيسبوك ➔</a>
+
+            <div class="ig-msg ig-msg-out">
+              أهلاً كرار! 👋 نعم، <strong>قميص كتان صيفي كلاسيك (أزرق)</strong> متوفر بجميع المقاسات! 👔
+              <br>• السعر: 35,000 د.ع (+5,000 توصيل).
+            </div>
+
+            <div class="ig-msg ig-msg-in">
+              تمام ممتاز! أريد مقاس L للتوصيل لحي الجامعة بغداد، شلون أدفع؟
+            </div>
+
+            <div class="ig-msg ig-msg-out">
+              تدلل كرار! اضغط على رابط الدفع المباشر عبر زين كاش / كي كارد لإتمام طلبك:
+              <br><a href="#" style="color:#a5b4fc; text-decoration:underline;">https://pay.rabt.iq/ig/inv_88291</a>
+            </div>
+
+            <div class="ig-msg ig-msg-out" style="background: linear-gradient(135deg, #059669, #10b981);">
+              ✅ تم استلام المبلغ بنجاح وتأكيد الشحنة رقم #RBT-IG-9912!
+            </div>
+          </div>
+        </div>
+        <div class="why-wins-box" style="max-width: 760px; margin: 0 auto 3rem;">
+          💡 <strong>لماذا هذا يفوز:</strong> تم تحويل العميل من تعليق بسيط إلى مبيعة مدفوعة بالخاص بـ 35 ثانية دون مغادرة التطبيق.
+        </div>
+
+        <!-- Scenario 2: Story Mention & Promo Code -->
+        <h3 style="text-align: center; margin-bottom: 1rem; color: var(--color-success); font-size: 1.15rem;">السيناريو الثاني: الرد التلقائي على منشن الستوري وإرسال كوبون خصم</h3>
+        <div class="ig-chat-frame" style="border-color: rgba(16, 185, 129, 0.3);">
+          <div class="ig-chat-header" style="background: #19241d;">
+            <div class="ig-profile">
+              <div class="ig-avatar" style="background: linear-gradient(135deg, #10b981, #059669);"><div class="ig-avatar-inner">ر</div></div>
+              <div class="ig-user-info">
+                <h4>@rabt_store_iq ✓</h4>
+                <p>Story Mention Automation</p>
+              </div>
+            </div>
+            <span class="badge badge-emerald" style="font-size: 0.725rem;">Story Trigger</span>
           </div>
 
-          <!-- POS & ERP Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="iig.rel_pos_title">تكامل نقاط البيع والـ ERP</h3>
-              <p class="bento-card-desc" data-i18n="iig.rel_pos_desc">
-                مزامنة الطلبات والمخزون مع أنظمة Odoo و SAP وكاشير المحل الفيزيائي أوتوماتيكياً.
-              </p>
+          <div class="ig-chat-body">
+            <div style="background:#132219; border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; padding: 0.6rem 0.85rem; font-size: 0.8rem; color: #34d399;">
+              📸 <strong>منشن ستوري جديد:</strong> شارك الزبون <code>@sarah_bgd</code> صورة منتجك في ستوري قائلين: <em>"عاشت ايدكم الطلبية تخبل!"</em>
             </div>
-            <a href="pos-erp.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل POS & ERP ➔</a>
+
+            <div class="ig-msg ig-msg-out" style="background: #059669;">
+              شكراً جزيلاً سارة على مشاركة تجربتك الجذابة! 💖
+              <br>تقديرًا لولائك، يسرنا إهداؤك كود خصم 15% لطلبك القادم: <code>RABT15</code>
+              <br>يمكنك استخدامه بالمتجر أو بطلبك القادم بالخاص!
+              <div class="wa-msg-meta">04:20 م</div>
+            </div>
+
+            <div class="ig-msg ig-msg-in">
+              شكراً جزيلًا ذوقكم عالي! راح اطلب الحذاء النودي هسة الكود ينفع وياها؟
+            </div>
+
+            <div class="ig-msg ig-msg-out" style="background: #059669;">
+              اي نعم اكيد ينفع فوراً! تفضلي رابط الطلب المباشر بالخصم:
+              <br><a href="#" style="color:#a7f3d0; text-decoration:underline;">https://rabt.iq/promo/RABT15</a>
+            </div>
           </div>
+        </div>
+        <div class="why-wins-box" style="max-width: 760px; margin: 0 auto; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+          💡 <strong>لماذا هذا يفوز:</strong> تحفيز العميل على الشراء مجدداً وتعميق الولاء للمتجر فور مشاركته للمنتج بالستوري.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. FAQ (5 Technical Questions) -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <span class="badge badge-accent" data-i18n="iig.faq_badge">أسئلة شائعة</span>
+          <h2 class="section-title" data-i18n="iig.faq_title">5 أسئلة تقنية دقيقة حول إنستغرام</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iig.q1">1. هل يحتاج حساب إنستغرام إلى نوع حساب تجاري؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.a1">نعم، يتطلب تحويل الحساب إلى Business أو Creator وربطه بصفحة فيسبوك رسمية لإطلاق الـ API.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iig.q2">2. هل يرسل البوت روابط قابلة للنقر داخل الـ Direct؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.a2">نعم، تتيح API المعتمدة من Meta إرسال أزرار وروابط تفاعلية نصوص قابلة للنقر للشراء فوراً.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iig.q3">3. كيف يتعامل النظام مع المنشورات الممولة (Ads)؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.a3">يعمل التكـامل بكفاءة كاملة على تعليقات وإعلانات Click-to-Direct فيسبوك وإنستغرام الممولة.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iig.q4">4. هل يتوافق مع Instagram Catalog والمخزون؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.a4">نعم، يزامن الكميات مباشرة مع متجرك أو نظام الـ ERP لضمان عدم حجز قطع غير متوفرة.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iig.q5">5. كم تستغرق مرحلة التفعيل والربط؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iig.a5">تستغرق عملية ربط الحساب وتخصيص قوالب الإجابات أقل من 10 دقائق من لوحة تحكم رَبْـط.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Related Features -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="iig.rel_badge">روابط ذات صلة</span>
+          <h2 class="section-title" data-i18n="iig.rel_title">ميزات وقنوات مكملة لمتجرك</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <a href="whatsapp.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-success); margin-bottom: 0.3rem;">تكامل واتساب للأعمال ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">أتمتة تأكيد الطلبات بالعامية واستخراج موقع GPS.</p>
+          </a>
+
+          <a href="facebook.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-primary); margin-bottom: 0.3rem;">تكامل فيسبوك ماسنجر ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">أتمتة زوار الإعلانات الممولة ومحادثات الصفحات.</p>
+          </a>
+
+          <a href="../feature-iraqi-ai-bot.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-accent-purple); margin-bottom: 0.3rem;">محرك الذكاء الاصطناعي العراقي ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">فهم مفردات اللهجات العراقية ومعالجة الصوتيات.</p>
+          </a>
 
         </div>
       </div>
     </section>
 
     <!-- Call to Action Banner -->
-    <section class="section-padding">
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container container-narrow" style="text-align: center;">
-        <h2 style="margin-bottom: 1.25rem;" data-i18n="iig.cta_bottom_title">جاهز لأتمتة مبيعات إنستغرام لمتجرك؟</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-muted);" data-i18n="iig.cta_bottom_sub">تواصل مع مهندسي الربط في بغداد لتفعيل أتمتة الـ Direct والتعليقات خلال دقائق.</p>
+        <h2 style="margin-bottom: 1rem;" data-i18n="iig.cta_bottom_title">جاهز لأتمتة مبيعات إنستغرام لمتجرك؟</h2>
+        <p style="margin-bottom: 1.75rem; color: var(--text-muted);" data-i18n="iig.cta_bottom_sub">تواصل مع مهندسي الربط في بغداد لتفعيل أتمتة الـ Direct والتعليقات خلال دقائق.</p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <a href="../contact.html?channel=instagram" class="btn btn-primary btn-lg" data-i18n="iig.cta_bottom_btn1">ربط إنستغرام لمتجرك الآن</a>
-          <a href="../pricing.html" class="btn btn-secondary btn-lg" data-i18n="iig.cta_bottom_btn2">عرض أسعار الباقات</a>
+          <a href="../pricing.html" class="btn btn-secondary btn-lg" data-i18n="iig.cta_bottom_btn2">عرض الباقات والأسعار</a>
         </div>
       </div>
     </section>
@@ -604,9 +511,7 @@
             </div>
             <span data-i18n="nav.brand">رَبْـط</span>
           </a>
-          <p class="footer-desc" data-i18n="footer.desc">
-            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع المحلّية العراقية وأنظمة إدارة المخزون والتوصيل.
-          </p>
+          <p class="footer-desc" data-i18n="footer.desc">المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع المحلّية والمحافظ وأنظمة المخزون والتوصيل.</p>
         </div>
 
         <div>

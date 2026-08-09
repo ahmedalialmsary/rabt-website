@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="ipos.page_title">تكامل نقاط البيع والـ ERP (POS/Odoo/SAP) - رَبْـط</title>
-  <meta name="description" content="ربط ثنائي الاتجاه لمزامنة المخزون، الفواتير المحاسبية، وحركات الكاشير والفرع الفيزيائي أوتوماتيكياً مع المتجر والقنوات.">
+  <title data-i18n="ipos.page_title">تكامل أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP) - رَبْـط</title>
+  <meta name="description" content="مزامنة المخزون، الفواتير المحاسبية، وحركات الكاشير والفرع الفيزيائي أوتوماتيكياً مع المتجر الإلكتروني.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* POS/ERP Console Mock UI Styling */
     .erp-console-frame {
       background: #0f172a;
       border: 1px solid rgba(245, 158, 11, 0.3);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      box-shadow: var(--shadow-lg), 0 0 35px rgba(245, 158, 11, 0.15);
-      max-width: 820px;
-      margin: 0 auto;
+      box-shadow: var(--shadow-lg), 0 0 30px rgba(245, 158, 11, 0.12);
+      max-width: 760px;
+      margin: 0 auto 2rem;
     }
     .erp-console-header {
       background: #1e293b;
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -31,22 +30,21 @@
     .erp-profile {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
     }
     .erp-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       background: linear-gradient(135deg, #f59e0b, #d97706);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
       font-weight: 800;
-      font-size: 1.2rem;
     }
     .erp-user-info h4 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #f8fafc;
       margin: 0;
       display: flex;
@@ -54,52 +52,43 @@
       gap: 0.35rem;
     }
     .erp-user-info p {
-      font-size: 0.775rem;
+      font-size: 0.75rem;
       color: #94a3b8;
       margin: 0;
     }
     .erp-console-body {
-      padding: 1.5rem 1.25rem;
+      padding: 1.25rem;
       font-family: monospace;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
-      max-height: 580px;
-      overflow-y: auto;
+      gap: 0.75rem;
       background: #090d16;
     }
     .erp-log-line {
       background: #162032;
       border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: var(--radius-md);
-      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      padding: 0.75rem 0.95rem;
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
+      gap: 0.65rem;
       line-height: 1.5;
     }
-    .erp-log-time {
-      color: var(--color-warning);
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .erp-log-msg {
-      color: var(--text-main);
-      flex: 1;
-    }
-    .step-card-num {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-warning), var(--color-accent-amber));
-      color: #fff;
+    .erp-log-time { color: var(--color-warning); font-weight: 700; white-space: nowrap; }
+    .erp-log-msg { color: var(--text-main); flex: 1; }
+    .why-wins-box {
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.1rem;
+      color: #fbbf24;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-top: 1rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+      gap: 0.5rem;
     }
   </style>
 </head>
@@ -206,340 +195,272 @@
   <main class="main-content">
 
     <!-- 1. Hero Section -->
-    <section class="hero-section" style="padding: 4.5rem 0 3.5rem;">
+    <section class="hero-section" style="padding: 4rem 0 3rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
-          <span class="badge badge-warning" data-i18n="ipos.hero_badge">تكامل الأنظمة البرمجية والـ ERP #4</span>
+          <span class="badge badge-warning" data-i18n="ipos.hero_badge">تكامل الأنظمة البرمجية والـ ERP الرسمي</span>
         </div>
         <h1 class="hero-title" data-i18n="ipos.hero_title">تكامل أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP)</h1>
-        <p class="hero-subtitle" data-i18n="ipos.hero_subtitle" style="max-width: 820px; font-size: 1.2rem; font-weight: 500;">
-          ربط ثنائي الاتجاه يضمن مزامنة المخزون، الفواتير، وحركات الكاشير والفرع الفيزيائي أوتوماتيكياً مع المتجر الإلكتروني وقنوات التواصل.
+        <p class="hero-subtitle" data-i18n="ipos.hero_subtitle" style="max-width: 820px; font-size: 1.25rem; font-weight: 600; color: var(--text-main);">
+          ربط ثنائي الاتجاه يضمن مزامنة المخزون، الفواتير المحاسبية، وحركات الكاشير والفرع الفيزيائي أوتوماتيكياً مع المتجر والقنوات.
         </p>
 
         <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
           <a href="../contact.html?channel=pos-erp" class="btn btn-primary btn-lg" data-i18n="ipos.btn_cta">ربط أنظمتك بـ رَبْـط الآن</a>
-          <a href="#mock-demo" class="btn btn-secondary btn-lg" data-i18n="ipos.btn_demo">شاهد محاكاة مزامنة Odoo ➔</a>
-        </div>
-
-        <!-- Metric Card -->
-        <div style="margin-top: 3rem; background: var(--bg-card); border: 1.5px solid rgba(245, 158, 11, 0.3); border-radius: var(--radius-xl); padding: 1.75rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: right;">
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="ipos.stat1_label">بروتوكول الربط</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-warning); margin-top: 0.25rem;" data-i18n="ipos.stat1_val">XML-RPC & JSON REST API</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="ipos.stat2_label">تزامن رصيد المخزون</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-success); margin-top: 0.25rem;" data-i18n="ipos.stat2_val">لحظي (&lt; 0.5 ثانية)</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="ipos.stat3_label">الأنظمة المدعومة</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;" data-i18n="ipos.stat3_val">Odoo, SAP, Custom POS</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="ipos.stat4_label">نسبة الفروقات المالية</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-accent-teal); margin-top: 0.25rem;" data-i18n="ipos.stat4_val">0.00% (تطابق تام)</div>
-          </div>
+          <a href="#mock-demo" class="btn btn-secondary btn-lg" data-i18n="ipos.btn_demo">شاهد السجلات الحية ➔</a>
         </div>
       </div>
     </section>
 
-    <!-- 2. القدرات الأساسية (Core Capabilities) -->
+    <!-- 2. Key Capabilities -->
     <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-warning" data-i18n="ipos.cap_badge">قدرات أتمتة الـ POS والـ ERP</span>
-          <h2 class="section-title" data-i18n="ipos.cap_title">القدرات الأساسية للربط المؤسسي</h2>
-          <p class="section-subtitle" data-i18n="ipos.cap_sub">6 تقنيات متخصصة لميكنة المستودعات، الكاشير الفيزيائي، والقيود المحاسبية</p>
+          <span class="badge badge-warning" data-i18n="ipos.cap_badge">القدرات الأساسية</span>
+          <h2 class="section-title" data-i18n="ipos.cap_title">6 قدرات حاسمة لأتمتة الـ POS والـ ERP</h2>
         </div>
 
-        <div class="bento-grid">
-
-          <!-- Cap 1 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="ipos.c1_title">1. مزامنة كميات المخزون ثنائية الاتجاه</h3>
-            <p class="bento-card-desc" data-i18n="ipos.c1_desc">
-              عند بيع أي قطعة في كاشير المحل الفيزيائي، يتم خصم رصيد المتجر الإلكتروني وقنوات الواتساب فوراً لمنع تعارض الطلبات.
-            </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-warning);" data-i18n="ipos.k1_title">1. مزامنة المخزون ثنائية الاتجاه</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.k1_desc">يخصم رصيد المتجر الإلكتروني فور تنفيذ أي عملية بيع بكاشير الفرع الفيزيائي.</p>
           </div>
 
-          <!-- Cap 2 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="ipos.c2_title">2. التصدير التلقائي للفواتير والقيود</h3>
-            <p class="bento-card-desc" data-i18n="ipos.c2_desc">
-              توليد قيود يومية المبيعات وسندات القبض آلياً في Odoo أو SAP دون الحاجة إلى تفريغ الفواتير يدوياً بنهاية اليوم.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-success);" data-i18n="ipos.k2_title">2. التصدير التلقائي للفواتير والقيود</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.k2_desc">ينشئ قيود يومية المبيعات وسندات القبض آلياً في Odoo أو SAP.</p>
           </div>
 
-          <!-- Cap 3 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="ipos.c3_title">3. تسوية تحويلات زين كاش وكي كارد بالميزانية</h3>
-            <p class="bento-card-desc" data-i18n="ipos.c3_desc">
-              ربط مبالغ الدفع المباشر من المحافظ الإلكترونية بالحسابات البنكية شجرة الحسابات العامة بالـ ERP ومطابقتها.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-primary);" data-i18n="ipos.k3_title">3. تسوية تحويلات المحافظ بالميزانية</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.k3_desc">يربط مبالغ زين كاش وكي كارد بالحسابات البنكية في شجرة الحسابات العامة.</p>
           </div>
 
-          <!-- Cap 4 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="ipos.c4_title">4. إدارة الفروع والمخازن المتعددة</h3>
-            <p class="bento-card-desc" data-i18n="ipos.c4_desc">
-              توزيع الطلبات الواردة أوتوماتيكياً على الفرع الأقرب جغرافي لعنوان الزبون (بغداد، أربيل، البصرة) لتسريع الشحن.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-accent-purple);" data-i18n="ipos.k4_title">4. إدارة الفروع والمخازن المتعددة</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.k4_desc">يوجه الطلبات أوتوماتيكياً للفرع الأقرب لعنوان الزبون لتسريع الشحن.</p>
           </div>
 
-          <!-- Cap 5 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(13, 148, 136, 0.15); color: var(--color-accent-teal);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="ipos.c5_title">5. حزم SDK المخصصة للأنظمة الخاصة</h3>
-            <p class="bento-card-desc" data-i18n="ipos.c5_desc">
-              توفير مكتبات ربط برمجي مخصصة بلغات Python, PHP, Node.js, و.NET لربط برامج الكاشير المصممة محلياً.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-accent-teal);" data-i18n="ipos.k5_title">5. حزم SDK للأنظمة الخاصة</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.k5_desc">يوفر مكتبات ربط برمجي مخصصة لربط برامج الكاشير المصممة محلياً.</p>
           </div>
 
-          <!-- Cap 6 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(239, 68, 68, 0.15); color: var(--color-error);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="ipos.c6_title">6. الحماية من انقطاع الإنترنت (Offline Buffer)</h3>
-            <p class="bento-card-desc" data-i18n="ipos.c6_desc">
-              حفظ وتخزين عمليات البيع محلياً عند انقطاع الإنترنت في المحل الفيزيائي، ومزامنتها فور عودة الاتصال دون فقدان أي عملية.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-error);" data-i18n="ipos.k6_title">6. الحماية من انقطاع الإنترنت</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.k6_desc">يحفظ الفواتير محلياً بكاشير الفرع ويزامنها أوتوماتيكياً فور عودة الاتصال.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 3. كيف يتم الربط (How Integration Works) -->
+    <!-- 3. Overview (Exactly 2 Paragraphs) -->
     <section class="section-padding">
-      <div class="container">
+      <div class="container container-narrow">
         <div class="section-header">
-          <span class="badge badge-warning" data-i18n="ipos.steps_badge">آلية التثبيت والربط</span>
-          <h2 class="section-title" data-i18n="ipos.steps_title">خطوات ربط الـ POS ونظام الـ ERP</h2>
-          <p class="section-subtitle" data-i18n="ipos.steps_sub">منهجية معتمدة تضمن تكاملاً آمناً بدون توقف أعمال المحل</p>
+          <span class="badge badge-primary" data-i18n="ipos.ov_badge">نظرة عامة</span>
+          <h2 class="section-title" data-i18n="ipos.ov_title">لماذا تحتاج متجرك أتمتة الـ POS والـ ERP؟</h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; font-size: 1.05rem; line-height: 1.8;">
+          <p style="margin-bottom: 1.25rem; color: var(--text-main);" data-i18n="ipos.ov_p1">
+            <strong>المشكلة بدون رَبْـط:</strong> يتضارب رصيد المخزون بين المحل الفيزيائي والمتجر الإلكتروني، مع اضطرار المحاسبين لإدخال الفواتير يدوياً بنهاية اليوم مما يسبب أخطاء محاسبية وتأخير إصدار الشحنات.
+          </p>
+          <p style="margin: 0; color: var(--text-main);" data-i18n="ipos.ov_p2">
+            <strong>الحل مع رَبْـط:</strong> يربط النظام كاشير الفرع بـ Odoo ومتجر سلة/ووردبريس بموزع تزامن فوري يحدّث الكميات، ينشئ القيود المالية، ويصدر بوليصة الشحن بـ 0.5 ثانية دون أي خطأ.
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">1</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="ipos.s1_title">تثبيت مودول Rabt Connector</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.s1_desc">
-              تثبيت المودول المعتمد في نظام Odoo أو ربط الـ REST API Credential في SAP/POS الخاص بك.
-            </p>
+    <!-- 4. How It Works (3 Numbered Steps) -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-warning" data-i18n="ipos.steps_badge">آلية العمل</span>
+          <h2 class="section-title" data-i18n="ipos.steps_title">3 خطوات بسيطة لتشغيل الربط</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-warning); margin-bottom: 0.5rem;">1</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="ipos.sw1_title">تثبيت مودول Rabt Connector</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.sw1_desc">اقتران المودول المعتمد بـ Odoo أو ربط REST API Key بـ SAP/POS.</p>
           </div>
 
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">2</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="ipos.s2_title">مطابقة خريطة الحسابات والمخازن</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.s2_desc">
-              ربط معرفات المنتجات (SKU)، مستودعات الفروع، وحسابات المحافظ الإلكترونية في شجرة الحسابات.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-success); margin-bottom: 0.5rem;">2</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="ipos.sw2_title">مطابقة الحسابات والمخازن</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.sw2_desc">ربط معرفات المنتجات (SKU) ومستودعات الفروع في شجرة الحسابات.</p>
           </div>
 
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">3</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="ipos.s3_title">الاختبار في بيئة Staging</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.s3_desc">
-              محاكاة عمليات شراء وتحديث مخزني وقيود مالية للتأكد من دقة البيانات قبل الإطلاق الحاي.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">4</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="ipos.s4_title">التشغيل الحي 100%</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.s4_desc">
-              تفعيل التزامن الفوري على السيرفر الرئيسي مع مراقبة الأداء عبر لوحة تحكم رَبْـط.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">3</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="ipos.sw3_title">التشغيل والمزامنة الحية</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="ipos.sw3_desc">تفعيل التزامن اللحظي على السيرفر الرئيسي مع مراقبة الأداء.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 4. شاهدها في العمل (Mock UI Interactive Demo) -->
-    <section class="section-padding" id="mock-demo" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <!-- 5. See It In Action (TWO Realistic Console Scenarios) -->
+    <section class="section-padding" id="mock-demo">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-warning" data-i18n="ipos.demo_badge">شاشة محاكاة التزامن اللحظي</span>
-          <h2 class="section-title" data-i18n="ipos.demo_title">سجل أحداث مزامنة الكاشير والـ ERP</h2>
-          <p class="section-subtitle" data-i18n="ipos.demo_sub">شاهد كيف تتكامل حركة بيع واحدة بالكاشير مع المتجر والقيد المحاسبي بأقل من ثانية</p>
+          <span class="badge badge-warning" data-i18n="ipos.demo_badge">شاهدها في العمل</span>
+          <h2 class="section-title" data-i18n="ipos.demo_title">مثالان واقعيان لسجلات تزامن الـ POS والـ ERP</h2>
+          <p class="section-subtitle" data-i18n="ipos.demo_sub">سيناريوهان يوضحان المزامنة اللحظية ومعالجة انقطاع الإنترنت</p>
         </div>
 
+        <!-- Scenario 1: Live POS to Odoo Sync -->
+        <h3 style="text-align: center; margin-bottom: 1rem; color: var(--color-warning); font-size: 1.15rem;">السيناريو الأول: مزامنة حركة بيع بالكاشير مع المتجر وقيد Odoo المحاسبي</h3>
         <div class="erp-console-frame">
-          <!-- Console Header -->
           <div class="erp-console-header">
             <div class="erp-profile">
               <div class="erp-avatar">O</div>
               <div class="erp-user-info">
-                <h4>
-                  Rabt Sync Connector v2026.4
-                  <span class="badge badge-emerald" style="font-size:0.65rem;">CONNECTED</span>
-                </h4>
-                <p>مربوط مع Odoo ERP 18 (Baghdad Main Warehouse)</p>
+                <h4>Rabt Sync Connector v2026.4 ✓</h4>
+                <p>Baghdad Main Warehouse (Odoo ERP 18)</p>
               </div>
             </div>
-            <div>
-              <span class="badge badge-warning" style="font-size:0.75rem;">Latency: 14ms</span>
-            </div>
+            <span class="badge badge-warning" style="font-size: 0.725rem;">Live Stream</span>
           </div>
 
-          <!-- Console Logs Stream -->
           <div class="erp-console-body">
-            
             <div class="erp-log-line">
               <div class="erp-log-time">11:02:14 AM</div>
-              <div class="erp-log-msg">
-                🛒 <strong style="color:#f59e0b;">POS-BRANCH-01 (فرع الكرادة):</strong> تم تنفيذ فاتورة بيع بالكاشير (#POS-99182) — خصم 2 قطعة من <code>SKU-BAG-9912</code>.
-              </div>
+              <div class="erp-log-msg">🛒 <strong>POS-BRANCH-01 (فرع الكرادة):</strong> تم تنفيذ فاتورة بيع بالكاشير — خصم 2 قطعة من SKU-BAG-9912.</div>
             </div>
-
             <div class="erp-log-line">
               <div class="erp-log-time">11:02:15 AM</div>
-              <div class="erp-log-msg">
-                ⚡ <strong style="color:#3b82f6;">Rabt Webhook Relay:</strong> إرسال أمر تحديث المخزون الفوري لمتجر سلة والموقع الإلكتروني (المخزون المتوفر: 15 ➔ 13 قطعة).
-              </div>
+              <div class="erp-log-msg">⚡ <strong>Rabt Webhook Relay:</strong> إرسال أمر تحديث المخزون الفوري لمتجر سلة والموقع (المتوفر: 15 ➔ 13 قطعة).</div>
             </div>
-
             <div class="erp-log-line">
               <div class="erp-log-time">11:02:16 AM</div>
-              <div class="erp-log-msg">
-                📝 <strong style="color:#10b981;">Odoo ERP Ledger:</strong> إنشاء وتثبيت قيد يومية المبيعات الآلي (#INV-2026-8812) — (مدين: محفظة زين كاش / دائن: إيراد مبيعات الفرع).
-              </div>
+              <div class="erp-log-msg">📝 <strong>Odoo ERP Ledger:</strong> إنشاء قيد المبيعات الآلي #INV-8812 (مدين: زين كاش / دائن: إيراد الفرع).</div>
             </div>
-
-            <div class="erp-log-line">
-              <div class="erp-log-time">11:02:18 AM</div>
-              <div class="erp-log-msg">
-                🏷️ <strong style="color:#7c3aed;">Logistics Dispatch:</strong> إصدار بوليصة الشحن الإلكترونية (#WB-99120) وطباعة ملصق الباركود تلقائياً بكاشير المخرجات.
-              </div>
-            </div>
-
-            <div class="erp-log-line" style="border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.06);">
-              <div class="erp-log-time" style="color:#10b981;">11:02:19 AM</div>
-              <div class="erp-log-msg" style="color:#34d399; font-weight:700;">
-                ✅ اكتملت الدورة التزامنية بنجاح (زمن الإنجاز الكلي: 0.48 ثانية | تطابق 100%).
-              </div>
-            </div>
-
           </div>
         </div>
+        <div class="why-wins-box" style="max-width: 760px; margin: 0 auto 3rem;">
+          💡 <strong>لماذا هذا يفوز:</strong> اكتملت الدورة التزامنية بين الكاشير الفيزيائي والـ ERP والمتجر الإلكتروني بـ 0.48 ثانية وتطابق 100%.
+        </div>
+
+        <!-- Scenario 2: Offline POS Recovery -->
+        <h3 style="text-align: center; margin-bottom: 1rem; color: var(--color-success); font-size: 1.15rem;">السيناريو الثاني: معالجة انقطاع الإنترنت ومزامنة الـ Offline Queue تلقائياً</h3>
+        <div class="erp-console-frame" style="border-color: rgba(16, 185, 129, 0.3);">
+          <div class="erp-console-header" style="background: #11221a;">
+            <div class="erp-profile">
+              <div class="erp-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">Q</div>
+              <div class="erp-user-info">
+                <h4>Offline Queue Buffer Sync ✓</h4>
+                <p>Branch-02 (Erbil Terminal)</p>
+              </div>
+            </div>
+            <span class="badge badge-emerald" style="font-size: 0.725rem;">Auto Recovered</span>
+          </div>
+
+          <div class="erp-console-body">
+            <div class="erp-log-line" style="border-color: rgba(245,158,11,0.3);">
+              <div class="erp-log-time" style="color:#f59e0b;">03:10:00 PM</div>
+              <div class="erp-log-msg">⚠️ <strong>Network Status:</strong> تم رصد انقطاع الاتصال بالإنترنت بكاشير أربيل — تفعيل حماية Offline Buffer.</div>
+            </div>
+            <div class="erp-log-line">
+              <div class="erp-log-time">03:14:22 PM</div>
+              <div class="erp-log-msg">💾 <strong>Local Storage:</strong> تسجيل 14 عملية بيع محلية وتخزين التواقيع الرقمية دون أي توقف للكاشير.</div>
+            </div>
+            <div class="erp-log-line" style="border-color: rgba(16,185,129,0.3);">
+              <div class="erp-log-time" style="color:#10b981;">03:15:01 PM</div>
+              <div class="erp-log-msg">✅ <strong>Network Restored:</strong> عودة الإنترنت ومزامنة الـ 14 عملية دفعة واحدة مع Odoo ومخزن أربيل بنجاح.</div>
+            </div>
+          </div>
+        </div>
+        <div class="why-wins-box" style="max-width: 760px; margin: 0 auto; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); color: #34d399;">
+          💡 <strong>لماذا هذا يفوز:</strong> استمرار عمليات البيع بالفرع دون توقف مع ضمان صفر ضياع في البيانات المحاسبية والمخزنية.
+        </div>
+
       </div>
     </section>
 
-    <!-- 5. الأسئلة الشائعة (FAQ) -->
-    <section class="section-padding">
+    <!-- 6. FAQ (5 Technical Questions) -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container container-narrow">
         <div class="section-header">
-          <span class="badge badge-warning" data-i18n="ipos.faq_badge">الأسئلة التقنية الشائعة</span>
-          <h2 class="section-title" data-i18n="ipos.faq_title">أسئلة شائعة حول تكامل الـ POS والـ ERP</h2>
+          <span class="badge badge-warning" data-i18n="ipos.faq_badge">أسئلة شائعة</span>
+          <h2 class="section-title" data-i18n="ipos.faq_title">5 أسئلة تقنية دقيقة حول الـ POS والـ ERP</h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
 
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="ipos.q1">1. هل يدعم التغيير نسخ Odoo Community و Enterprise؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="ipos.a1">
-              نعم، يدعم مودول رَبْـط المعتمد جميع إصدارات Odoo من V13 حتى V18 لكلا النسختين (Community & Enterprise) وسيرفرات Cloud أو On-Premise.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="ipos.q1">1. هل يدعم نسخ Odoo Community & Enterprise؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.a1">نعم، يدعم مودول رَبْـط جميع إصدارات Odoo من V13 حتى V18 لكلا النسختين وسيرفرات Cloud أو On-Premise.</p>
           </div>
 
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="ipos.q2">2. ماذا يحدث إذا انقطع اتصال الإنترنت في المحل الفيزيائي؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="ipos.a2">
-              يعمل نظام (Offline Queue Buffer) محلياً على جهاز الكاشير لحفظ الفواتير، وفور عودة الإنترنت يتم إرسال ومزامنة جميع العمليات أوتوماتيكياً دون أي فقدان.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="ipos.q2">2. كيف يتعامل مع انقطاع الإنترنت بكاشير الفرع؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.a2">يحفظ الفواتير محلياً بنظام Offline Queue، وفور عودة النت يرفع المبيعات أوتوماتيكياً دون فقدان أي عملية.</p>
           </div>
 
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="ipos.q3">3. هل يمكن الربط مع برنامج كاشير محلي مخصص مصمم للشركة؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="ipos.a3">
-              نعم، توفر رَبْـط REST API موثقة وحزم SDK بسيطة تمكّن مبرمجي شركتك من إكمال الربط البرمجي خلال ساعات معدودة.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="ipos.q3">3. هل يمكن الربط مع برنامج كاشير محلي مخصص؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.a3">نعم، نوفر REST API موثقة وحزم SDK بسيطة لتمكين مبرمجي شركتك من الربط خلال ساعات.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="ipos.q4">4. هل تؤثر المزامنة على سرعة خادم الـ ERP؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.a4">لا، لأننا نعتمد على Asynchronous Webhooks وموزع أحداث خفيف لا يستهلك موارد الخادم.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="ipos.q5">5. كم تستغرق مرحلة الربط والتدريب؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="ipos.a5">يتم الربط البرمجي واختبار المزامنة وتدريب كادر الكاشير خلال يوم عمل واحد.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 6. قنوات ذات صلة (Related Channels) -->
-    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <!-- 7. Related Features -->
+    <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-primary" data-i18n="ipos.rel_badge">شبكة القنوات المكملة</span>
-          <h2 class="section-title" data-i18n="ipos.rel_title">قنوات تواصل إضافية يمكنك ربطها بنفس الوقت</h2>
+          <span class="badge badge-primary" data-i18n="ipos.rel_badge">روابط ذات صلة</span>
+          <h2 class="section-title" data-i18n="ipos.rel_title">ميزات وقنوات مكملة لمتجرك</h2>
         </div>
 
-        <div class="bento-grid">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <a href="whatsapp.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-success); margin-bottom: 0.3rem;">تكامل واتساب للأعمال ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">أتمتة تأكيد الطلبات بالعامية واستخراج موقع GPS.</p>
+          </a>
 
-          <!-- WhatsApp Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="ipos.rel_wa_title">تكامل واتساب للأعمال</h3>
-              <p class="bento-card-desc" data-i18n="ipos.rel_wa_desc">
-                أتمتة تأكيد الطلبات بالعامية العراقية، روابط الدفع والاستدلال بالـ GPS Pin.
-              </p>
-            </div>
-            <a href="whatsapp.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل الواتساب ➔</a>
-          </div>
+          <a href="instagram.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-accent-purple); margin-bottom: 0.3rem;">تكامل إنستغرام ماسنجر ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">أتمتة الرد على الـ Direct وتعليقات المنشورات فوراً.</p>
+          </a>
 
-          <!-- Instagram Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="ipos.rel_ig_title">تكامل إنستغرام ماسنجر</h3>
-              <p class="bento-card-desc" data-i18n="ipos.rel_ig_desc">
-                أتمتة الرد على الـ Direct والتعليقات والستوريات وكروت المنتجات التفاعلية.
-              </p>
-            </div>
-            <a href="instagram.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل إنستغرام ➔</a>
-          </div>
-
-          <!-- Facebook Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="ipos.rel_fb_title">تكامل فيسبوك ماسنجر</h3>
-              <p class="bento-card-desc" data-i18n="ipos.rel_fb_desc">
-                أتمتة عملاء إعلانات Click-to-Messenger والرد الآلي وتأكيد الطلبات المباشرة.
-              </p>
-            </div>
-            <a href="facebook.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل فيسبوك ➔</a>
-          </div>
+          <a href="../service-payments.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-primary); margin-bottom: 0.3rem;">تسوية المحافظ وبوابات الدفع ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">أتمتة مطابقة مبالغ زين كاش وكي كارد والميزانية.</p>
+          </a>
 
         </div>
       </div>
     </section>
 
     <!-- Call to Action Banner -->
-    <section class="section-padding">
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container container-narrow" style="text-align: center;">
-        <h2 style="margin-bottom: 1.25rem;" data-i18n="ipos.cta_bottom_title">جاهز لمزامنة الكاشير ونظام الـ ERP مع متجرك؟</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-muted);" data-i18n="ipos.cta_bottom_sub">تواصل مع مهندسي الربط في بغداد لتهيئة مودول Odoo وتكامل الـ POS.</p>
+        <h2 style="margin-bottom: 1rem;" data-i18n="ipos.cta_bottom_title">جاهز لمزامنة الكاشير ونظام الـ ERP مع متجرك؟</h2>
+        <p style="margin-bottom: 1.75rem; color: var(--text-muted);" data-i18n="ipos.cta_bottom_sub">تواصل مع مهندسي الربط في بغداد لتهيئة مودول Odoo وتكامل الـ POS خلال ساعات.</p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <a href="../contact.html?channel=pos-erp" class="btn btn-primary btn-lg" data-i18n="ipos.cta_bottom_btn1">ربط الـ POS والـ ERP الآن</a>
-          <a href="../pricing.html" class="btn btn-secondary btn-lg" data-i18n="ipos.cta_bottom_btn2">عرض أسعار الباقات</a>
+          <a href="../pricing.html" class="btn btn-secondary btn-lg" data-i18n="ipos.cta_bottom_btn2">عرض الباقات والأسعار</a>
         </div>
       </div>
     </section>
@@ -560,9 +481,7 @@
             </div>
             <span data-i18n="nav.brand">رَبْـط</span>
           </a>
-          <p class="footer-desc" data-i18n="footer.desc">
-            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع المحلّية العراقية وأنظمة إدارة المخزون والتوصيل.
-          </p>
+          <p class="footer-desc" data-i18n="footer.desc">المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع المحلّية والمحافظ وأنظمة المخزون والتوصيل.</p>
         </div>
 
         <div>

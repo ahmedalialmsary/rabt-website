@@ -3,26 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="iwa.page_title">تكامل واتساب للأعمال (WhatsApp Business API) - رَبْـط</title>
-  <meta name="description" content="ربط حساب الواتساب الخاص بمتجرك مباشرة مع أنظمة أتمتة الطلبات، تأكيد العناوين، وإرسال روابط بوابات الدفع المحلّية والتتبع.">
+  <title data-i18n="iwa.page_title">تكامل واتساب للأعمال (WhatsApp Cloud API) - رَبْـط</title>
+  <meta name="description" content="أتمتة مبيعات واتساب بالكامل: رد آلي باللهجة العراقية، استخراج موقع الـ GPS، وإرسال روابط الدفع المباشرة.">
   <link rel="stylesheet" href="../styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* WhatsApp Interactive Chat Specific Styling */
     .wa-chat-frame {
       background: #0b141a;
       border: 1px solid rgba(16, 185, 129, 0.3);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      box-shadow: var(--shadow-lg), 0 0 35px rgba(16, 185, 129, 0.15);
-      max-width: 780px;
-      margin: 0 auto;
+      box-shadow: var(--shadow-lg), 0 0 30px rgba(16, 185, 129, 0.12);
+      max-width: 760px;
+      margin: 0 auto 2rem;
     }
     .wa-chat-header {
       background: #1f2c34;
-      padding: 1rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -31,11 +30,11 @@
     .wa-profile {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.75rem;
     }
     .wa-avatar {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: linear-gradient(135deg, #10b981, #059669);
       display: flex;
@@ -43,21 +42,9 @@
       justify-content: center;
       color: #fff;
       font-weight: 800;
-      font-size: 1.2rem;
-      position: relative;
-    }
-    .wa-avatar-online {
-      width: 12px;
-      height: 12px;
-      background: #10b981;
-      border: 2px solid #1f2c34;
-      border-radius: 50%;
-      position: absolute;
-      bottom: 0;
-      right: 0;
     }
     .wa-user-info h4 {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #e9edef;
       margin: 0;
       display: flex;
@@ -65,28 +52,24 @@
       gap: 0.35rem;
     }
     .wa-user-info p {
-      font-size: 0.775rem;
+      font-size: 0.75rem;
       color: #8696a0;
       margin: 0;
     }
     .wa-chat-body {
-      padding: 1.5rem 1.25rem;
+      padding: 1.25rem;
       background-image: radial-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 0);
       background-size: 20px 20px;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
-      max-height: 580px;
-      overflow-y: auto;
+      gap: 1rem;
     }
     .wa-msg {
       max-width: 82%;
-      padding: 0.75rem 1rem;
-      border-radius: 12px;
-      font-size: 0.925rem;
-      line-height: 1.55;
-      position: relative;
-      animation: fadeIn 0.3s ease;
+      padding: 0.7rem 0.95rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
     .wa-msg-in {
       align-self: flex-start;
@@ -104,62 +87,25 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 0.3rem;
-      font-size: 0.7rem;
+      gap: 0.25rem;
+      font-size: 0.68rem;
       color: #8696a0;
-      margin-top: 0.35rem;
+      margin-top: 0.25rem;
     }
-    .wa-msg-out .wa-msg-meta {
-      color: #79ac9f;
-    }
-    .wa-ticks {
-      color: #53bdeb;
-      font-weight: 700;
-    }
-    .wa-btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 0.75rem;
-    }
-    .wa-interactive-btn {
-      background: rgba(0, 92, 75, 0.5);
-      border: 1px solid rgba(16, 185, 129, 0.4);
-      color: #53bdeb;
-      padding: 0.5rem 0.85rem;
+    .wa-msg-out .wa-msg-meta { color: #79ac9f; }
+    .wa-ticks { color: #53bdeb; font-weight: 700; }
+    .why-wins-box {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
       border-radius: var(--radius-md);
-      font-size: 0.85rem;
+      padding: 0.85rem 1.1rem;
+      color: #34d399;
       font-weight: 600;
-      text-align: center;
-      cursor: pointer;
-      transition: var(--transition-fast);
-    }
-    .wa-interactive-btn:hover {
-      background: #005c4b;
-      color: #fff;
-    }
-    .wa-system-notice {
-      align-self: center;
-      background: #182229;
-      color: #ffd279;
-      border: 1px solid rgba(255, 210, 121, 0.2);
-      font-size: 0.775rem;
-      padding: 0.4rem 0.85rem;
-      border-radius: var(--radius-md);
-      text-align: center;
-    }
-    .step-card-num {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-primary), var(--color-accent-purple));
-      color: #fff;
+      font-size: 0.9rem;
+      margin-top: 1rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+      gap: 0.5rem;
     }
   </style>
 </head>
@@ -266,396 +212,299 @@
   <main class="main-content">
 
     <!-- 1. Hero Section -->
-    <section class="hero-section" style="padding: 4.5rem 0 3.5rem;">
+    <section class="hero-section" style="padding: 4rem 0 3rem;">
       <div class="container hero-content">
         <div class="hero-badge-wrap">
-          <span class="badge badge-emerald" data-i18n="iwa.hero_badge">تكامل قنوات التواصل المباشر #1</span>
+          <span class="badge badge-emerald" data-i18n="iwa.hero_badge">تكامل واتساب للأعمال الرسمية</span>
         </div>
-        <h1 class="hero-title" data-i18n="iwa.hero_title">تكامل واتساب للأعمال (WhatsApp Business API)</h1>
-        <p class="hero-subtitle" data-i18n="iwa.hero_subtitle" style="max-width: 820px; font-size: 1.2rem; font-weight: 500;">
-          حوّل رسائل واتساب لمبيعات فورية دون تدخل يدوي مع أتمتة الذكاء الاصطناعي للهجة العراقية، وتأكيد العناوين، واستخراج موقع الـ GPS، وإرسال روابط الدفع المباشرة.
+        <h1 class="hero-title" data-i18n="iwa.hero_title">تكامل واتساب للأعمال (WhatsApp Cloud API)</h1>
+        <p class="hero-subtitle" data-i18n="iwa.hero_subtitle" style="max-width: 820px; font-size: 1.25rem; font-weight: 600; color: var(--text-main);">
+          حوّل كل محادثة واتساب إلى مبيعة مؤكدة بفضل الرد الفوري باللهجة العراقية واستخراج الموقع الجغرافي ودفع زين كاش بدون تدخل يدوي.
         </p>
 
         <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
           <a href="../contact.html?channel=whatsapp" class="btn btn-primary btn-lg" data-i18n="iwa.btn_cta">ربط الواتساب لمتجرك الآن</a>
-          <a href="#mock-demo" class="btn btn-secondary btn-lg" data-i18n="iwa.btn_demo">شاهد محاكاة المحادثة الحية ➔</a>
-        </div>
-
-        <!-- Meta Verified Status Badge Metric Card -->
-        <div style="margin-top: 3rem; background: var(--bg-card); border: 1.5px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-xl); padding: 1.75rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: right;">
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iwa.stat1_label">النموذج المعتمد</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-success); margin-top: 0.25rem;" data-i18n="iwa.stat1_val">Meta Cloud API الرسمي</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iwa.stat2_label">نسبة حظر الرقم</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-success); margin-top: 0.25rem;" data-i18n="iwa.stat2_val">0% (حساب موثق رسمياً)</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iwa.stat3_label">سرعة الاستجابة اللحظية</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-primary); margin-top: 0.25rem;" data-i18n="iwa.stat3_val">&lt; 1.2 ثانية / رسالة</div>
-          </div>
-          <div>
-            <div style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="iwa.stat4_label">دعم اللهجة العراقية</div>
-            <div style="font-size: 1.25rem; font-weight: 700; color: var(--color-accent-purple); margin-top: 0.25rem;" data-i18n="iwa.stat4_val"> بغدادية، جنوبية، شمالية</div>
-          </div>
+          <a href="#mock-demo" class="btn btn-secondary btn-lg" data-i18n="iwa.btn_demo">شاهد الأمثلة الحية ➔</a>
         </div>
       </div>
     </section>
 
-    <!-- 2. القدرات الأساسية (Core Capabilities) -->
+    <!-- 2. Key Capabilities -->
     <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-emerald" data-i18n="iwa.cap_badge">القدرات الهندسية للواتساب</span>
-          <h2 class="section-title" data-i18n="iwa.cap_title">القدرات الأساسية للتكامل المباشر</h2>
-          <p class="section-subtitle" data-i18n="iwa.cap_sub">6 ميزات استثنائية تحوّل رقم الواتساب إلى كاشير إلكتروني ومحطة توصيل أوتوماتيكية</p>
+          <span class="badge badge-emerald" data-i18n="iwa.cap_badge">القدرات الأساسية</span>
+          <h2 class="section-title" data-i18n="iwa.cap_title">6 قدرات حاسمة لأتمتة محادثات الواتساب</h2>
         </div>
 
-        <div class="bento-grid">
-
-          <!-- Cap 1 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iwa.c1_title">1. الرد الذكي باللهجة العراقية</h3>
-            <p class="bento-card-desc" data-i18n="iwa.c1_desc">
-              فهم المحادثات وتعبيرات الشارع العراقي مثل ("شغلك مضبوط؟"، "شوكت يوصلني الباغيت؟"، "اكو توصيل للكرادة؟") والإجابة الفورية بدقة عالية.
-            </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-success);" data-i18n="iwa.k1_title">1. الرد الآلي باللهجة العراقية</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.k1_desc">يكتشف مفردات الشارع العراقي ويرد بفهم تام على استفسارات الأسعار والتوصيل.</p>
           </div>
 
-          <!-- Cap 2 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iwa.c2_title">2. استخراج الـ GPS Pin والعنوان</h3>
-            <p class="bento-card-desc" data-i18n="iwa.c2_desc">
-              استلام موقع الزبون الدبوسي المباشر على واتساب، وتحويله فوراً إلى رابط Google Maps دقيق مرفق مع طلب التوصيل لنظام شركة الشحن.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-accent-purple);" data-i18n="iwa.k2_title">2. استخراج موقع الـ GPS Pin</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.k2_desc">يحول الدبوس المرسل من الزبون فوراً إلى رابط Google Maps ويوجهه لشركة الشحن.</p>
           </div>
 
-          <!-- Cap 3 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></style>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iwa.c3_title">3. تأكيد الطلبات وإصدار الفواتير</h3>
-            <p class="bento-card-desc" data-i18n="iwa.c3_desc">
-              إرسال فاتورة تفصيلية منسقة بملف PDF كارت مصغر مع تفاصيل المنتجات والأسعار والتأكيد بكبسة زر واحدة من الزبون.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-primary);" data-i18n="iwa.k3_title">3. الفواتير الآلية بكبسة زر</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.k3_desc">يرسل ملخص الطلب مع تفاصيل الحساب وصور المنتجات ببطاقة منسقة.</p>
           </div>
 
-          <!-- Cap 4 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iwa.c4_title">4. روابط الدفع المحلي (زين كاش، كي كارد)</h3>
-            <p class="bento-card-desc" data-i18n="iwa.c4_desc">
-              توليد رابط آمن ومباشر للمحفظة الإلكترونية داخل الشات، وتلقي إشعارات Instant Payment Webhook لتأكيد الدفع فوراً.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-warning);" data-i18n="iwa.k4_title">4. تكامل زين كاش وكي كارد</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.k4_desc">يولد رابط دفع مباشر داخل الشات ويتلقى تأكيد الدفع لحظياً.</p>
           </div>
 
-          <!-- Cap 5 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(13, 148, 136, 0.15); color: var(--color-accent-teal);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iwa.c5_title">5. إشعارات التتبع الحي والتوصيل</h3>
-            <p class="bento-card-desc" data-i18n="iwa.c5_desc">
-              إرسال رسائل تلقائية بموعد انطلاق السائق، اسم المندوب ورقم هاتفه، ورابط تتبع الخريطة اللحظية للشحنة حتى وصولها للباب.
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-accent-teal);" data-i18n="iwa.k5_title">5. إشعارات التتبع الحي</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.k5_desc">يزود العميل برابط الخريطة المباشرة لمتابعة المندوب حتى وصول الطرد.</p>
           </div>
 
-          <!-- Cap 6 -->
-          <div class="bento-card col-span-4">
-            <div class="bento-card-icon" style="background: rgba(239, 68, 68, 0.15); color: var(--color-error);">
-              <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <h3 class="bento-card-title" data-i18n="iwa.c6_title">6. التصعيد الفوري للدعم البشري</h3>
-            <p class="bento-card-desc" data-i18n="iwa.c6_desc">
-              إسناد الاستفسارات المعقدة أو الحالات الخاصة لموظف المبيعات فوراً مع نقل سجل المحادثة كاملاً (Human Escalation Protocol).
-            </p>
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-error);" data-i18n="iwa.k6_title">6. التصعيد الفوري للدعم البشري</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.k6_desc">ينقل الاستفسارات الحساسة لموظف المبيعات مع كامل سجل المحادثة.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 3. كيف يتم الربط (How Integration Works) -->
-    <section class="section-padding">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge badge-primary" data-i18n="iwa.steps_badge">خطوات الربط والتفعيل</span>
-          <h2 class="section-title" data-i18n="iwa.steps_title">كيف يتم الربط البرمجي لـ الواتساب؟</h2>
-          <p class="section-subtitle" data-i18n="iwa.steps_sub">4 خطوات تقنية بسيطة تفصلك عن تشغيل المحطة الأوتوماتيكية بالكامل</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">1</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iwa.s1_title">ربط رقم الواتساب بـ Meta API</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.s1_desc">
-              تفعيل رقم متجرك على خوادم WhatsApp Cloud API الرسمية لمنع الحظر كلياً والحصول على توثيق العلامة التجارية المعتمدة.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">2</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iwa.s2_title">إعداد الـ Webhook ومفاتيح الأمان</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.s2_desc">
-              توجيه إشعارات وتحديثات الرسائل فورياً إلى محرك رَبْـط المشفر بتشفير HMAC SHA256 لضمان سرية وأمان البيانات.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">3</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iwa.s3_title">تهيئة الذكاء الاصطناعي والمنتجات</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.s3_desc">
-              مزامنة قائمة منتجات متجرك، أسعار التوصيل للمحافظات، وتخصيص طريقة رد البوت وسيناريوهات الإجابة.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem;">
-            <div class="step-card-num">4</div>
-            <h3 style="font-size: 1.15rem; margin-bottom: 0.65rem;" data-i18n="iwa.s4_title">الانطلاق والمزامنة اللحظية</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.s4_desc">
-              بدء استقبال الطلبات أوتوماتيكياً وتحويلها فورياً لـ ERP والمخزون وشركات التوصيل بدون أي إدخال يدوي.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. شاهدها في العمل (Mock UI Interactive Demo) -->
-    <section class="section-padding" id="mock-demo" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge badge-emerald" data-i18n="iwa.demo_badge">محاكاة تفاعلية واقعية</span>
-          <h2 class="section-title" data-i18n="iwa.demo_title">شاهد تدفق المحادثة الحقيقي في العمل</h2>
-          <p class="section-subtitle" data-i18n="iwa.demo_sub">مثال حقيقي لتجربة الزبون العراقي من بداية الطلب حتى تأكيد الاستلام والدفع</p>
-        </div>
-
-        <div class="wa-chat-frame">
-          <!-- Chat Header -->
-          <div class="wa-chat-header">
-            <div class="wa-profile">
-              <div class="wa-avatar">
-                ر
-                <div class="wa-avatar-online"></div>
-              </div>
-              <div class="wa-user-info">
-                <h4>
-                  متجر رَبْـط الأوتوماتيكي 
-                  <svg style="width:16px;height:16px;color:#10b981;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                </h4>
-                <p>متصل الآن (استجابة خلال 0.8 ثانية)</p>
-              </div>
-            </div>
-            <div>
-              <span class="badge badge-emerald" style="font-size:0.75rem;">WhatsApp Business API</span>
-            </div>
-          </div>
-
-          <!-- Chat Body -->
-          <div class="wa-chat-body">
-            
-            <div class="wa-system-notice">
-              🔒 محادثة مشفرة رسمياً عبر منصة رَبْـط لتكامل التجارة الإلكترونية 2026
-            </div>
-
-            <!-- Customer Message 1 -->
-            <div class="wa-msg wa-msg-in">
-              السلام عليكم، أخي أريد أطلب قاط رجالي رسمياً لون أسود قياس 52، للتوصيل منطقة اليرموك ببغداد.
-              <div class="wa-msg-meta">10:42 ص</div>
-            </div>
-
-            <!-- Bot Message 1 -->
-            <div class="wa-msg wa-msg-out">
-              وعليكم السلام ورحمة الله! 👋 أهلاً بك.
-              <br><br>
-              تم العثور على <strong>قاط رجالي كلاسيك (أسود - قياس 52)</strong> 👔
-              <br>• سعر القطعة: 65,000 د.ع
-              <br>• كلفة التوصيل (بغداد - اليرموك): 5,000 د.ع
-              <br>• <strong>المجموع الكلي: 70,000 د.ع</strong>
-              <br><br>
-              يرجى مشاركة موقعك الجغرافي (Pin Location) لتأكيد العنوان بدقة وتحديد موعد التسليم.
-              <div class="wa-msg-meta">10:42 ص <span class="wa-ticks">✓✓</span></div>
-            </div>
-
-            <!-- Customer Location Pin -->
-            <div class="wa-msg wa-msg-in" style="background:#182229; border: 1px solid rgba(16,185,129,0.3);">
-              📍 <strong>موقع جغرافي مرسل:</strong><br>
-              بغداد - اليرموك - شارع الأربعين قرب ساحة قحطان<br>
-              <a href="#" style="color:#53bdeb; font-size:0.8rem; text-decoration:underline;">فتح في Google Maps (33.3012, 44.3411)</a>
-              <div class="wa-msg-meta">10:43 ص</div>
-            </div>
-
-            <!-- Bot Message 2 with Interactive Buttons -->
-            <div class="wa-msg wa-msg-out">
-              تم استلام موقعك الجغرافي بنجاح! 🎯
-              <br>يرجى اختيار طريقة الدفع المناسبة لإصدار الفاتورة الفورية:
-              <div class="wa-btn-group">
-                <div class="wa-interactive-btn">💳 دفع إلكتروني (زين كاش / كي كارد / FIB)</div>
-                <div class="wa-interactive-btn">🚚 الدفع نقداً عند الاستلام</div>
-              </div>
-              <div class="wa-msg-meta">10:43 ص <span class="wa-ticks">✓✓</span></div>
-            </div>
-
-            <!-- Customer Selection -->
-            <div class="wa-msg wa-msg-in">
-              أخترت: 💳 دفع إلكتروني عبر زين كاش
-              <div class="wa-msg-meta">10:44 ص</div>
-            </div>
-
-            <!-- Bot Payment Invoice Link -->
-            <div class="wa-msg wa-msg-out">
-              ممتاز! اضغط على الرابط الآمن لإتمام الدفع الفوري عبر زين كاش:
-              <br><br>
-              🔗 <a href="#" style="color:#53bdeb; font-weight:700; text-decoration:underline;">https://pay.rabt.iq/invoice/inv_99842</a>
-              <br><br>
-              <i>* سيتم تحديث حالة الشحنة فور إتمام عملية التحويل تلقائياً.</i>
-              <div class="wa-msg-meta">10:44 ص <span class="wa-ticks">✓✓</span></div>
-            </div>
-
-            <!-- System Payment Received Notice -->
-            <div class="wa-system-notice" style="background: rgba(16,185,129,0.15); color: #34d399; border-color: rgba(16,185,129,0.4);">
-              ✅ تم استلام مبلغ (70,000 د.ع) بنجاح عبر بوابة ZainCash (رقم العملية: ZC-889102)
-            </div>
-
-            <!-- Final Confirmation Bot Message -->
-            <div class="wa-msg wa-msg-out">
-              🎉 <strong>تم تأكيد طلبك بنجاح!</strong>
-              <br>رقم الشحنة: <code>#RBT-98421</code>
-              <br>اسم المندوب: حيدر (شركة البراق للتوصيل)
-              <br><br>
-              تتبع شحنتك لحظياً على الخريطة: 
-              <br><a href="#" style="color:#53bdeb; text-decoration:underline;">https://track.rabt.iq/shipment/RBT-98421</a>
-              <div class="wa-msg-meta">10:45 ص <span class="wa-ticks">✓✓</span></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. الأسئلة الشائعة (FAQ) -->
+    <!-- 3. Overview (Exactly 2 Paragraphs) -->
     <section class="section-padding">
       <div class="container container-narrow">
         <div class="section-header">
-          <span class="badge badge-accent" data-i18n="iwa.faq_badge">الأسئلة التقنية الشائعة</span>
-          <h2 class="section-title" data-i18n="iwa.faq_title">أسئلة شائعة حول تكامل الواتساب</h2>
+          <span class="badge badge-primary" data-i18n="iwa.ov_badge">نظرة عامة</span>
+          <h2 class="section-title" data-i18n="iwa.ov_title">لماذا تحتاج متجرك أتمتة الواتساب؟</h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 2rem; font-size: 1.05rem; line-height: 1.8;">
+          <p style="margin-bottom: 1.25rem; color: var(--text-main);" data-i18n="iwa.ov_p1">
+            <strong>المشكلة بدون رَبْـط:</strong> يعاني معظم التجار في العراق من ضياع المبيعات بسبب تأخر الموظفين في الرد على رسائل الواتساب، والخطأ في كتابة العناوين اليدوية، وتأخير التأكد من تحويلات زين كاش، مما يؤدي لإحباط الزبون وإلغاء الشحنات.
+          </p>
+          <p style="margin: 0; color: var(--text-main);" data-i18n="iwa.ov_p2">
+            <strong>الحل مع رَبْـط:</strong> تحول المنصة حساب الواتساب إلى كاشير إلكتروني ذكي يعمل على مدار الساعة، يستلم الموقع الدبوسي فوراً، ويصدر الفاتورة، ويتأكد من الدفع المالي ويصدر بوليصة الشحن بـ 30 ثانية دون أي خطأ بشري.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <!-- 4. How It Works (3 Numbered Steps) -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-emerald" data-i18n="iwa.steps_badge">آلية العمل</span>
+          <h2 class="section-title" data-i18n="iwa.steps_title">3 خطوات بسيطة لتشغيل الربط</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          
           <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iwa.q1">1. هل يضمن تكامل رَبْـط عدم حظر رقم الواتساب الخاص بالمتجر؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iwa.a1">
-              نعم، 100%. نحن نعتمد حصراً على WhatsApp Business Cloud API الرسمية المعتمدة مباشرة من شركة Meta. لا نستخدم أي برامج غير رسمية أو كشط بيانات web scraping التي تتسبب بحظر الأرقام.
-            </p>
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-success); margin-bottom: 0.5rem;">1</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="iwa.sw1_title">الربط مع Meta Cloud API</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.sw1_desc">توثيق رقم المتجر رسمياً وحمايته من الحظر نهائياً بأعلى سرعة رسائل.</p>
           </div>
 
           <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iwa.q2">2. هل أحتاج إلى رقم هاتف جديد أم يمكن استخدام رقمي الحالي؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iwa.a2">
-              يمكنك استخدام رقمك الحالي بعد حذف الحساب من تطبيق واتساب العادي ونقله إلى منصة Cloud API، أو ربط رقم جديد مخصص للمبيعات وخدمة العملاء.
-            </p>
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">2</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="iwa.sw2_title">تهيئة شجرة الذكاء الاصطناعي</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.sw2_desc">رفع قائمة المنتجات، أسعار التوصيل للمحافظات، وسيناريوهات الأسئلة.</p>
           </div>
 
           <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iwa.q3">3. كم يبلغ وقت التفعيل والربط التقني للمتجر؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iwa.a3">
-              عملية التفعيل والربط تستغرق أقل من 15 دقيقة عبر لوحة تحكم رَبْـط، ومهندسونا في بغداد متواجدون لمساعدتك خطوة بخطوة حتى الانطلاق.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iwa.q4">4. كيف يتعامل البوت إذا أرسل الزبون بصمة صوتية بدلاً من كتابة نص؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iwa.a4">
-              محرك الذكاء الاصطناعي مزود بتقنية تحويل البصمة الصوتية (Speech-to-Text) خصيصاً للهجة العراقية، حيث يفهم مضمون الصوت ويستخرج اسم المنتج أو العنوان ويرد نصياً أو صوتياً فوراً.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem;">
-            <h3 style="font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.5rem;" data-i18n="iwa.q5">5. هل يستطيع موظفو خدمة العملاء التدخل في المحادثة بداخل الواتساب؟</h3>
-            <p style="color: var(--text-muted); font-size: 0.925rem; margin: 0;" data-i18n="iwa.a5">
-              نعم، بمجرد ضغط الموظف على "استلام المحادثة" من لوحة التحكم المشتركة، يتوقف الرد الآلي للبوت ويتولى الموظف الاستجابة مباشرة دون أن يشعر الزبون بأي انقطاع.
-            </p>
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--color-accent-purple); margin-bottom: 0.5rem;">3</div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="iwa.sw3_title">المزامنة والانطلاق</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;" data-i18n="iwa.sw3_desc">ربط تلقائي حي مع نظام المخزون وبوابات الدفع وشركات الشحن.</p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- 6. قنوات ذات صلة (Related Channels) -->
-    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+    <!-- 5. See It In Action (TWO Realistic Conversation Scenarios) -->
+    <section class="section-padding" id="mock-demo">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-primary" data-i18n="iwa.rel_badge">شبكة القنوات المكملة</span>
-          <h2 class="section-title" data-i18n="iwa.rel_title">قنوات تواصل إضافية يمكنك ربطها بنفس الوقت</h2>
+          <span class="badge badge-emerald" data-i18n="iwa.demo_badge">شاهدها في العمل</span>
+          <h2 class="section-title" data-i18n="iwa.demo_title">مثالان واقعيان لتدفق محادثات الواتساب</h2>
+          <p class="section-subtitle" data-i18n="iwa.demo_sub">سيناريوهان مختلفان يوضحان كفاءة البوت في إغلاق المبيعات والاستفسارات</p>
         </div>
 
-        <div class="bento-grid">
-
-          <!-- Instagram Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <!-- Scenario 1: Order Confirmation & Location Pin -->
+        <h3 style="text-align: center; margin-bottom: 1rem; color: var(--color-success); font-size: 1.15rem;">السيناريو الأول: تأكيد طلب، استلام عنوان GPS ودفع زين كاش</h3>
+        <div class="wa-chat-frame">
+          <div class="wa-chat-header">
+            <div class="wa-profile">
+              <div class="wa-avatar">ر</div>
+              <div class="wa-user-info">
+                <h4>متجر رَبْـط الأوتوماتيكي ✓</h4>
+                <p>استجابة فورية (&lt; 0.8 ثانية)</p>
               </div>
-              <h3 class="bento-card-title" data-i18n="iwa.rel_ig_title">تكامل إنستغرام (Instagram Direct API)</h3>
-              <p class="bento-card-desc" data-i18n="iwa.rel_ig_desc">
-                أتمتة الرد على الـ Direct وتعليقات المنشورات والستوريات وإرسال روابط الدفع والمنتجات فوراً.
-              </p>
             </div>
-            <a href="instagram.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل إنستغرام ➔</a>
+            <span class="badge badge-emerald" style="font-size: 0.725rem;">Meta Verified API</span>
           </div>
 
-          <!-- Facebook Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="iwa.rel_fb_title">تكامل فيسبوك (Facebook Messenger)</h3>
-              <p class="bento-card-desc" data-i18n="iwa.rel_fb_desc">
-                أتمتة عملاء إعلانات Click-to-Messenger والرد الآلي وتأكيد الطلبات المباشرة.
-              </p>
+          <div class="wa-chat-body">
+            <div class="wa-msg wa-msg-in">
+              سلام عليكم، أريد أطلب قاط رجالي أسود قياس 52 للتوصيل لحي الجامعة بغداد.
+              <div class="wa-msg-meta">10:42 ص</div>
             </div>
-            <a href="facebook.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل فيسبوك ➔</a>
+
+            <div class="wa-msg wa-msg-out">
+              وعليكم السلام! 👋 أهلاً بك.
+              <br>• قاط رجالي كلاسيك (أسود - قياس 52): 65,000 د.ع
+              <br>• التوصيل (بغداد - اليرموك/الجامعة): 5,000 د.ع
+              <br>• <strong>المجموع الكلي: 70,000 د.ع</strong>
+              <br>يرجى إرسال موقعك الجغرافي (Location Pin) لتأكيد الشحنة.
+              <div class="wa-msg-meta">10:42 ص <span class="wa-ticks">✓✓</span></div>
+            </div>
+
+            <div class="wa-msg wa-msg-in" style="background:#182229; border: 1px solid rgba(16,185,129,0.3);">
+              📍 موقع جغرافي مرسل: بغداد - حي الجامعة قرب ساحة قحطان (Google Maps Pin)
+              <div class="wa-msg-meta">10:43 ص</div>
+            </div>
+
+            <div class="wa-msg wa-msg-out">
+              تم استلام الموقع بنجاح! 🎯 رابط الدفع الإلكتروني عبر زين كاش:
+              <br><a href="#" style="color:#53bdeb; text-decoration:underline;">https://pay.rabt.iq/inv_99842</a>
+              <div class="wa-msg-meta">10:43 ص <span class="wa-ticks">✓✓</span></div>
+            </div>
+
+            <div class="wa-msg wa-msg-out" style="background: rgba(16,185,129,0.2); border: 1px solid #10b981;">
+              ✅ تم استلام مبلغ 70,000 د.ع بنجاح وتأكيد الشحنة رقم #RBT-98421!
+              <div class="wa-msg-meta">10:44 ص <span class="wa-ticks">✓✓</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="why-wins-box" style="max-width: 760px; margin: 0 auto 3rem;">
+          💡 <strong>لماذا هذا يفوز:</strong> تم إغلاق المبيعة واستلام العنوان الدقيق وتأكيد الدفع بـ 45 ثانية فقط دون أي تدخل يدوي أو خطأ في العنوان.
+        </div>
+
+        <!-- Scenario 2: Stock Check & Product Inquiry -->
+        <h3 style="text-align: center; margin-bottom: 1rem; color: var(--color-primary); font-size: 1.15rem;">السيناريو الثاني: استفسار عن توفر قياس وحجز تلقائي من المخزون</h3>
+        <div class="wa-chat-frame" style="border-color: rgba(59, 130, 246, 0.3);">
+          <div class="wa-chat-header" style="background: #1a2332;">
+            <div class="wa-profile">
+              <div class="wa-avatar" style="background: linear-gradient(135deg, #2563eb, #1d4ed8);">ر</div>
+              <div class="wa-user-info">
+                <h4>خدمة عملاء المتجر - المخزون الحقيقي ✓</h4>
+                <p>مربوط مع Odoo ERP</p>
+              </div>
+            </div>
+            <span class="badge badge-primary" style="font-size: 0.725rem;">Realtime Stock Check</span>
           </div>
 
-          <!-- POS & ERP Card -->
-          <div class="bento-card col-span-4" style="display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
-                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-              </div>
-              <h3 class="bento-card-title" data-i18n="iwa.rel_pos_title">تكامل نقاط البيع والـ ERP</h3>
-              <p class="bento-card-desc" data-i18n="iwa.rel_pos_desc">
-                مزامنة الطلبات والمخزون مع أنظمة Odoo و SAP وكاشير المحل الفيزيائي أوتوماتيكياً.
-              </p>
+          <div class="wa-chat-body">
+            <div class="wa-msg wa-msg-in">
+              مرحبا، عيني حذاء كاجوال بني قياس 43 متوفر لو خلصان؟
+              <div class="wa-msg-meta">02:15 م</div>
             </div>
-            <a href="pos-erp.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;">استكشاف تكامل POS & ERP ➔</a>
+
+            <div class="wa-msg wa-msg-out" style="background: #1e3a8a;">
+              أهلاً بك! 👞 تم الفحص الفوري بالمخزون:
+              <br>نعم، <strong>حذاء كاجوال جلد طبيعي (بني - قياس 43)</strong> متبقي منه قطعتين فقط في مخزن بغداد!
+              <br>السعر: 42,000 د.ع. هل تحب نحجز لك قطعة قبل نفاد الكمية؟
+              <div class="wa-msg-meta">02:15 م <span class="wa-ticks">✓✓</span></div>
+            </div>
+
+            <div class="wa-msg wa-msg-in">
+              اي يمعود احجزلي وحدة للتوصيل للكرادة!
+              <div class="wa-msg-meta">02:16 م</div>
+            </div>
+
+            <div class="wa-msg wa-msg-out" style="background: #1e3a8a;">
+              تم حجز القطعة لك فوراً بالسيستم! 📦 
+              <br>يرجى إرسال رقم الهاتف والعنوان الفعلي لتثبيت بوليصة التوصيل.
+              <div class="wa-msg-meta">02:16 م <span class="wa-ticks">✓✓</span></div>
+            </div>
           </div>
+        </div>
+        <div class="why-wins-box" style="max-width: 760px; margin: 0 auto; background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); color: #60a5fa;">
+          💡 <strong>لماذا هذا يفوز:</strong> منع البوت ضياع العميل عن طريق التحقق اللحظي من رصيد المخزون وحجز القطعة فوراً قبل خروج العميل.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. FAQ (5 Technical Questions) -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <span class="badge badge-accent" data-i18n="iwa.faq_badge">أسئلة شائعة</span>
+          <h2 class="section-title" data-i18n="iwa.faq_title">5 أسئلة تقنية دقيقة حول الواتساب</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iwa.q1">1. هل يحتاج رقم واتساب بزنس رسمي موثق؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.a1">نعم، نربط رقمك عبر WhatsApp Cloud API الرسمية من Meta لحماية حسابك من الحظر نهائياً وتوثيق الشارة الخضراء.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iwa.q2">2. هل يفهم البوت اللهجة العراقية بالكامل؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.a2">نعم، تم تدريب محرك الذكاء الاصطناعي على مفردات البغدادية والجنوبية والشمالية والتعامل مع الاختصارات الشائعة.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iwa.q3">3. هل يتعرض رقم الواتساب للخطر أو الحظر؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.a3">لا، لأننا لا نستخدم سكربتات غير رسمية بل خوادم Meta الرسمية المشفرة المعتمدة 100%.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iwa.q4">4. كيف يتعامل النظام مع البصمات الصوتية والصور؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.a4">يحول الصوت إلى نص (Speech-to-Text) بالعامية العراقية، ويستخرج تفاصيل المنتجات والعناوين من الصور تلقائياً.</p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem;">
+            <h3 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;" data-i18n="iwa.q5">5. كم يستغرق التفعيل الفعلي لمتجري؟</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;" data-i18n="iwa.a5">يتم الربط والتفعيل الكامل وتجربة أول طلب خلال 15 دقيقة فقط بمساعدة فريقنا في بغداد.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Related Features -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="iwa.rel_badge">روابط ذات صلة</span>
+          <h2 class="section-title" data-i18n="iwa.rel_title">ميزات وقنوات مكملة لمتجرك</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+          
+          <a href="instagram.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-accent-purple); margin-bottom: 0.3rem;">تكامل إنستغرام ماسنجر ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">أتمتة الرد على الـ Direct وتعليقات المنشورات فوراً.</p>
+          </a>
+
+          <a href="../feature-iraqi-ai-bot.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-success); margin-bottom: 0.3rem;">محرك الذكاء الاصطناعي العراقي ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">فهم مفردات اللهجات العراقية ومعالجة الصوتيات.</p>
+          </a>
+
+          <a href="pos-erp.html" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.25rem; text-decoration: none; display: block;">
+            <h3 style="font-size: 1.05rem; color: var(--color-warning); margin-bottom: 0.3rem;">تكامل نقاط البيع والـ ERP ➔</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">مزامنة المخزون والقيود المالية مع Odoo و POS.</p>
+          </a>
 
         </div>
       </div>
     </section>
 
     <!-- Call to Action Banner -->
-    <section class="section-padding">
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
       <div class="container container-narrow" style="text-align: center;">
-        <h2 style="margin-bottom: 1.25rem;" data-i18n="iwa.cta_bottom_title">جاهز لأتمتة مبيعات متجرك عبر الواتساب للأعمال؟</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-muted);" data-i18n="iwa.cta_bottom_sub">تواصل مع فريق مهندسينا في بغداد لتوجيه وتفعيل حسابك الرسمي مع توثيق الشارة الخضراء.</p>
+        <h2 style="margin-bottom: 1rem;" data-i18n="iwa.cta_bottom_title">جاهز لأتمتة مبيعات الواتساب لمتجرك؟</h2>
+        <p style="margin-bottom: 1.75rem; color: var(--text-muted);" data-i18n="iwa.cta_bottom_sub">تواصل مع مهندسينا في بغداد لتفعيل حزمة الربط الرسمية خلال 15 دقيقة.</p>
         <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
           <a href="../contact.html?channel=whatsapp" class="btn btn-primary btn-lg" data-i18n="iwa.cta_bottom_btn1">ربط الواتساب لمتجرك الآن</a>
-          <a href="../pricing.html" class="btn btn-secondary btn-lg" data-i18n="iwa.cta_bottom_btn2">عرض أسعار الباقات</a>
+          <a href="../pricing.html" class="btn btn-secondary btn-lg" data-i18n="iwa.cta_bottom_btn2">عرض الباقات والأسعار</a>
         </div>
       </div>
     </section>
@@ -676,9 +525,7 @@
             </div>
             <span data-i18n="nav.brand">رَبْـط</span>
           </a>
-          <p class="footer-desc" data-i18n="footer.desc">
-            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع المحلّية العراقية والمحافظ الإلكترونية وأنظمة إدارة المخزون والتوصيل.
-          </p>
+          <p class="footer-desc" data-i18n="footer.desc">المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع المحلّية والمحافظ وأنظمة المخزون والتوصيل.</p>
         </div>
 
         <div>
