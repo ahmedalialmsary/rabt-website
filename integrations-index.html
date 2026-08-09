@@ -136,7 +136,7 @@
         <div class="bento-grid">
 
           <!-- WhatsApp -->
-          <div class="bento-card col-span-4" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="bento-card col-span-3" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="bento-card-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--color-success);">
                 <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
@@ -146,11 +146,11 @@
                 تأكيد الطلبات تلقائياً بالعامية العراقية، إرسال روابط الدفع وتتبع الشحنات، واستخراج موقع الـ GPS.
               </p>
             </div>
-            <a href="integration-whatsapp.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_int">استكشاف تكامل الواتساب ➔</a>
+            <a href="integrations/whatsapp.html" class="btn btn-primary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_wa">استكشاف تكامل الواتساب ➔</a>
           </div>
 
           <!-- Instagram -->
-          <div class="bento-card col-span-4" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="bento-card col-span-3" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="bento-card-icon" style="background: rgba(124, 58, 237, 0.15); color: var(--color-accent-purple);">
                 <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -160,11 +160,11 @@
                 أتمتة الرد على الـ Direct وتعليقات المنشورات ("بكام هذا؟") وإرسال كارت المنتج ورابط الدفع فوراً.
               </p>
             </div>
-            <a href="integration-instagram.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_int">استكشاف تكامل إنستغرام ➔</a>
+            <a href="integrations/instagram.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_ig">استكشاف تكامل إنستغرام ➔</a>
           </div>
 
           <!-- Facebook -->
-          <div class="bento-card col-span-4" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="bento-card col-span-3" style="display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div class="bento-card-icon" style="background: rgba(59, 130, 246, 0.15); color: var(--color-primary);">
                 <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -174,19 +174,33 @@
                 أتمتة عملاء إعلانات Click-to-Messenger وتأكيد الطلبات والتحويل المباشر لموظفي خدمة العملاء.
               </p>
             </div>
-            <a href="integration-facebook.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_int">استكشاف تكامل فيسبوك ➔</a>
+            <a href="integrations/facebook.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_fb">استكشاف تكامل فيسبوك ➔</a>
+          </div>
+
+          <!-- POS & ERP -->
+          <div class="bento-card col-span-3" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="bento-card-icon" style="background: rgba(245, 158, 11, 0.15); color: var(--color-warning);">
+                <svg class="icon-svg icon-svg-xl" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              </div>
+              <h3 class="bento-card-title" data-i18n="iidx.pos_title">تكامل نقاط البيع والـ ERP (POS/Odoo/SAP)</h3>
+              <p class="bento-card-desc" data-i18n="iidx.pos_desc">
+                مزامنة المخزون، الفواتير، ومبيعات الكاشير والفرع الفيزيائي أوتوماتيكياً مع المتجر الإلكتروني.
+              </p>
+            </div>
+            <a href="integrations/pos-erp.html" class="btn btn-secondary btn-sm" style="margin-top: 1.5rem; align-self: flex-start;" data-i18n="iidx.view_pos">استكشاف تكامل POS & ERP ➔</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- Category 2: Platforms & ERP -->
+    <!-- Category 2: Platforms & Payment Systems -->
     <section class="section-padding">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-primary" data-i18n="iidx.sec2_badge">منسات التجارة والـ ERP</span>
-          <h2 class="section-title" data-i18n="iidx.sec2_title">ربط المتاجر الإلكترونية وأنظمة الكاشير</h2>
+          <span class="badge badge-primary" data-i18n="iidx.sec2_badge">منصات التجارة وسلات التسوق</span>
+          <h2 class="section-title" data-i18n="iidx.sec2_title">ربط المتاجر الإلكترونية وبوابات الدفع المحلية</h2>
         </div>
 
         <div class="bento-grid">
