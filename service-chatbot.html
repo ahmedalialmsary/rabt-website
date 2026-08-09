@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="schat.page_title">بوت الواتساب التفاعلي لتأكيد العناوين بالعراقي - رَبْـط</title>
+  <meta name="description" content="ذكاء اصطناعي يفهم اللهجة العراقية ويحدد موقع الزبون الدقيق على الخارطة (GPS) عبر الواتساب لتوفير 40% من راجع التوصيل.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </div>
+        <span data-i18n="nav.brand">رَبْـط</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="services.html" class="nav-link active" data-i18n="nav.services">الخدمات والحلول</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
+        <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
+        <li><a href="demo.html" class="nav-link" data-i18n="nav.demo">التجربة التفاعلية</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
+          <span id="lang-switch-label">English</span>
+        </button>
+
+        <button class="toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span id="theme-toggle-icon"></span>
+        </button>
+
+        <a href="contact.html?service=chatbot" class="btn btn-primary btn-sm" data-i18n="schat.hero_cta">تفعيل بوت العناوين</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Hero Header -->
+    <section class="hero-section" style="padding: 4rem 0 3rem;">
+      <div class="container hero-content">
+        <div class="hero-badge-wrap">
+          <span class="badge badge-accent" data-i18n="schat.badge">نموذج ذكاء اصطناعي مدرّب على اللهجة العراقية</span>
+        </div>
+        <h1 class="hero-title" data-i18n="schat.title">شات بوت الواتساب المباشر لتأكيد العناوين الجغرافية</h1>
+        <p class="hero-subtitle" data-i18n="schat.subtitle">
+          حل عقبة العناوين العشوائية ("قرب جامع..." أو "مقابيل المحل الفلاني"). يتواصل البوت أوتوماتيكياً مع الزبون بعد الطلب بالعامية العراقية لتحويل الوصف النصي إلى إحداثيات GPS دقيقة للمندوب.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="contact.html?service=chatbot" class="btn btn-primary btn-lg" data-i18n="schat.btn_contact">تفعيل البوت لمتجرك اليوم</a>
+          <a href="demo.html" class="btn btn-secondary btn-lg" data-i18n="schat.btn_demo">تجربة محادثة البوت الحية</a>
+        </div>
+
+        <div style="margin-top: 3rem; border-radius: var(--radius-2xl); overflow: hidden; border: 1.5px solid rgba(124, 58, 237, 0.3); position: relative;">
+          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80" alt="Iraqi Address AI Verification Chatbot" style="width: 100%; height: 380px; object-fit: cover; display: block;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.9) 100%); display: flex; align-items: flex-end; padding: 2rem;">
+            <div style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); padding: 1.25rem 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); max-width: 650px;">
+              <span class="badge badge-accent" style="margin-bottom: 0.5rem;" data-i18n="schat.img_tag">تقليل راجع الشحنات بنسبة 40%</span>
+              <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); font-weight: 600;" data-i18n="schat.img_caption">
+                تأكيد جاهزية الزبون للاستلام، تحديد نقطة التسليم على Google Maps، وإصدار بوليسة التوصيل آلياً.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="schat.spec_badge">معالجة اللغة الطبيعية العريضة NLP</span>
+          <h2 class="section-title" data-i18n="schat.spec_title">لماذا تفشل البوتات التقليدية في العراق ويرتح رَبْـط؟</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+          <div style="background: var(--bg-card); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-xl); padding: 2rem;">
+            <span class="badge badge-danger" style="margin-bottom: 1rem;" data-i18n="schat.prob_badge">مشكلة البوتات الكلاسيكية</span>
+            <h3 style="margin-bottom: 1.25rem; font-size: 1.25rem;" data-i18n="schat.prob_title">الفصحى الجافة وعدم فهم المصطلحات المحلية</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.25rem;" data-i18n="schat.prob_desc">
+              تعتمد معظم البوتات المستوردة على لغة فصحى أجنبية متيبسة لا يتفاعل معها المستهلك العراقي، ولا تفهم مصطلحات مثل (الفرع الثاني ورة المستشفى، الصيدلية المقابيلنا، جيس التوصيل). هذا يؤدي إلى إغلاق الواتساب وضياع المندوب.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1.5px solid rgba(124, 58, 237, 0.4); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-md);">
+            <span class="badge badge-accent" style="margin-bottom: 1rem;" data-i18n="schat.sol_badge">نموذج رَبْـط العراقي المخصص</span>
+            <h3 style="margin-bottom: 1.25rem; font-size: 1.25rem;" data-i18n="schat.sol_title">حوار طبيعي ولطيف يطلب الـ Location تلقائياً</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.25rem;" data-i18n="schat.sol_desc">
+              يتحدث البوت بلهجة بغدادية/محلية ودودة: "هلا بيك! طلبيتك من متجرنا كملت، بس دزلي موقعك عالخارطة حتى المندوب يوصلك أسرع"، ثم يحلل الموقع ويولد رابط إحداثيات مباشر للمندوب في المانفيست.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Specs -->
+    <section class="section-padding">
+      <div class="container" style="max-width: 950px;">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="schat.code_badge">هيكل البيانات المستخرجة</span>
+          <h2 class="section-title" data-i18n="schat.code_title">مخرجات البوت الجغرافية (AI Verification Result Payload)</h2>
+        </div>
+
+        <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem; font-family: monospace; font-size: 0.875rem; overflow-x: auto;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+            <span style="color: var(--color-accent-purple); font-weight: 700;">WHATSAPP HOOK /v1/ai-bot/verify-address</span>
+            <span class="badge badge-accent">CONFIRMED (Lat/Lng Mapped)</span>
+          </div>
+          <pre style="color: var(--text-main); margin: 0; line-height: 1.6;">{
+  <span style="color: #60a5fa;">"order_id"</span>: <span style="color: #f59e0b;">"ORD-BAGHDAD-8841"</span>,
+  <span style="color: #60a5fa;">"customer_phone"</span>: <span style="color: #34d399;">"+964770****999"</span>,
+  <span style="color: #60a5fa;">"raw_speech_ar"</span>: <span style="color: #34d399;">"أني بالمنصور محلة 609 ش 14 مقابيل مطعم الساعة"</span>,
+  <span style="color: #60a5fa;">"gps_coordinates"</span>: {
+    <span style="color: #60a5fa;">"lat"</span>: <span style="color: #f59e0b;">33.3128</span>,
+    <span style="color: #60a5fa;">"lng"</span>: <span style="color: #f59e0b;">44.3615</span>
+  },
+  <span style="color: #60a5fa;">"verified_district"</span>: <span style="color: #34d399;">"بغداد - المنصور"</span>,
+  <span style="color: #60a5fa;">"delivery_readiness"</span>: <span style="color: #34d399;">"CONFIRMED_TODAY_PM"</span>,
+  <span style="color: #60a5fa;">"courier_link"</span>: <span style="color: #34d399;">"https://maps.google.com/?q=33.3128,44.3615"</span>
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container container-narrow" style="text-align: center;">
+        <h2 style="margin-bottom: 1.25rem;" data-i18n="schat.cta_title">تريد خفض راجع الشحنات وتأكيد الطلبات تلقائياً؟</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-muted);" data-i18n="schat.cta_sub">تفعيل البوت لا يستغرق أكثر من 15 دقيقة مع ربطه ببيانات متجرك الحالية.</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="contact.html?service=chatbot" class="btn btn-primary btn-lg" data-i18n="schat.cta_btn1">تفعيل البوت وتجربة النسخة التجريبية</a>
+          <a href="pricing.html" class="btn btn-secondary btn-lg" data-i18n="schat.cta_btn2">مشاهدة الباقات والتكاليف</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </div>
+            <span data-i18n="nav.brand">رَبْـط</span>
+          </a>
+          <p class="footer-desc" data-i18n="footer.desc">
+            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع الإلكتروني (زين كاش، كي كارد) وأنظمة إدارة المخزون والتوصيل.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
+          <ul class="footer-links">
+            <li><a href="service-payments.html" data-i18n="footer.col1_link1">تسوية زين كاش وكي كارد</a></li>
+            <li><a href="service-pos.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
+            <li><a href="service-chatbot.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
+            <li><a href="service-logistics.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col2_title">الشركة والبيئة</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" data-i18n="footer.col2_link1">عن رَبْـط Baghdad</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link2">معايير الأمان ISO</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link3">مركز بغداد للبيانات</a></li>
+            <li><a href="contact.html" data-i18n="footer.col2_link4">الوظائف والانضمام</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col3_title">الدعم الفني</h4>
+          <ul class="footer-links">
+            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ API والـ SDK</a></li>
+            <li><a href="about.html" data-i18n="footer.col3_link2">حالة الخدمة (Uptime)</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link3">مركز مساعدة التجار</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link4">اتصل بالدعم</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 رَبْـط للتكنولوجيا والتكامل البرمجي ش.م.م - بغداد، العراق. جميع الحقوق محفوظة.</span>
+        <span class="badge badge-emerald">
+          <span class="pulse-dot"></span>
+          <span data-i18n="footer.status">جميع الأنظمة تعمل بكفاءة 99.99%</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared-engine.js"></script>
+</body>
+</html>

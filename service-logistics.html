@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="slog.page_title">أتمتة شركات التوصيل وإصدار المانفيست - رَبْـط</title>
+  <meta name="description" content="ربط أوتوماتيكي مع شركات الشحن والتوصيل في العراق. إنشاء بوالص التوصيل وطباعة الباركود بنقرة زر واحدة.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </div>
+        <span data-i18n="nav.brand">رَبْـط</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="services.html" class="nav-link active" data-i18n="nav.services">الخدمات والحلول</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
+        <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
+        <li><a href="demo.html" class="nav-link" data-i18n="nav.demo">التجربة التفاعلية</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
+          <span id="lang-switch-label">English</span>
+        </button>
+
+        <button class="toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span id="theme-toggle-icon"></span>
+        </button>
+
+        <a href="contact.html?service=courier" class="btn btn-primary btn-sm" data-i18n="slog.hero_cta">ربط شركة التوصيل</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Hero Header -->
+    <section class="hero-section" style="padding: 4rem 0 3rem;">
+      <div class="container hero-content">
+        <div class="hero-badge-wrap">
+          <span class="badge badge-warning" data-i18n="slog.badge">أتمتة الشحن واللوجستيات للمحافظات 18</span>
+        </div>
+        <h1 class="hero-title" data-i18n="slog.title">إصدار المانفيست وبوالص الشحن التلقائية لشركات التوصيل</h1>
+        <p class="hero-subtitle" data-i18n="slog.subtitle">
+          توليد بوالص التوصيل وملفات المانفيست بطباعة الباركود (A6 / Thermal Sticker) بنقرة زر واحدة فور تأكيد الطلب، مع نقل البيانات تلقائياً لنظام شركة التوصيل وتتبع حالات الشحنة في بغداد والمحافظات.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="contact.html?service=courier" class="btn btn-primary btn-lg" data-i18n="slog.btn_contact">ربط متجرك بشركات التوصيل</a>
+          <a href="demo.html" class="btn btn-secondary btn-lg" data-i18n="slog.btn_demo">تجربة طباعة المانفيست المباشرة</a>
+        </div>
+
+        <div style="margin-top: 3rem; border-radius: var(--radius-2xl); overflow: hidden; border: 1.5px solid rgba(245, 158, 11, 0.3); position: relative;">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80" alt="Iraqi Courier Logistics Manifest Automation" style="width: 100%; height: 380px; object-fit: cover; display: block;">
+          <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.9) 100%); display: flex; align-items: flex-end; padding: 2rem;">
+            <div style="background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); padding: 1.25rem 1.75rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); max-width: 650px;">
+              <span class="badge badge-warning" style="margin-bottom: 0.5rem;" data-i18n="slog.img_tag">تتبع حي ومزامنة حالات الشحن</span>
+              <p style="margin: 0; font-size: 0.95rem; color: var(--text-main); font-weight: 600;" data-i18n="slog.img_caption">
+                تكامل مع شركات التوصيل العراقية القيادية، مع إتاحة تتبع حالة الشحنة (تم الاستلام، قيد التوصيل، راجع) بـ Webhooks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="slog.spec_badge">معالجة شحنات المتاجر</span>
+          <h2 class="section-title" data-i18n="slog.spec_title">من التعبئة اليدوية إلى الشحن الأوتوماتيكي</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
+          <div style="background: var(--bg-card); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-xl); padding: 2rem;">
+            <span class="badge badge-danger" style="margin-bottom: 1rem;" data-i18n="slog.prob_badge">الطريقة اليدوية الشاقة</span>
+            <h3 style="margin-bottom: 1.25rem; font-size: 1.25rem;" data-i18n="slog.prob_title">كتابة المانفيست باليد وضياع الشحنات</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.25rem;" data-i18n="slog.prob_desc">
+              يضطر المخزنجي يومياً إلى نقل أسماء الزبائن وأرقام هواتفهم وعناوينهم يدوياً إلى شيت اكسل أو في موقع شركة التوصيل، مما يسبب أخطاء في أرقام العناوين، وضياع البوليسات، وضياع مستحقات الدفع عند التسليم (COD).
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: var(--radius-xl); padding: 2rem; box-shadow: var(--shadow-md);">
+            <span class="badge badge-warning" style="margin-bottom: 1rem;" data-i18n="slog.sol_badge">حل رَبْـط التلقائي</span>
+            <h3 style="margin-bottom: 1.25rem; font-size: 1.25rem;" data-i18n="slog.sol_title">توليد المانفيست وبوالص الباركود بضغطة زر</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.25rem;" data-i18n="slog.sol_desc">
+              يقوم رَبْـط بسحب الطلبات المؤكدة وتصدير المانفيست وطباعة ملصقات الباركود الـ Thermal فوراً. يتم إرسال بيانات الشحنة إلى API شركة التوصيل فوراً بدون أي كتابة يدوية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Specs -->
+    <section class="section-padding">
+      <div class="container" style="max-width: 950px;">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="slog.code_badge">هيكل بيانات الشحنة والـ Manifest</span>
+          <h2 class="section-title" data-i18n="slog.code_title">هيكل رسالة إنشاء بوليصة الشحن (Courier Waybill Manifest API)</h2>
+        </div>
+
+        <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1.75rem; font-family: monospace; font-size: 0.875rem; overflow-x: auto;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+            <span style="color: var(--color-warning); font-weight: 700;">POST /v1/logistics/generate-manifest</span>
+            <span class="badge badge-warning">200 CREATED (Barcode Generated)</span>
+          </div>
+          <pre style="color: var(--text-main); margin: 0; line-height: 1.6;">{
+  <span style="color: #60a5fa;">"manifest_id"</span>: <span style="color: #f59e0b;">"MNF-IQ-2026-0811"</span>,
+  <span style="color: #60a5fa;">"courier_partner"</span>: <span style="color: #34d399;">"EXPRESS_IRAQ_LOGISTICS"</span>,
+  <span style="color: #60a5fa;">"waybill_barcode"</span>: <span style="color: #f59e0b;">"RBT-882049102-IQ"</span>,
+  <span style="color: #60a5fa;">"recipient_details"</span>: {
+    <span style="color: #60a5fa;">"name"</span>: <span style="color: #34d399;">"حسن البغدادي"</span>,
+    <span style="color: #60a5fa;">"city"</span>: <span style="color: #34d399;">"البصرة"</span>,
+    <span style="color: #60a5fa;">"district"</span>: <span style="color: #34d399;">"الجبيلة"</span>,
+    <span style="color: #60a5fa;">"phone"</span>: <span style="color: #34d399;">"+9647700000000"</span>
+  },
+  <span style="color: #60a5fa;">"cod_amount_iqd"</span>: <span style="color: #f59e0b;">45000</span>,
+  <span style="color: #60a5fa;">"printable_sticker_url"</span>: <span style="color: #34d399;">"https://api.rabt.iq/v1/stickers/RBT-882049102-IQ.pdf"</span>
+}</pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container container-narrow" style="text-align: center;">
+        <h2 style="margin-bottom: 1.25rem;" data-i18n="slog.cta_title">جاهز لأتمتة إصدار المانفيست وبوالص الشحن؟</h2>
+        <p style="margin-bottom: 2rem; color: var(--text-muted);" data-i18n="slog.cta_sub">اربط متجرك بشركة التوصيل المعنية وتخلص من كتابة المانفيست باليد للأبد.</p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="contact.html?service=courier" class="btn btn-primary btn-lg" data-i18n="slog.cta_btn1">طلب ربط شركة التوصيل</a>
+          <a href="pricing.html" class="btn btn-secondary btn-lg" data-i18n="slog.cta_btn2">عرض خطط الأسعار</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </div>
+            <span data-i18n="nav.brand">رَبْـط</span>
+          </a>
+          <p class="footer-desc" data-i18n="footer.desc">
+            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع الإلكتروني (زين كاش، كي كارد) وأنظمة إدارة المخزون والتوصيل.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
+          <ul class="footer-links">
+            <li><a href="service-payments.html" data-i18n="footer.col1_link1">تسوية زين كاش وكي كارد</a></li>
+            <li><a href="service-pos.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
+            <li><a href="service-chatbot.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
+            <li><a href="service-logistics.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col2_title">الشركة والبيئة</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" data-i18n="footer.col2_link1">عن رَبْـط Baghdad</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link2">معايير الأمان ISO</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link3">مركز بغداد للبيانات</a></li>
+            <li><a href="contact.html" data-i18n="footer.col2_link4">الوظائف والانضمام</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col3_title">الدعم الفني</h4>
+          <ul class="footer-links">
+            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ API والـ SDK</a></li>
+            <li><a href="about.html" data-i18n="footer.col3_link2">حالة الخدمة (Uptime)</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link3">مركز مساعدة التجار</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link4">اتصل بالدعم</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 رَبْـط للتكنولوجيا والتكامل البرمجي ش.م.م - بغداد، العراق. جميع الحقوق محفوظة.</span>
+        <span class="badge badge-emerald">
+          <span class="pulse-dot"></span>
+          <span data-i18n="footer.status">جميع الأنظمة تعمل بكفاءة 99.99%</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared-engine.js"></script>
+</body>
+</html>
