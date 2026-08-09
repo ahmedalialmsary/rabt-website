@@ -105,12 +105,35 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a></li>
         <li><a href="services.html" class="nav-link active" data-i18n="nav.services">الخدمات والحلول</a></li>
-        <li><a href="features-index.html" class="nav-link" data-i18n="nav.features">دليل الميزات</a></li>
-        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
         <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
-        <li><a href="demo.html" class="nav-link" data-i18n="nav.demo">التجربة التفاعلية</a></li>
-        <li><a href="blog.html" class="nav-link" data-i18n="nav.blog">المدونة الهندسية</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
         <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn" aria-expanded="false">
+            <span data-i18n="nav.more">المزيد</span>
+            <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="features-index.html" class="nav-dropdown-item">
+              <div>
+                <strong data-i18n="nav.features">دليل الميزات الهندسية</strong>
+                <span class="nav-dropdown-item-desc" data-i18n="nav.features_sub">8 ميزات تخصصية مستقلة</span>
+              </div>
+            </a>
+            <a href="blog.html" class="nav-dropdown-item">
+              <div>
+                <strong data-i18n="nav.blog">المدونة الهندسية</strong>
+                <span class="nav-dropdown-item-desc" data-i18n="nav.blog_sub">دلاءل ومقالات تقنية تخصصية</span>
+              </div>
+            </a>
+            <a href="demo.html" class="nav-dropdown-item">
+              <div>
+                <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
+                <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والتحاكاة الحية</span>
+              </div>
+            </a>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-actions">
@@ -155,7 +178,7 @@
           <!-- Service Module 1 -->
           <div class="bento-card service-interactive-card col-span-12" onclick="openServiceModal(1)">
             <div style="margin-bottom: 1.5rem; border-radius: var(--radius-lg); overflow: hidden; height: 200px; border: 1px solid var(--border-color); position: relative;">
-              <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="ZainCash & QiCard Settlement" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+              <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) Settlement" style="width: 100%; height: 100%; object-fit: cover; display: block;">
               <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.8) 100%);"></div>
             </div>
             <div>
@@ -172,7 +195,7 @@
               <!-- Problem & Solution Callout Box -->
               <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
                 <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s1_prob">
-                  🔴 المشكلة التي تعاني منها: قضاء المحاسبين ساعات يومياً في مراجعة لقطات الشاشات وإشعارات زين كاش وكي كارد اليدوية، مما يؤدي إلى تأخير تجهيز الطلبات ومخاطر قبول تحويلات مزيفة بنفس رقم المعاملة.
+                  🔴 المشكلة التي تعاني منها: قضاء المحاسبين ساعات يومياً في مراجعة لقطات الشاشات وإشعارات بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) اليدوية، مما يؤدي إلى تأخير تجهيز الطلبات ومخاطر قبول تحويلات مزيفة بنفس رقم المعاملة.
                 </div>
                 <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s1_sol">
                   🟢 كيف يحلها رَبْـط: نربط متجرك برمجياً بـ API البنوك والمحافظ مباشرة. يتلقى النظام إشعار Webhook المشفر بـ HMAC فور التحويل، ويفحص رقم المعاملة في الخادم الرسمي، ثم يغير حالة الطلب تلقائياً إلى (مقبول ومطابق) خلال 500ms.
@@ -455,7 +478,7 @@
         <div>
           <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
           <ul class="footer-links">
-            <li><a href="services.html" data-i18n="footer.col1_link1">تسوية زين كاش وكي كارد</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link1">تسوية بوابات الدفع المحلية والمحافظ (زين كاش، كي كارد، FIB، وغيرها)</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
@@ -497,8 +520,8 @@
   <script>
     const serviceDetailsData = {
       1: {
-        title_ar: "المطابقة المالية الذكية وبوابات الدفع (ZainCash & QiCard)",
-        title_en: "Automated Financial Settlement (ZainCash & QiCard)",
+        title_ar: "المطابقة المالية الذكية وبوابات الدفع (Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.))",
+        title_en: "Automated Financial Settlement (Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.))",
         body_ar: "<p>يوفر محرك رَبْـط المالي اتصالاً برمجياً مباشراً بالبنوك العراقية والمحافظ الإلكترونية لتنفيذ التسوية اليومية تلقائياً دون الحاجة للتحقق اليدوي.</p><h4>الميزات الفنية:</h4><ul><li>زمن استجابة API لا يتعدى 500ms مع مطابقة التوقيع الرقمي HMAC-SHA256.</li><li>توليد كشوفات يومية لجميع المعاملات المؤتمتة وتصديرها بصيغ Excel/JSON.</li><li>دعم التسوية الفورية لحسابات التاجر البنكية في العراق.</li></ul>",
         body_en: "<p>RABT Financial Engine connects directly to Iraqi banks & mobile wallets to execute automated daily balance reconciliation with zero manual effort.</p><h4>Technical Highlights:</h4><ul><li>API Latency under 500ms with HMAC-SHA256 signature verification.</li><li>Automated daily ledger statement export in Excel/JSON format.</li><li>Direct instant settlement into merchant bank accounts across Iraq.</li></ul>",
         link: "contact.html?service=zaincash"

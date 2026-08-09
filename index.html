@@ -124,12 +124,35 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link active" data-i18n="nav.home">الرئيسية</a></li>
         <li><a href="services.html" class="nav-link" data-i18n="nav.services">الخدمات والحلول</a></li>
-        <li><a href="features-index.html" class="nav-link" data-i18n="nav.features">دليل الميزات</a></li>
-        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
         <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
-        <li><a href="demo.html" class="nav-link" data-i18n="nav.demo">التجربة التفاعلية</a></li>
-        <li><a href="blog.html" class="nav-link" data-i18n="nav.blog">المدونة الهندسية</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
         <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn" aria-expanded="false">
+            <span data-i18n="nav.more">المزيد</span>
+            <svg class="icon-svg" style="width:14px;height:14px;" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="features-index.html" class="nav-dropdown-item">
+              <div>
+                <strong data-i18n="nav.features">دليل الميزات الهندسية</strong>
+                <span class="nav-dropdown-item-desc" data-i18n="nav.features_sub">8 ميزات تخصصية مستقلة</span>
+              </div>
+            </a>
+            <a href="blog.html" class="nav-dropdown-item">
+              <div>
+                <strong data-i18n="nav.blog">المدونة الهندسية</strong>
+                <span class="nav-dropdown-item-desc" data-i18n="nav.blog_sub">دلاءل ومقالات تقنية تخصصية</span>
+              </div>
+            </a>
+            <a href="demo.html" class="nav-dropdown-item">
+              <div>
+                <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
+                <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والتحاكاة الحية</span>
+              </div>
+            </a>
+          </div>
+        </li>
       </ul>
 
       <div class="nav-actions">
@@ -322,8 +345,8 @@
                 <span class="bento-card-num">01</span>
               </div>
               <h3 class="bento-card-title" data-i18n="home.bento_card1_title">مطابقة فورية للمبالغ والتحويلات</h3>
-              <p class="bento-card-desc" data-i18n="home.bento_card1_desc">لا حاجة للتحقق اليدوي من إشعارات زين كاش وكي كارد. يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.</p>
-              <p style="font-size: 0.85rem; color: var(--color-primary); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-right: 3px solid var(--color-primary); margin-top: 0.75rem;" data-i18n="home.bento_card1_how">💡 كيف تعمل الخدمة تقنياً: يرتبط النظام عبر Webhook خاص ببوابة التاجر في زين كاش وكي كارد، ويتحقق تلقائياً من التوقيع الرقمي HMAC لكل معاملة، ثم يحدّث قاعدة بيانات المتجر إلى (تم الدفع) فوراً بدون أي تدخل بشري.</p>
+              <p class="bento-card-desc" data-i18n="home.bento_card1_desc">لا حاجة للتحقق اليدوي من إشعارات بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها). يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.</p>
+              <p style="font-size: 0.85rem; color: var(--color-primary); background: rgba(59, 130, 246, 0.08); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-right: 3px solid var(--color-primary); margin-top: 0.75rem;" data-i18n="home.bento_card1_how">💡 كيف تعمل الخدمة تقنياً: يرتبط النظام عبر Webhook خاص ببوابة التاجر في بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها)، ويتحقق تلقائياً من التوقيع الرقمي HMAC لكل معاملة، ثم يحدّث قاعدة بيانات المتجر إلى (تم الدفع) فوراً بدون أي تدخل بشري.</p>
             </div>
             <div class="bento-visual">
               <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.85rem; font-weight: 600;">
@@ -489,7 +512,7 @@
               كيف يتأكد النظام من مطابقة الحسابات وعدم وجود إشعارات دفع مزيفة؟
             </summary>
             <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.7; font-size: 0.95rem;" data-i18n="home.faq_a4">
-              يتصل محرك رَبْـط مباشرة بالخوادم الرسمية لـ زين كاش وكي كارد عبر تشفير AES-256 ومطابقة التوقيع الرقمي (HMAC Validation). يرفض النظام أي إشعار فوتوشوب أو لقطة شاشة مزيفة تلقائياً.
+              يتصل محرك رَبْـط مباشرة بالخوادم الرسمية لـ بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) عبر تشفير AES-256 ومطابقة التوقيع الرقمي (HMAC Validation). يرفض النظام أي إشعار فوتوشوب أو لقطة شاشة مزيفة تلقائياً.
             </p>
           </details>
 
@@ -551,7 +574,7 @@
         <div>
           <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
           <ul class="footer-links">
-            <li><a href="services.html" data-i18n="footer.col1_link1">تسوية زين كاش وكي كارد</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link1">تسوية بوابات الدفع المحلية والمحافظ (زين كاش، كي كارد، FIB، وغيرها)</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>

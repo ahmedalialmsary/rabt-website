@@ -11,6 +11,10 @@ const translations = {
     "nav.home": "الرئيسية",
     "nav.services": "الخدمات والحلول",
     "nav.features": "دليل الميزات",
+    "nav.more": "المزيد",
+    "nav.features_sub": "8 ميزات تخصصية مستقلة",
+    "nav.blog_sub": "دلاءل ومقالات تقنية تخصصية",
+    "nav.demo_sub": "اختبار الـ API والتحاكاة الحية",
     "nav.about": "عن الشركة",
     "nav.pricing": "الأسعار والباقات",
     "nav.demo": "التجربة التفاعلية",
@@ -21,7 +25,7 @@ const translations = {
     // --- Footer ---
     "footer.desc": "المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع الإلكتروني (زين كاش، كي كارد) وأنظمة إدارة المخزون والتوصيل.",
     "footer.col1_title": "المنتجات والحلول",
-    "footer.col1_link1": "تسوية زين كاش وكي كارد",
+    "footer.col1_link1": "تسوية بوابات الدفع المحلية والمحافظ",
     "footer.col1_link2": "مزامنة المخزون والـ POS",
     "footer.col1_link3": "بوت الواتساب واللهجة العراقية",
     "footer.col1_link4": "أتمتة شركات التوصيل",
@@ -78,8 +82,8 @@ const translations = {
     "home.bento_badge": "لماذا تختار رَبْـط؟",
     "home.bento_title": "بنية تحتية مصممة خصيصاً للتجارة العراقية",
     "home.bento_card1_title": "مطابقة فورية للمبالغ والتحويلات",
-    "home.bento_card1_desc": "لا حاجة للتحقق اليدوي من إشعارات زين كاش وكي كارد. يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.",
-    "home.bento_card1_how": "💡 كيف تعمل الخدمة تقنياً: يرتبط النظام عبر Webhook خاص ببوابة التاجر في زين كاش وكي كارد، ويتحقق تلقائياً من التوقيع الرقمي HMAC لكل معاملة، ثم يحدّث قاعدة بيانات المتجر إلى (تم الدفع) فوراً بدون أي تدخل بشري.",
+    "home.bento_card1_desc": "لا حاجة للتحقق اليدوي من إشعارات بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها). يتولى النظام مطابقة كل دينار وتحديث حالة الطلب تلقائياً.",
+    "home.bento_card1_how": "💡 كيف تعمل الخدمة تقنياً: يرتبط النظام عبر Webhook خاص ببوابة التاجر في بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها)، ويتحقق تلقائياً من التوقيع الرقمي HMAC لكل معاملة، ثم يحدّث قاعدة بيانات المتجر إلى (تم الدفع) فوراً بدون أي تدخل بشري.",
     "home.bento_card2_how": "💡 كيف تعمل الخدمة تقنياً: يعتمد المحرك على بروتوكول WebSockets مزدوج الاتجاه ينقل أي حركة بيع من جهاز الكاشير (Odoo, SAP) إلى المتجر الإلكتروني خلال 12 ملي ثانية، مما يمنع ظاهرة البيع المزدوج نهائياً.",
     "home.bento_card3_how": "💡 كيف تعمل الخدمة تقنياً: يستخدم المحرك نموذج ذكاء اصطناعي محلي مُدرَّب على الخرائط والمصطلحات العراقية، ويرسل رسالة واتساب آلية للزبون لتحديد الدبوس الجغرافي وقرب العلامة المشهورة.",
     "home.bento_card4_how": "💡 كيف تعمل الخدمة تقنياً: يتصل النظام بـ REST APIs الخاصة بأساطيل التوصيل في بغداد والمحافظات، ليقوم بتوليد المانفيست المجمع وطباعة ملصق الشحن Barcode بنقرة واحدة.",
@@ -93,7 +97,7 @@ const translations = {
     "home.faq_q3": "ماذا لو كان لدي متجر يعمل فعلياً ومبيعات يومية، هل يمكن النقل إليكم بدون توقف؟",
     "home.faq_a3": "نعم، نضمن لك انتقالاً سلساً 100% بدون أي انقطاع في الخدمة (Zero Downtime)، حيث نقوم باختبار قنوات الربط الموازية في بيئة تجريبية Sandbox ثم تحويل المبيعات للحية فور تأكيد استقرارها.",
     "home.faq_q4": "كيف يتأكد النظام من مطابقة الحسابات وعدم وجود إشعارات دفع مزيفة؟",
-    "home.faq_a4": "يتصل محرك رَبْـط مباشرة بالخوادم الرسمية لـ زين كاش وكي كارد عبر تشفير AES-256 ومطابقة التوقيع الرقمي (HMAC Validation). يرفض النظام أي إشعار فوتوشوب أو لقطة شاشة مزيفة تلقائياً.",
+    "home.faq_a4": "يتصل محرك رَبْـط مباشرة بالخوادم الرسمية لـ بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) عبر تشفير AES-256 ومطابقة التوقيع الرقمي (HMAC Validation). يرفض النظام أي إشعار فوتوشوب أو لقطة شاشة مزيفة تلقائياً.",
     "home.faq_q5": "ماذا يحدث إذا انقطع اتصال الإنترنت في كاشير المحل الفيزيائي؟",
     "home.faq_a5": "يحتوي النظام على ذاكرة تخزين مؤقتة (Offline Queue Buffer). عند انقطاع الإنترنت، تُسجل المبيعات محلياً في الكاشير، وفور عودة التغطية تُرفع التعديلات للمتجر الإلكتروني تلقائياً خلال ملي ثوانٍ.",
     "home.faq_q6": "هل التجميع وتوليد بوليصة التوصيل يتوافق مع شركات التوصيل العراقية؟",
@@ -135,7 +139,7 @@ const translations = {
     "services.hero_title": "خدمات الأتمتة والربط البرمجي الشامل",
     "services.hero_subtitle": "نظام موحد يستبدل العمل اليدوي الشاق بالحلول الذكية المباشرة، لتعزيز مبيعاتك وتقليل التكاليف التشغيلية.",
     // --- Services Deep Copy (AR) ---
-    "services.s1_prob": "🔴 المشكلة التي تعاني منها: قضاء المحاسبين ساعات يومياً في مراجعة لقطات الشاشات وإشعارات زين كاش وكي كارد اليدوية، مما يؤدي إلى تأخير تجهيز الطلبات ومخاطر قبول تحويلات مزيفة بنفس رقم المعاملة.",
+    "services.s1_prob": "🔴 المشكلة التي تعاني منها: قضاء المحاسبين ساعات يومياً في مراجعة لقطات الشاشات وإشعارات بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) اليدوية، مما يؤدي إلى تأخير تجهيز الطلبات ومخاطر قبول تحويلات مزيفة بنفس رقم المعاملة.",
     "services.s1_sol": "🟢 كيف يحلها رَبْـط: نربط متجرك برمجياً بـ API البنوك والمحافظ مباشرة. يتلقى النظام إشعار Webhook المشفر بـ HMAC فور التحويل، ويفحص رقم المعاملة في الخادم الرسمي، ثم يغير حالة الطلب تلقائياً إلى (مقبول ومطابق) خلال 500ms.",
     "services.s1_res1": "توفير 100% من وقت التدقيق اليدوي للمحاسبين.",
     "services.s1_res2": "تأكيد فوري مسبق قبل تسليم البضائع للمندوب.",
@@ -210,7 +214,7 @@ const translations = {
     "about.story_badge": "قصة التأسيس",
     "about.story_title": "من تحديات السوق المحلي إلى بنية تحتية رقمية متكاملة",
     "about.story_p1": "تأسست منصة رَبْـط عام 2024 في بغداد بعد أن لاحظ مهندسو الشركة الفجوة الكبيرة بين نمو التجارة الإلكترونية السريع في العراق وبين الحلول اليدوية البدائية المستعملة في إدارة المبيعات والتحويلات المالية.",
-    "about.story_p2": "كان التجار والمؤسسات يعانون يومياً من ضياع الساعات في مطابقة تحويلات زين كاش وكي كارد اليدوية، والتخبط في متابعة رصيد المخزون بين المحل الفيزيائي والمتجر الإلكتروني، فضلاً عن ضياع المناديب بسبب العناوين غير الدقيقة بالرسائل. من هنا انطلقت رَبْـط لبناء بنية تحتية برمجية موحدة مصممة خصيصاً لتحديات السوق العراقي، تمنح التاجر أتمتة كاملة 100% تمكنه من التركيز على زيادة مبيعاته وتوسيع نشاطه دون الغرق في الروتين التشغيلي.",
+    "about.story_p2": "كان التجار والمؤسسات يعانون يومياً من ضياع الساعات في مطابقة تحويلات بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) اليدوية، والتخبط في متابعة رصيد المخزون بين المحل الفيزيائي والمتجر الإلكتروني، فضلاً عن ضياع المناديب بسبب العناوين غير الدقيقة بالرسائل. من هنا انطلقت رَبْـط لبناء بنية تحتية برمجية موحدة مصممة خصيصاً لتحديات السوق العراقي، تمنح التاجر أتمتة كاملة 100% تمكنه من التركيز على زيادة مبيعاته وتوسيع نشاطه دون الغرق في الروتين التشغيلي.",
 
     "about.values_badge": "مبادئنا وهويتنا",
     "about.values_title": "القيم الأساسية التي تقود عملنا اليومي",
@@ -288,7 +292,7 @@ const translations = {
     "pricing.matrix_h2": "الناشئة ($49)",
     "pricing.matrix_h3": "النمو ($129)",
     "pricing.matrix_h4": "المؤسسات ($299)",
-    "pricing.matrix_r1_f": "سرعة التحقق الفوري (ZainCash & QiCard)",
+    "pricing.matrix_r1_f": "سرعة التحقق الفوري (Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.))",
     "pricing.matrix_r1_c1": "500ms (تحقق فوري عبر Webhook)",
     "pricing.matrix_r1_c2": "200ms (أولوية معالجة في الخادم)",
     "pricing.matrix_r1_c3": "12ms (عقدة خادم مخصصة بغداد)",
@@ -306,7 +310,7 @@ const translations = {
     "pricing.faq_title": "إجابات على استفساراتك الفنية والتجارية",
     "pricing.faq_q1": "هل يتطلب الربط تعديل كود متجري الإلكتروني الحالي؟",
     "pricing.faq_a1": "لا، نوفر إضافات برمجية جاهزة (Plugins / SDKs) لمنصات سلة، زد، Odoo، ووكمرس، كما نوفر RESTful APIs سهلة الدمج لأي تطبيق مخصص.",
-    "pricing.faq_q2": "كيف تضمنون أمان التحويلات المالية عبر زين كاش وكي كارد؟",
+    "pricing.faq_q2": "كيف تضمنون أمان التحويلات المالية عبر بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها)؟",
     "pricing.faq_a2": "يتم الاتصال مباشرة عبر القنوات المعتمدة تشفيرياً مع البنوك والمحافظ الإلكترونية دون تخزين أي بيانات حساسة، مع استخدام تشفير AES-256 ومطابقة التوقيع الرقمي (Signature Verification).",
     "pricing.faq_q3": "ما هي المدة الاستغراقية لبدء التشغيل الفعلي (Go-Live)؟",
     "pricing.faq_a3": "تستغرق عملية الإعداد والتفعيل للمتاجر القياسية أقل من 24 ساعة. بالنسبة للمؤسسات الكبرى التي تتطلب دمج SAP أو Oracle، يتطلب ذلك من 3 إلى 5 أيام عمل فقط.",
@@ -334,7 +338,7 @@ const translations = {
 
     "demo.card_after1_title": "سرعة ودقة فائقة",
     "demo.after_t1": "تأكيد مالي فوري خلال 15 ثانية",
-    "demo.after_d1": "إشعار فوري وتأكيد تلقائي للطلب بمجرد إتمام التحويل عبر API زين كاش وكي كارد.",
+    "demo.after_d1": "إشعار فوري وتأكيد تلقائي للطلب بمجرد إتمام التحويل عبر API بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها).",
     "demo.after_t2": "مزامنة لحظية للمخزون في المحل والمتجر",
     "demo.after_d2": "خصم تلقائي لحظي يضمن عدم تكرار بيع المنتج المباع في أي منصة.",
 
@@ -358,7 +362,7 @@ const translations = {
     "contact.lbl_phone": "رقم الهاتف (العراق)",
     "contact.lbl_company": "اسم الشركة / المتجر",
     "contact.lbl_service": "الخدمة المطلوبة",
-    "contact.opt1": "أتمتة زين كاش وكي كارد",
+    "contact.opt1": "أتمتة بوابات الدفع المحلية والمحافظ (زين كاش، كي كارد، FIB، وغيرها)",
     "contact.opt2": "ربط المخزون ونقاط البيع POS",
     "contact.opt3": "البوت العراقي لتأكيد العناوين",
     "contact.opt4": "حلول المؤسسات المخصصة Enterprise",
@@ -380,9 +384,9 @@ const translations = {
     "contact.office_email": "البريد: enterprise@rabt.iq",
     "contact.map_title": "مركز بيانات واستشارات بغداد",
     // --- Dedicated Payment Page (service-payments.html) ---
-    "spay.page_title": "المطابقة المالية والتسوية الفورية | زين كاش وكي كارد - رَبْـط",
+    "spay.page_title": "المطابقة المالية والتسوية الفورية | بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) - رَبْـط",
     "spay.badge": "أتمتة المحافظ والمصارف العراقية 2026",
-    "spay.title": "المطابقة المالية الفورية مع زين كاش وكي كارد",
+    "spay.title": "المطابقة المالية الفورية مع بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها)",
     "spay.subtitle": "محرك ربط برمجي مباشر يغنيك عن المراجعة اليدوية لإشعارات الدفع ولقطات الشاشة. يتحقق النظام من كل دينار محول عبر خوادم البنوك خلال 500ms ويحدث حالة الطلب تلقائياً.",
     "spay.hero_cta": "ربط بوابة الدفع الآن",
     "spay.btn_contact": "طلب ربط البوابة لمتجرك",
@@ -393,7 +397,7 @@ const translations = {
     "spay.spec_title": "كيف يعمل محرك المطابقة المالية؟",
     "spay.prob_badge": "المشكلة قبل رَبْـط",
     "spay.prob_title": "خسائر التدقيق اليدوي وإشعارات الفوتوشوب",
-    "spay.prob_desc": "يعتمد التاجر العراقي تقليدياً على قيام المحاسب بمطابقة صُور لقطات الشاشة الواردة عبر الواتساب مع إشعارات زين كاش وكي كارد. يتسبب هذا بطرق احتيال شائعة (مثل تكرار استخدام نفس لقطة الشاشة أو تعديل المبالغ بالفوتوشوب)، فضلاً عن تأخير شحن البضائع لعدة ساعات حتى يفرغ المحاسب من التدقيق.",
+    "spay.prob_desc": "يعتمد التاجر العراقي تقليدياً على قيام المحاسب بمطابقة صُور لقطات الشاشة الواردة عبر الواتساب مع إشعارات بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها). يتسبب هذا بطرق احتيال شائعة (مثل تكرار استخدام نفس لقطة الشاشة أو تعديل المبالغ بالفوتوشوب)، فضلاً عن تأخير شحن البضائع لعدة ساعات حتى يفرغ المحاسب من التدقيق.",
     "spay.sol_badge": "الحل الذكي من رَبْـط",
     "spay.sol_title": "الربط المباشر مع API البنك المشفر",
     "spay.sol_desc": "يتصل محرك رَبْـط برمجياً بالخوادم الرسمية لـ ZainCash و QiCard و Visa/Mastercard. بمجرد قيام الزبون بالتحويل، يستلم نظام التاجر إشعار Webhook مؤمن بتوقيع رقمي HMAC-SHA256، فيتأكد المحرك من قيمة المبلغ وتاريخ العملية ورقم المعاملة الفريد، ويقبل الطلب خلال 0.18 ثانية.",
@@ -746,6 +750,10 @@ const translations = {
     "nav.home": "Home",
     "nav.services": "Solutions",
     "nav.features": "Features Directory",
+    "nav.more": "Resources & More",
+    "nav.features_sub": "8 Enterprise Feature Modules",
+    "nav.blog_sub": "Technical Guides & Research",
+    "nav.demo_sub": "Live API Sandbox & Simulator",
     "nav.about": "About Us",
     "nav.pricing": "Pricing",
     "nav.demo": "Interactive Demo",
@@ -756,7 +764,7 @@ const translations = {
     // --- Footer ---
     "footer.desc": "Iraq's premier B2B SaaS platform specializing in API integration between e-commerce stores, payment gateways (ZainCash, QiCard), ERP inventory, and logistics.",
     "footer.col1_title": "Products & Solutions",
-    "footer.col1_link1": "ZainCash & QiCard Reconciliation",
+    "footer.col1_link1": "Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) Reconciliation",
     "footer.col1_link2": "POS & ERP Stock Sync",
     "footer.col1_link3": "Iraqi Dialect AI Chatbot",
     "footer.col1_link4": "Logistics Automation",
@@ -813,8 +821,8 @@ const translations = {
     "home.bento_badge": "Why RABT?",
     "home.bento_title": "Purpose-Built for Iraqi Commerce Infrastructure",
     "home.bento_card1_title": "Instant Payment Settlement",
-    "home.bento_card1_desc": "Eliminate manual verification of ZainCash and QiCard transfer receipts. RABT verifies every Dinar and updates orders automatically.",
-    "home.bento_card1_how": "💡 Technical Execution: RABT connects via a dedicated Webhook to your merchant gateway on ZainCash & QiCard, validating HMAC digital signatures per transaction and instantly updating order status to PAID without human audit.",
+    "home.bento_card1_desc": "Eliminate manual verification of Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) transfer receipts. RABT verifies every Dinar and updates orders automatically.",
+    "home.bento_card1_how": "💡 Technical Execution: RABT connects via a dedicated Webhook to your merchant gateway on Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.), validating HMAC digital signatures per transaction and instantly updating order status to PAID without human audit.",
     "home.bento_card2_how": "💡 Technical Execution: The engine uses bidirectional WebSockets to transmit any sale from your physical POS (Odoo, SAP) to your e-commerce storefront in 12ms, eliminating double-selling completely.",
     "home.bento_card3_how": "💡 Technical Execution: Uses a localized AI model trained on Iraqi landmark geography via automated WhatsApp API to verify exact GPS pins and nearby landmarks.",
     "home.bento_card4_how": "💡 Technical Execution: Connects directly to REST APIs of courier fleets in Baghdad and provinces, generating unified manifests and printable barcode labels in 1 click.",
@@ -828,7 +836,7 @@ const translations = {
     "home.faq_q3": "What if I have an existing live store with daily volume? Can I migrate with zero downtime?",
     "home.faq_a3": "Yes, we guarantee 100% zero downtime. We configure and test parallel staging endpoints in Sandbox mode before switching live transaction traffic seamlessly.",
     "home.faq_q4": "How does the platform verify payment legitimacy and prevent fake receipt screenshots?",
-    "home.faq_a4": "RABT connects directly to official ZainCash and QiCard banking endpoints using AES-256 encryption and HMAC-SHA256 signature verification. Fake receipts or edited screenshots are automatically rejected.",
+    "home.faq_a4": "RABT connects directly to official Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) banking endpoints using AES-256 encryption and HMAC-SHA256 signature verification. Fake receipts or edited screenshots are automatically rejected.",
     "home.faq_q5": "What happens if the internet drops at our physical cashier counter?",
     "home.faq_a5": "The system features an Offline Queue Buffer. Sales are recorded locally at the cashier terminal and automatically synced to the online store the moment connectivity is restored.",
     "home.faq_q6": "Does shipping manifest generation support Iraqi courier fleets?",
@@ -870,7 +878,7 @@ const translations = {
     "services.hero_title": "End-to-End Automation & Integration Services",
     "services.hero_subtitle": "A unified infrastructure replacing tedious manual tasks with intelligent API workflows, driving sales while cutting operational costs.",
     // --- Services Deep Copy (EN) ---
-    "services.s1_prob": "🔴 Current Pain Point: Accountants spend hours daily verifying manual ZainCash and QiCard screenshots, causing shipping delays and risking fraudulent receipts.",
+    "services.s1_prob": "🔴 Current Pain Point: Accountants spend hours daily verifying manual Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) screenshots, causing shipping delays and risking fraudulent receipts.",
     "services.s1_sol": "🟢 RABT Solution: Direct API connection with bank gateways. System receives HMAC-encrypted Webhooks, verifies txid with official servers, and updates order to PAID within 500ms.",
     "services.s1_res1": "100% elimination of manual accounting verification time.",
     "services.s1_res2": "Instant pre-delivery confirmation before handoff to couriers.",
@@ -944,7 +952,7 @@ const translations = {
     "about.story_badge": "Our Origin Story",
     "about.story_title": "Bridging Local Market Gaps with Infrastructure-Grade Engineering",
     "about.story_p1": "RABT was founded in 2024 in Baghdad when our software engineers identified a massive disparity between Iraq's rapid e-commerce expansion and the archaic manual processes powering retail operations.",
-    "about.story_p2": "Merchants spent hours verifying manual ZainCash and QiCard transfer screenshots, struggled with inventory discrepancies between physical stores and websites, and lost money on returned packages due to vague text addresses. RABT was engineered to solve these exact Iraqi retail hurdles, offering 100% automated infrastructure that lets merchants scale without operational gridlock.",
+    "about.story_p2": "Merchants spent hours verifying manual Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) transfer screenshots, struggled with inventory discrepancies between physical stores and websites, and lost money on returned packages due to vague text addresses. RABT was engineered to solve these exact Iraqi retail hurdles, offering 100% automated infrastructure that lets merchants scale without operational gridlock.",
 
     "about.values_badge": "Our Core Principles",
     "about.values_title": "The Engineering & Business Values Driving RABT",
@@ -1033,7 +1041,7 @@ const translations = {
     "pricing.faq_title": "Answers to Technical & Commercial FAQs",
     "pricing.faq_q1": "Does integration require modifying my store's codebase?",
     "pricing.faq_a1": "No, we provide ready-made Plugins / SDKs for Salla, Ziina, Odoo, WooCommerce, as well as developer-friendly RESTful APIs for custom apps.",
-    "pricing.faq_q2": "How do you guarantee transaction security for ZainCash & QiCard?",
+    "pricing.faq_q2": "How do you guarantee transaction security for Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.)?",
     "pricing.faq_a2": "Connections use encrypted channels with banks and mobile wallets without storing sensitive payload data, utilizing AES-256 encryption & RSA signature verification.",
     "pricing.faq_q3": "How long does Go-Live onboarding take?",
     "pricing.faq_a3": "Standard store setup takes under 24 hours. Enterprise integrations requiring custom SAP or Oracle connectors take 3-5 business days.",
@@ -1081,7 +1089,7 @@ const translations = {
     "contact.lbl_phone": "Phone Number (Iraq)",
     "contact.lbl_company": "Company / Store Name",
     "contact.lbl_service": "Required Solution",
-    "contact.opt1": "ZainCash & QiCard Automation",
+    "contact.opt1": "Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) Automation",
     "contact.opt2": "POS & ERP Stock Inventory Link",
     "contact.opt3": "Iraqi Dialect Verification Chatbot",
     "contact.opt4": "Custom Enterprise Solutions",
@@ -1103,9 +1111,9 @@ const translations = {
     "contact.office_email": "Email: enterprise@rabt.iq",
     "contact.map_title": "Baghdad Data & Consulting Hub",
     // --- Dedicated Payment Page (service-payments.html EN) ---
-    "spay.page_title": "Instant Financial Reconciliation & Gateways | ZainCash & QiCard - RABT",
+    "spay.page_title": "Instant Financial Reconciliation & Gateways | Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.) - RABT",
     "spay.badge": "Iraqi Banking & Wallet Automation 2026",
-    "spay.title": "Instant Financial Settlement for ZainCash & QiCard",
+    "spay.title": "Instant Financial Settlement for Local Payment Gateways & Mobile Wallets (ZainCash, QiCard, FIB, etc.)",
     "spay.subtitle": "Direct API connection engine eliminating manual receipt checking & screenshot verification. System validates every dinar with bank servers in 500ms and updates order status automatically.",
     "spay.hero_cta": "Connect Gateway Now",
     "spay.btn_contact": "Request Gateway Setup",
@@ -1469,6 +1477,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initLanguage();
   initMobileMenu();
+  initNavDropdown();
+  initBlogFilter();
   initInteractivity();
 });
 
@@ -1688,5 +1698,60 @@ function runLiveSimulation(logContainer) {
       logContainer.appendChild(line);
       logContainer.scrollTop = logContainer.scrollHeight;
     }, index * 350);
+  });
+}
+
+
+// Nav Dropdown Controller
+function initNavDropdown() {
+  document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+    const btn = dropdown.querySelector('.nav-dropdown-btn');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains('open');
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => {
+        if (d !== dropdown) d.classList.remove('open');
+      });
+      dropdown.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.nav-dropdown.open').forEach(dropdown => {
+      dropdown.classList.remove('open');
+      const btn = dropdown.querySelector('.nav-dropdown-btn');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+
+// Blog Category Filter Controller
+function initBlogFilter() {
+  const filterBtns = document.querySelectorAll('[data-blog-cat]');
+  const articles = document.querySelectorAll('article.blog-card');
+  if (!filterBtns.length || !articles.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const cat = btn.getAttribute('data-blog-cat');
+      filterBtns.forEach(b => {
+        b.classList.remove('btn-primary');
+        b.classList.add('btn-secondary');
+      });
+      btn.classList.remove('btn-secondary');
+      btn.classList.add('btn-primary');
+
+      articles.forEach(art => {
+        const artCat = art.getAttribute('data-category');
+        if (cat === 'all' || artCat === cat) {
+          art.style.display = 'flex';
+        } else {
+          art.style.display = 'none';
+        }
+      });
+    });
   });
 }
