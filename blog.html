@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="blog.page_title">مدونة رَبْـط الهندسية والدليل التجاري - التجارة الرقمية في العراق</title>
+  <meta name="description" content="مقالات هندسية وأدلة تخصصية في التجارة الإلكترونية، بوابات الدفع العراقي، مزامنة نقاط البيع، والربط البرمجي للمتاجر والشركات.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+          </svg>
+        </div>
+        <span data-i18n="nav.brand">رَبْـط</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link" data-i18n="nav.home">الرئيسية</a></li>
+        <li><a href="services.html" class="nav-link" data-i18n="nav.services">الخدمات والحلول</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav.about">عن الشركة</a></li>
+        <li><a href="pricing.html" class="nav-link" data-i18n="nav.pricing">الأسعار والباقات</a></li>
+        <li><a href="demo.html" class="nav-link" data-i18n="nav.demo">التجربة التفاعلية</a></li>
+        <li><a href="blog.html" class="nav-link active" data-i18n="nav.blog">المدونة الهندسية</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav.contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang-switch-btn" id="lang-switch-btn" aria-label="Switch Language">
+          <svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"></path></svg>
+          <span id="lang-switch-label">English</span>
+        </button>
+
+        <button class="toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span id="theme-toggle-icon"></span>
+        </button>
+
+        <a href="contact.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">ابدأ الآن مجاناً</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- Blog Hero Section -->
+    <section class="hero-section" style="padding: 4rem 0 2.5rem;">
+      <div class="container hero-content">
+        <div class="hero-badge-wrap">
+          <span class="badge badge-primary" data-i18n="blog.hero_badge">المعرفة والتكنولوجيا المالية 2026</span>
+        </div>
+        <h1 class="hero-title" data-i18n="blog.hero_title">المدونة الهندسية ودليل البنية التحتية</h1>
+        <p class="hero-subtitle" data-i18n="blog.hero_subtitle">
+          مقالات تقنية وأدلة عمليّة موجهة للشركات والتجار في العراق: من معايير أمن المحافظ المالية ومزامنة الكاشير، إلى حل عقبات اللوجستيات والامتثال المالي.
+        </p>
+
+        <!-- Category Filter Pills -->
+        <div style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap;">
+          <button class="btn btn-sm btn-primary" style="border-radius: 30px;" data-i18n="blog.cat_all">جميع المقالات</button>
+          <button class="btn btn-sm btn-secondary" style="border-radius: 30px;" data-i18n="blog.cat_payments">بوابات الدفع والتسوية</button>
+          <button class="btn btn-sm btn-secondary" style="border-radius: 30px;" data-i18n="blog.cat_pos">مزامنة الـ POS والـ ERP</button>
+          <button class="btn btn-sm btn-secondary" style="border-radius: 30px;" data-i18n="blog.cat_logistics">اللوجستيات والتوصيل</button>
+          <button class="btn btn-sm btn-secondary" style="border-radius: 30px;" data-i18n="blog.cat_security">الأمان والامتثال المالي</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Lead Article Hero Banner -->
+    <section class="section-padding" style="padding-top: 1rem;">
+      <div class="container">
+        <div style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-2xl); overflow: hidden; display: grid; grid-template-columns: 1.2fr 1fr; box-shadow: var(--shadow-xl);">
+          <div style="padding: 3rem; display: flex; flex-direction: column; justify-content: center;">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+              <span class="badge badge-emerald" data-i18n="blog.lead_badge">المقال الرئيسي الموصى به</span>
+              <span style="color: var(--text-muted); font-size: 0.875rem;" data-i18n="blog.lead_readtime">قراءة 7 دقائق • 8 أغسطس 2026</span>
+            </div>
+
+            <h2 style="font-size: 1.75rem; margin-bottom: 1.25rem; line-height: 1.4; color: var(--text-main);" data-i18n="blog.lead_title">
+              دليل اختيار بوابة الدفع الإلكتروني في العراق 2026: زين كاش، كي كارد، وتفادي فبركة الإشعارات
+            </h2>
+
+            <p style="color: var(--text-muted); line-height: 1.8; font-size: 1rem; margin-bottom: 1.75rem;" data-i18n="blog.lead_desc">
+              تحليل تقني شامل لآلية ربط المحافظ الإلكترونية والمصارف العراقية عبر Webhook مشفر، وكيف تمنع المتاجر الرقمية مخاطر الاعتماد على لقطات الشاشة اليدوية باستخدام توقيع HMAC الرقمي.
+            </p>
+
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <div style="width: 42px; height: 42px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">
+                  رَبْـط
+                </div>
+                <div>
+                  <div style="font-size: 0.9rem; font-weight: 700; color: var(--text-main);" data-i18n="blog.lead_author">فريق الهندسة المالية ببغداد</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);" data-i18n="blog.lead_role">قسم البنية التحتية والـ API</div>
+                </div>
+              </div>
+              <a href="#article-lead" class="btn btn-primary btn-sm" data-i18n="blog.lead_btn">قراءة المقال الكامل ➔</a>
+            </div>
+          </div>
+
+          <div style="position: relative; min-height: 340px;">
+            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1000&q=80" alt="Iraqi Payment Gateway Architecture" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(270deg, rgba(15, 23, 42, 0.6) 0%, transparent 100%);"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Articles Grid Section -->
+    <section class="section-padding" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-primary" data-i18n="blog.grid_badge">المكتبة التقنية</span>
+          <h2 class="section-title" data-i18n="blog.grid_title">أحدث المقالات والدراسات الهندسية</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+          <!-- Article 1: POS Sync -->
+          <article style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition-fast);" class="blog-card">
+            <div style="height: 200px; overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80" alt="POS & ERP Sync" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge badge-emerald" style="position: absolute; top: 1rem; right: 1rem;" data-i18n="blog.a1_tag">مزامنة المخزون</span>
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="blog.a1_date">5 أغسطس 2026 • 5 دقائق قراءة</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.85rem; line-height: 1.5; color: var(--text-main);" data-i18n="blog.a1_title">
+                كيف تمنع البيع المزدوج بين فرع المحل الفيزيائي والمتجر الإلكتروني؟
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1;" data-i18n="blog.a1_desc">
+                شرح عملي لاستخدام بروتوكول WebSockets بفيض 12ms لمزامنة رصيد المخزون في Odoo و POS الكاشير لحظة بلحظة مع متجر سلة ووكمرس.
+              </p>
+              <a href="#article-1" style="font-weight: 600; color: var(--color-primary); font-size: 0.9rem;" data-i18n="blog.read_more">قراءة الدراسة الفنية ➔</a>
+            </div>
+          </article>
+
+          <!-- Article 2: Iraqi Address Chatbot -->
+          <article style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition-fast);" class="blog-card">
+            <div style="height: 200px; overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Iraqi Dialect Chatbot AI" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge badge-accent" style="position: absolute; top: 1rem; right: 1rem;" data-i18n="blog.a2_tag">الذكاء الاصطناعي</span>
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="blog.a2_date">1 أغسطس 2026 • 6 دقائق قراءة</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.85rem; line-height: 1.5; color: var(--text-main);" data-i18n="blog.a2_title">
+                حل عقبة العناوين العشوائية في العراق: من الرسائل النصية إلى إحداثيات GPS
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1;" data-i18n="blog.a2_desc">
+                دراسة حالات واقعية لكيفية خفض نسبة راجع الشحنات 40% عبر بوت الواتساب المتحدث باللهجة البغدادية لاستخراج نقاط Google Maps المباشرة.
+              </p>
+              <a href="#article-2" style="font-weight: 600; color: var(--color-primary); font-size: 0.9rem;" data-i18n="blog.read_more">قراءة الدراسة الفنية ➔</a>
+            </div>
+          </article>
+
+          <!-- Article 3: Logistics & Manifest -->
+          <article style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition-fast);" class="blog-card">
+            <div style="height: 200px; overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Logistics Manifest Automation" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge badge-warning" style="position: absolute; top: 1rem; right: 1rem;" data-i18n="blog.a3_tag">اللوجستيات والشحن</span>
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="blog.a3_date">28 يوليو 2026 • 4 دقائق قراءة</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.85rem; line-height: 1.5; color: var(--text-main);" data-i18n="blog.a3_title">
+                أتمتة المانفيست وطباعة بوالص الـ Thermal: خفض زمن التعبئة 80%
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1;" data-i18n="blog.a3_desc">
+                كيف تتخلص المتاجر المتنامية من نقل بيانات الشحنات يدوياً لشركات التوصيل عبر الأتمتة المباشرة وتأمين تحصيل أموال الـ COD.
+              </p>
+              <a href="#article-3" style="font-weight: 600; color: var(--color-primary); font-size: 0.9rem;" data-i18n="blog.read_more">قراءة الدراسة الفنية ➔</a>
+            </div>
+          </article>
+
+          <!-- Article 4: Regulatory Compliance -->
+          <article style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition-fast);" class="blog-card">
+            <div style="height: 200px; overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80" alt="Central Bank Compliance" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge badge-primary" style="position: absolute; top: 1rem; right: 1rem;" data-i18n="blog.a4_tag">الامتثال القانوني</span>
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="blog.a4_date">20 يوليو 2026 • 8 دقائق قراءة</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.85rem; line-height: 1.5; color: var(--text-main);" data-i18n="blog.a4_title">
+                دليل الامتثال لتعليمات البنك المركزي العراقي في التحويلات المالية الرقمية
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1;" data-i18n="blog.a4_desc">
+                متطلبات الأمان السيبراني، تشفير البيانات AES-256، وحماية خصوصية بيانات المستهلكين العراقيين طبقاً لأحدث التشريعات.
+              </p>
+              <a href="#article-4" style="font-weight: 600; color: var(--color-primary); font-size: 0.9rem;" data-i18n="blog.read_more">قراءة الدراسة الفنية ➔</a>
+            </div>
+          </article>
+
+          <!-- Article 5: Cost & ROI Analysis -->
+          <article style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; transition: transform var(--transition-fast);" class="blog-card">
+            <div style="height: 200px; overflow: hidden; position: relative;">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="ROI & Cost Comparison" style="width: 100%; height: 100%; object-fit: cover;">
+              <span class="badge badge-emerald" style="position: absolute; top: 1rem; right: 1rem;" data-i18n="blog.a5_tag">دراسات العائد ROI</span>
+            </div>
+            <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+              <span style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;" data-i18n="blog.a5_date">12 يوليو 2026 • 5 دقائق قراءة</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.85rem; line-height: 1.5; color: var(--text-main);" data-i18n="blog.a5_title">
+                مقارنة تكاليف التشغيل اليدوي مقابل الأتمتة البرمجية للمتاجر المتوسطة
+              </h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; flex-grow: 1;" data-i18n="blog.a5_desc">
+                حساب الأرقام والتكاليف المستترة الناتجة عن أخطاء الإدخال اليدوي، ومقارنتها بتكلفة اشتراك الـ SaaS المباشر مع رَبْـط.
+              </p>
+              <a href="#article-5" style="font-weight: 600; color: var(--color-primary); font-size: 0.9rem;" data-i18n="blog.read_more">قراءة الدراسة الفنية ➔</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter & Technical Updates CTA -->
+    <section class="section-padding">
+      <div class="container container-narrow" style="background: var(--bg-card); border: 1.5px solid var(--border-color); border-radius: var(--radius-2xl); padding: 3rem; text-align: center; box-shadow: var(--shadow-lg);">
+        <span class="badge badge-primary" style="margin-bottom: 1rem;" data-i18n="blog.newsletter_badge">النشرة الهندسية الدورية</span>
+        <h2 style="font-size: 1.6rem; margin-bottom: 1rem;" data-i18n="blog.newsletter_title">اشترك في النشرة التقنية للتجارة الرقمية في العراق</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;" data-i18n="blog.newsletter_sub">
+          نرسل شهرياً ملخصاً لأحدث تحديثات بوابات الدفع، التغييرات التنظيمية، وأفضل الممارسات البرمجية لإدارة المتاجر.
+        </p>
+
+        <form onsubmit="event.preventDefault(); alert('تم الاشتراك في النشرة التقنية بنجاح!');" style="display: flex; gap: 0.75rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+          <input type="email" placeholder="بريدك الإلكتروني المهني (e.g. eng@company.iq)" required style="flex-grow: 1; padding: 0.85rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); font-family: inherit;">
+          <button type="submit" class="btn btn-primary" data-i18n="blog.newsletter_btn">اشترك الآن</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-logo-icon">
+              <svg class="icon-svg icon-svg-lg" viewBox="0 0 24 24">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+            </div>
+            <span data-i18n="nav.brand">رَبْـط</span>
+          </a>
+          <p class="footer-desc" data-i18n="footer.desc">
+            المنصة العراقية الأولى المتخصصة في أتمتة الربط البرمجي بين المتاجر الإلكترونية، بوابات الدفع الإلكتروني (زين كاش، كي كارد) وأنظمة إدارة المخزون والتوصيل.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
+          <ul class="footer-links">
+            <li><a href="service-payments.html" data-i18n="footer.col1_link1">تسوية زين كاش وكي كارد</a></li>
+            <li><a href="service-pos.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
+            <li><a href="service-chatbot.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
+            <li><a href="service-logistics.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col2_title">الشركة والبيئة</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" data-i18n="footer.col2_link1">عن رَبْـط Baghdad</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link2">معايير الأمان ISO</a></li>
+            <li><a href="about.html" data-i18n="footer.col2_link3">مركز بغداد للبيانات</a></li>
+            <li><a href="contact.html" data-i18n="footer.col2_link4">الوظائف والانضمام</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer.col3_title">الدعم الفني</h4>
+          <ul class="footer-links">
+            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ API والـ SDK</a></li>
+            <li><a href="about.html" data-i18n="footer.col3_link2">حالة الخدمة (Uptime)</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link3">مركز مساعدة التجار</a></li>
+            <li><a href="contact.html" data-i18n="footer.col3_link4">اتصل بالدعم</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span data-i18n="footer.copyright">© 2026 رَبْـط للتكنولوجيا والتكامل البرمجي ش.م.م - بغداد، العراق. جميع الحقوق محفوظة.</span>
+        <span class="badge badge-emerald">
+          <span class="pulse-dot"></span>
+          <span data-i18n="footer.status">جميع الأنظمة تعمل بكفاءة 99.99%</span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared-engine.js"></script>
+</body>
+</html>
