@@ -243,8 +243,12 @@
     <!-- Services Hero Section -->
     <section class="hero-section" style="padding: 4rem 0 2.5rem;">
       <div class="container hero-content">
-        <div class="hero-badge-wrap">
+        <div class="hero-badge-wrap" style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1rem;">
           <span class="badge badge-primary" data-i18n="services.hero_badge">حلول متكاملة للمؤسسات والتجار</span>
+          <span class="badge badge-emerald">
+            <span class="pulse-dot"></span>
+            <span data-i18n="services.activation_timeline">⚡ زمن التفعيل: 15 دقيقة للمتاجر الجاهزة، و24-48 ساعة لأنظمة ERP</span>
+          </span>
         </div>
         <h1 class="hero-title" data-i18n="services.hero_title">خدمات الأتمتة والربط البرمجي الشامل</h1>
         <p class="hero-subtitle" data-i18n="services.hero_subtitle">
@@ -342,7 +346,7 @@
               <!-- Problem & Solution Callout Box -->
               <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.25rem;">
                 <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s2_prob">
-                  🔴 المشكلة التي تعاني منها: بيع منتج عبر المتجر الإلكتروني اكتشفت لاحقاً أنه بيع بالفعل قبل دقائق لكاستمر في المحل الفيزيائي، مما يسبب إحراجاً مع الزبون وإرجاع مبالغ التحويلات.
+                  🔴 المشكلة التي تعاني منها: أن يتم بيع منتج عبر متجرك الإلكتروني، لتكتشف لاحقاً أنه قد تم بيعه بالفعل قبل دقائق لعميل داخل محلك التجاري على أرض الواقع، مما يسبب إحراجاً مع الزبون وإرجاع مبالغ التحويلات.
                 </div>
                 <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s2_sol">
                   🟢 كيف يحلها رَبْـط: نشئ قناة اتصال WebSockets مستمرة بين برنامج الكاشير (Odoo, SAP, QuickBooks) وقاعدة بيانات المتجر. بمجرد قراءة الـ Barcode في المحل، يتحدث الرصيد في المتجر أونلاين فوراً بـ 12ms.
@@ -455,10 +459,10 @@
                   🤖 هلا بيك علي! طلبك رقم #9910 جاهز. تدلل العنوان بغداد - الجادرية قرب المستشفى؟
                 </div>
                 <div style="background: rgba(239, 68, 68, 0.08); border-right: 3px solid var(--color-danger); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s4_prob">
-                  🔴 المشكلة التي تعاني منها: كتابة المانفيست وطباعة بوليصات التوصيل يدوياً لكل طلب على حدة، وتأخير تسليم الشحنات لشركات الشحن حتى ساعات التأخير.
+                  🔴 المشكلة التي تعاني منها: كتابة المانفيست وطباعة بوليصات التوصيل يدوياً لكل طلب على حدة، وتأخير تسليم الشحنات لشركات الشحن لساعات.
                 </div>
                 <div style="background: rgba(16, 185, 129, 0.08); border-right: 3px solid var(--color-success); padding: 0.75rem 1rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-main);" data-i18n="services.s4_sol">
-                  🟢 كيف يحلها رَبْـط: يتصل محركنا بـ API شركات التوصيل العراقية كافة. ينشئ النظام بوليصة الشحن مع الباركود الرسمي تلقائياً بنقرة واحدة، ويطبّع المانفيست المجمع جاهزاً للتسليم.
+                  🟢 كيف يحلها رَبْـط: يتصل محركنا بـ واجهة برمجة التطبيقات (API) لشركات التوصيل العراقية كافة. ينشئ النظام بوليصة الشحن مع الباركود الرسمي تلقائياً بنقرة واحدة، ويطبّع المانفيست المجمع جاهزاً للتسليم.
                 </div>
               </div>
             </div>
