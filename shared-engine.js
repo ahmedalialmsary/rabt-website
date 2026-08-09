@@ -41,6 +41,8 @@ const translations = {
     "home.badge": "منصة الأتمتة المالية والتجارية الأولى في العراق 2026",
     "home.hero_title": "أتمتة وتكامل أنظمة التجارة الإلكترونية كلياً",
     "home.hero_subtitle": "ربط فوري ومباشر بين متجرك الإلكتروني، بوابات الدفع (زين كاش، كي كارد، ماستركارد)، وأنظمة إدارة المخزون ERP والتوصيل. دون أخطاء يدويّة وبسرعة تنفيذ خلال ملي ثوانٍ.",
+    "home.hero_img_badge": "مركز بغداد للتشغيل المباشر",
+    "home.hero_img_caption": "بنية تحتية برمجية متصلة بلحظة مع بوابات زين كاش، كي كارد، وأنظمة POS الكاشير في العراق.",
     "home.cta_primary": "تجربة المنصة الآن",
     "home.cta_secondary": "حجز جلسة استشارية",
     "home.status_badge": "● زمن الاستجابة: 12ms | نسبة التشغيل: 99.99%",
@@ -155,6 +157,8 @@ const translations = {
     "about.hero_badge": "الهندسة والموثوقية العراقية",
     "about.hero_title": "نبني البنية التحتية لمستقبل التجارة الرقمية في العراق",
     "about.hero_subtitle": "تأسست رَبْـط في بغداد بأيدي مهندسين عراقيين متخصصين في الأنظمة عالية الاعتمادية، لتزويد السوق المحلي ببرمجيات تضاهي المعايير العالمية.",
+    "about.team_img_badge": "فريق رَبْـط البرمجي في بغداد",
+    "about.team_img_caption": "عقول عراقية متميزة تبني وتطور محرك الربط المباشر في المجمع التكنولوجي بالجادرية.",
     
     "about.val1_title": "مركز بيانات في قلب بغداد",
     "about.val1_desc": "خوادم محلية فائقة السرعة تضمن أدنى استجابة (Latency) لاتصالات البنوك والشبكات الوطنية.",
@@ -339,9 +343,11 @@ const translations = {
     // --- Homepage (index.html) ---
     "page.title.index": "RABT | End-to-End E-Commerce & Payment Automation Infrastructure - Iraq 2026",
     "home.badge": "Iraq's #1 B2B Financial & Retail Automation Platform 2026",
-    "home.hero_title": "Unified E-Commerce & Payment Integration Infrastructure",
-    "home.hero_subtitle": "Instant API connectivity between your online store, Iraqi payment gateways (ZainCash, QiCard, Visa/Mastercard), ERP inventory, and logistics. Zero manual errors with millisecond-speed execution.",
-    "home.cta_primary": "Explore Platform",
+    "home.hero_title": "End-to-End E-Commerce Automation & Systems Integration",
+    "home.hero_subtitle": "Instant direct connection between your online storefront, payment gateways (ZainCash, QiCard, Mastercard), POS inventory & logistics. Zero manual errors with sub-millisecond execution.",
+    "home.hero_img_badge": "Baghdad Live Operations Hub",
+    "home.hero_img_caption": "Real-time software infrastructure connecting ZainCash, QiCard, and physical retail POS cashiers in Iraq.",
+    "home.cta_primary": "Try Interactive Demo Now",
     "home.cta_secondary": "Book Consultation",
     "home.status_badge": "● Latency: 12ms | System Uptime: 99.99%",
 
@@ -453,7 +459,9 @@ const translations = {
     // --- About Page ---
     "about.hero_badge": "Iraqi Engineering & High Reliability",
     "about.hero_title": "Building the Infrastructure for Digital Commerce in Iraq",
-    "about.hero_subtitle": "Founded in Baghdad by Iraqi engineers specialized in high-availability systems, delivering enterprise-grade performance matching global SaaS standards.",
+    "about.hero_subtitle": "Founded in Baghdad by Iraqi engineers specialized in high-reliability systems, empowering local retail with enterprise-grade software.",
+    "about.team_img_badge": "RABT Software Team in Baghdad",
+    "about.team_img_caption": "Top Iraqi engineering minds building & scaling the integration platform in Jadriya Technology Park.",
     
     "about.val1_title": "Baghdad Data Node",
     "about.val1_desc": "Ultra-low latency local server infrastructure connected directly to national telecom networks.",
