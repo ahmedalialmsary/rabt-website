@@ -63,6 +63,19 @@
       border-color: var(--color-primary);
     }
   </style>
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="رَبْـط | RABT Enterprise">
+  <meta property="og:title" content="عن رَبْـط | الرؤية والمعايير البرمجية">
+  <meta property="og:description" content="تعرّف على منصة رَبْـط للتكامل البرمجي في بغداد - معايير الأمان، موثوقية البنية التحتية، ورؤيتنا لأتمتة التجارة العراقية.">
+  <meta property="og:image" content="https://rabt.iq/assets/og-image.png">
+  <meta property="og:url" content="https://rabt.iq/about.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="عن رَبْـط | الرؤية والمعايير البرمجية">
+  <meta name="twitter:description" content="تعرّف على منصة رَبْـط للتكامل البرمجي في بغداد - معايير الأمان، موثوقية البنية التحتية، ورؤيتنا لأتمتة التجارة العراقية.">
+  <meta name="twitter:image" content="https://rabt.iq/assets/og-image.png">
+
 </head>
 <body>
 
@@ -109,12 +122,12 @@
               <a href="service-payments.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.sol_payments">تسوية بوابات الدفع والمحافظ</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_payments_sub">زين كاش، كي كارد، FIB بتوقيع HMAC</span>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_payments_sub">زين كاش، كي كارد، FIB بتوقيع <bdi class="en-inline">HMAC</bdi></span>
                 </div>
               </a>
               <a href="service-pos.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.sol_pos">مزامنة المخزون والـ POS</strong>
+                  <strong data-i18n="nav.sol_pos">مزامنة المخزون والـ <bdi class="en-inline">POS</bdi></strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.sol_pos_sub">ربط كاشير الفرع الفيزيائي بزمن 12ms</span>
                 </div>
               </a>
@@ -130,25 +143,25 @@
             <div class="nav-dropdown-menu">
               <a href="integrations/whatsapp.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_wa">تكامل واتساب للأعمال (WhatsApp Cloud API)</strong>
+                  <strong data-i18n="nav.ch_wa">تكامل واتساب للأعمال (WhatsApp Cloud <bdi class="en-inline">API</bdi>)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_wa_sub">رد آلي بالعامية واستخراج الـ GPS Pin</span>
                 </div>
               </a>
               <a href="integrations/instagram.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_ig">تكامل إنستغرام ماسنجر (Direct API)</strong>
+                  <strong data-i18n="nav.ch_ig">تكامل إنستغرام ماسنجر (Direct <bdi class="en-inline">API</bdi>)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_ig_sub">أتمتة الـ Direct وتعليقات المنشورات</span>
                 </div>
               </a>
               <a href="integrations/facebook.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_fb">تكامل فيسبوك ماسنجر (Messenger API)</strong>
+                  <strong data-i18n="nav.ch_fb">تكامل فيسبوك ماسنجر (Messenger <bdi class="en-inline">API</bdi>)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_fb_sub">أتمتة عملاء إعلانات Click-to-Messenger</span>
                 </div>
               </a>
               <a href="integrations/pos-erp.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_pos">أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP)</strong>
+                  <strong data-i18n="nav.ch_pos">أنظمة نقاط البيع والـ <bdi class="en-inline">ERP</bdi> (<bdi class="en-inline">POS</bdi>/Odoo/SAP)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_pos_sub">مزامنة كاشير المحل والفواتير المركزية</span>
                 </div>
               </a>
@@ -186,7 +199,7 @@
               <a href="demo.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والمحاكاة الحية</span>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ <bdi class="en-inline">API</bdi> والمحاكاة الحية</span>
                 </div>
               </a>
             </div>
@@ -230,7 +243,37 @@
 
         <!-- High-Tech Corporate Engineering Team Photo Showcase -->
         <div style="position: relative; margin-top: 2.5rem; margin-bottom: 1rem; border-radius: var(--radius-2xl); overflow: hidden; border: 1.5px solid rgba(59, 130, 246, 0.3); box-shadow: var(--shadow-xl);">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="RABT Engineering Team in Baghdad" style="width: 100%; height: 380px; object-fit: cover; display: block;">
+          <div class="saas-mockup-window">
+  <div class="saas-mockup-topbar">
+    <div class="saas-mockup-dots">
+      <span class="saas-dot saas-dot-red"></span>
+      <span class="saas-dot saas-dot-yellow"></span>
+      <span class="saas-dot saas-dot-green"></span>
+    </div>
+    <div class="saas-mockup-title">rabt-engine://dashboard.console.iq</div>
+    <span class="badge badge-emerald" style="font-size: 0.7rem;"><span class="pulse-dot"></span> متصل 12ms</span>
+  </div>
+  <div class="saas-mockup-body">
+    <div class="saas-grid-3">
+      <div class="saas-stat-card">
+        <div class="saas-stat-label">المزامنة الفورية</div>
+        <div class="saas-stat-val" style="color: var(--color-success);">99.99%</div>
+      </div>
+      <div class="saas-stat-card">
+        <div class="saas-stat-label">أمان التوقيع الرقمي</div>
+        <div class="saas-stat-val" style="color: var(--color-primary);">HMAC OK</div>
+      </div>
+      <div class="saas-stat-card">
+        <div class="saas-stat-label">بوابات الدفع والمحافظ</div>
+        <div class="saas-stat-val" style="color: var(--text-main);">زين كاش / كي كارد</div>
+      </div>
+    </div>
+    <div style="background: rgba(15, 23, 42, 0.9); padding: 0.85rem 1.15rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); font-family: monospace; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <span>[SYS_EXEC]: Webhook trigger verified from ZainCash Gateway</span>
+      <span class="badge badge-primary" style="font-size: 0.7rem;">STATUS: VERIFIED</span>
+    </div>
+  </div>
+</div>
           <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.85) 100%); display: flex; align-items: flex-end; padding: 2rem;">
             <div style="background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(8px); padding: 1rem 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); max-width: 600px;">
               <span class="badge badge-primary" style="margin-bottom: 0.5rem;" data-i18n="about.team_img_badge">فريق رَبْـط البرمجي في بغداد</span>
@@ -334,13 +377,13 @@
         <div class="timeline-container">
           <div class="timeline-card active-year" onclick="selectTimeline(2024, this)">
             <div class="timeline-year-tag">2024</div>
-            <h4 style="margin-bottom: 0.5rem;">تأسيس النواة وإطلاق الـ API</h4>
+            <h4 style="margin-bottom: 0.5rem;">تأسيس النواة وإطلاق الـ <bdi class="en-inline">API</bdi></h4>
             <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">بناء محرك الربط المباشر مع بوابة بوابات الدفع المحلية والمحافظ الإلكترونية (مثل زين كاش، كي كارد، FIB، وغيرها) ومعالجة أول 100,000 معاملة.</p>
           </div>
 
           <div class="timeline-card" onclick="selectTimeline(2025, this)">
             <div class="timeline-year-tag">2025</div>
-            <h4 style="margin-bottom: 0.5rem;">مزامنة الـ POS والـ ERP</h4>
+            <h4 style="margin-bottom: 0.5rem;">مزامنة الـ <bdi class="en-inline">POS</bdi> والـ <bdi class="en-inline">ERP</bdi></h4>
             <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0;">إطلاق محرك M-POS المزدوج ومزامنة أكثر من 500 فرع في بغداد والمحافظات.</p>
           </div>
 
@@ -445,7 +488,7 @@
           <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
           <ul class="footer-links">
             <li><a href="services.html" data-i18n="footer.col1_link1">تسوية بوابات الدفع المحلية والمحافظ (زين كاش، كي كارد، FIB، وغيرها)</a></li>
-            <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ <bdi class="en-inline">POS</bdi></a></li>
             <li><a href="services.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
           </ul>
@@ -464,7 +507,7 @@
         <div>
           <h4 class="footer-title" data-i18n="footer.col3_title">الدعم الفني</h4>
           <ul class="footer-links">
-            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ API والـ SDK</a></li>
+            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ <bdi class="en-inline">API</bdi> والـ <bdi class="en-inline">SDK</bdi></a></li>
             <li><a href="about.html" data-i18n="footer.col3_link2">حالة الخدمة (Uptime)</a></li>
             <li><a href="contact.html" data-i18n="footer.col3_link3">مركز مساعدة التجار</a></li>
             <li><a href="contact.html" data-i18n="footer.col3_link4">اتصل بالدعم</a></li>

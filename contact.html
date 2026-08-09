@@ -35,6 +35,19 @@
       display: block;
     }
   </style>
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="رَبْـط | RABT Enterprise">
+  <meta property="og:title" content="تواصل معنا وحجز الاستشارة | رَبْـط">
+  <meta property="og:description" content="اتصل بفريق مهندسي رَبْـط في بغداد - حجز جلسة استشارية مجانية لأتمتة متجرك الإلكتروني، زين كاش، وكي كارد.">
+  <meta property="og:image" content="https://rabt.iq/assets/og-image.png">
+  <meta property="og:url" content="https://rabt.iq/contact.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="تواصل معنا وحجز الاستشارة | رَبْـط">
+  <meta name="twitter:description" content="اتصل بفريق مهندسي رَبْـط في بغداد - حجز جلسة استشارية مجانية لأتمتة متجرك الإلكتروني، زين كاش، وكي كارد.">
+  <meta name="twitter:image" content="https://rabt.iq/assets/og-image.png">
+
 </head>
 <body>
 
@@ -81,12 +94,12 @@
               <a href="service-payments.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.sol_payments">تسوية بوابات الدفع والمحافظ</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_payments_sub">زين كاش، كي كارد، FIB بتوقيع HMAC</span>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.sol_payments_sub">زين كاش، كي كارد، FIB بتوقيع <bdi class="en-inline">HMAC</bdi></span>
                 </div>
               </a>
               <a href="service-pos.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.sol_pos">مزامنة المخزون والـ POS</strong>
+                  <strong data-i18n="nav.sol_pos">مزامنة المخزون والـ <bdi class="en-inline">POS</bdi></strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.sol_pos_sub">ربط كاشير الفرع الفيزيائي بزمن 12ms</span>
                 </div>
               </a>
@@ -102,25 +115,25 @@
             <div class="nav-dropdown-menu">
               <a href="integrations/whatsapp.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_wa">تكامل واتساب للأعمال (WhatsApp Cloud API)</strong>
+                  <strong data-i18n="nav.ch_wa">تكامل واتساب للأعمال (WhatsApp Cloud <bdi class="en-inline">API</bdi>)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_wa_sub">رد آلي بالعامية واستخراج الـ GPS Pin</span>
                 </div>
               </a>
               <a href="integrations/instagram.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_ig">تكامل إنستغرام ماسنجر (Direct API)</strong>
+                  <strong data-i18n="nav.ch_ig">تكامل إنستغرام ماسنجر (Direct <bdi class="en-inline">API</bdi>)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_ig_sub">أتمتة الـ Direct وتعليقات المنشورات</span>
                 </div>
               </a>
               <a href="integrations/facebook.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_fb">تكامل فيسبوك ماسنجر (Messenger API)</strong>
+                  <strong data-i18n="nav.ch_fb">تكامل فيسبوك ماسنجر (Messenger <bdi class="en-inline">API</bdi>)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_fb_sub">أتمتة عملاء إعلانات Click-to-Messenger</span>
                 </div>
               </a>
               <a href="integrations/pos-erp.html" class="nav-dropdown-item ">
                 <div>
-                  <strong data-i18n="nav.ch_pos">أنظمة نقاط البيع والـ ERP (POS/Odoo/SAP)</strong>
+                  <strong data-i18n="nav.ch_pos">أنظمة نقاط البيع والـ <bdi class="en-inline">ERP</bdi> (<bdi class="en-inline">POS</bdi>/Odoo/SAP)</strong>
                   <span class="nav-dropdown-item-desc" data-i18n="nav.ch_pos_sub">مزامنة كاشير المحل والفواتير المركزية</span>
                 </div>
               </a>
@@ -158,7 +171,7 @@
               <a href="demo.html" class="nav-dropdown-item ">
                 <div>
                   <strong data-i18n="nav.demo">التجربة التفاعلية</strong>
-                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ API والمحاكاة الحية</span>
+                  <span class="nav-dropdown-item-desc" data-i18n="nav.demo_sub">اختبار الـ <bdi class="en-inline">API</bdi> والمحاكاة الحية</span>
                 </div>
               </a>
             </div>
@@ -236,7 +249,7 @@
                 <label class="form-label" data-i18n="contact.lbl_service">نوع الخدمة أو الباقة المطلوبة</label>
                 <select id="contact-select" class="form-control">
                   <option value="zaincash" data-i18n="contact.opt_zaincash">تسوية بوابات الدفع المحلية والمحافظ (زين كاش، كي كارد، FIB، وغيرها)</option>
-                  <option value="pos" data-i18n="contact.opt_pos">مزامنة المخزون والـ POS (Odoo/SAP)</option>
+                  <option value="pos" data-i18n="contact.opt_pos">مزامنة المخزون والـ <bdi class="en-inline">POS</bdi> (<bdi class="en-inline">Odoo</bdi>/SAP)</option>
                   <option value="chatbot" data-i18n="contact.opt_chatbot">شات بوت الذكاء الاصطناعي باللهجة العراقية</option>
                   <option value="logistics" data-i18n="contact.opt_logistics">أتمتة شركات التوصيل والمانفيست</option>
                   <option value="enterprise" data-i18n="contact.opt_enterprise">باقة المؤسسات والربط المخصص</option>
@@ -369,7 +382,7 @@
           <h4 class="footer-title" data-i18n="footer.col1_title">المنتجات والحلول</h4>
           <ul class="footer-links">
             <li><a href="services.html" data-i18n="footer.col1_link1">تسوية بوابات الدفع المحلية والمحافظ (زين كاش، كي كارد، FIB، وغيرها)</a></li>
-            <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ POS</a></li>
+            <li><a href="services.html" data-i18n="footer.col1_link2">مزامنة المخزون والـ <bdi class="en-inline">POS</bdi></a></li>
             <li><a href="services.html" data-i18n="footer.col1_link3">بوت الواتساب واللهجة العراقية</a></li>
             <li><a href="services.html" data-i18n="footer.col1_link4">أتمتة شركات التوصيل</a></li>
           </ul>
@@ -388,7 +401,7 @@
         <div>
           <h4 class="footer-title" data-i18n="footer.col3_title">الدعم الفني</h4>
           <ul class="footer-links">
-            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ API والـ SDK</a></li>
+            <li><a href="demo.html" data-i18n="footer.col3_link1">وثائق الـ <bdi class="en-inline">API</bdi> والـ <bdi class="en-inline">SDK</bdi></a></li>
             <li><a href="about.html" data-i18n="footer.col3_link2">حالة الخدمة (Uptime)</a></li>
             <li><a href="contact.html" data-i18n="footer.col3_link3">مركز مساعدة التجار</a></li>
             <li><a href="contact.html" data-i18n="footer.col3_link4">اتصل بالدعم</a></li>

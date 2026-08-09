@@ -115,7 +115,7 @@ body {
   background-color: var(--bg-main);
   color: var(--text-main);
   font-family: var(--font-ar);
-  line-height: 1.6;
+  line-height: 1.8; /* Arabic B2B Typography: Enhanced breathing room */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -128,7 +128,7 @@ html[lang="en"] body {
   font-family: var(--font-en);
 }
 
-/* RTL / LTR Helpers */
+/* RTL / LTR Helpers & Technical Terms Punctuation Fix */
 html[dir="rtl"] {
   direction: rtl;
   text-align: right;
@@ -137,6 +137,13 @@ html[dir="rtl"] {
 html[dir="ltr"] {
   direction: ltr;
   text-align: left;
+}
+
+/* Fix LTR/RTL Punctuation jumping for English terms in Arabic text */
+.en-inline, .en-term, bdi, code, .tech-badge, [dir="ltr"] {
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
 }
 
 /* Containers */
@@ -162,7 +169,7 @@ html[dir="ltr"] {
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-main);
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.35;
   letter-spacing: -0.02em;
 }
 
@@ -174,6 +181,7 @@ h4 { font-size: 1.25rem; }
 p {
   color: var(--text-muted);
   font-size: 1.05rem;
+  line-height: 1.8; /* Arabic B2B Typography readability rule */
 }
 
 a {
@@ -804,20 +812,28 @@ html[data-theme="dark"] .architecture-card {
 
 .pulse-line {
   width: 100%;
-  height: 2px;
-  background: var(--diagram-line);
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--color-primary) 0, var(--color-primary) 6px, transparent 6px, transparent 12px);
+  background-size: 24px 100%;
+  animation: flowDashed 1s linear infinite;
   position: relative;
+  border-radius: 2px;
+}
+
+@keyframes flowDashed {
+  0% { background-position: 0 0; }
+  100% { background-position: 24px 0; }
 }
 
 .pulse-line::after {
   content: '';
   position: absolute;
-  top: -3px;
-  width: 8px;
-  height: 8px;
+  top: -4px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: var(--color-primary);
-  box-shadow: 0 0 8px var(--color-primary);
+  box-shadow: 0 0 12px var(--color-primary), 0 0 4px #ffffff;
   animation: flow-line 2s infinite linear;
 }
 
@@ -826,15 +842,18 @@ html[dir="rtl"] .pulse-line::after {
 }
 
 @keyframes flow-line {
-  0% { left: 0%; opacity: 0; }
-  20% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { left: 100%; opacity: 0; }
+  0% { left: 0%; opacity: 0; transform: scale(0.8); }
+  20% { opacity: 1; transform: scale(1.2); }
+  80% { opacity: 1; transform: scale(1.2); }
+  100% { left: 100%; opacity: 0; transform: scale(0.8); }
 }
 
 @keyframes flow-line-rtl {
-  0% { right: 0%; opacity: 0; }
-  20% { opacity: 1; }
+  0% { right: 0%; opacity: 0; transform: scale(0.8); }
+  20% { opacity: 1; transform: scale(1.2); }
+  80% { opacity: 1; transform: scale(1.2); }
+  100% { right: 100%; opacity: 0; transform: scale(0.8); }
+}
   80% { opacity: 1; }
   100% { right: 100%; opacity: 0; }
 }
@@ -1606,6 +1625,89 @@ textarea.form-control {
   .footer-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==========================================================================
+   RABT SaaS Interface & Glassmorphic Dashboard Mockup UI System (Milestone 4)
+   ========================================================================== */
+.saas-mockup-window {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.4), 0 0 30px rgba(37, 99, 235, 0.12);
+  position: relative;
+  font-family: var(--font-ar);
+}
+
+.saas-mockup-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.saas-mockup-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.saas-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.saas-dot-red { background: #EF4444; }
+.saas-dot-yellow { background: #F59E0B; }
+.saas-dot-green { background: #10B981; }
+
+.saas-mockup-title {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: monospace;
+  direction: ltr;
+}
+
+.saas-mockup-body {
+  padding: 1.5rem;
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.95) 0%, rgba(11, 15, 25, 0.98) 100%);
+}
+
+.saas-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .saas-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.saas-stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.saas-stat-label {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.saas-stat-val {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
 @media (min-width: 992px) {
