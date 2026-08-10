@@ -10,7 +10,10 @@ verify_all_pages_and_links.js
 check_links.js
 add_cache_buster.js
 test_nav_wrapping.js
+test_short_viewports.js
+take_final_verification_screenshots.js
 screenshots/
 screenshots_audit/
+screenshots_final/
 full_qa_report.json
 audit_results_summary.json
