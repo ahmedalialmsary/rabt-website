@@ -14,6 +14,7 @@ test_short_viewports.js
 take_final_verification_screenshots.js
 audit_copy.js
 fix_copy_honesty.js
+master_audit_39_pages.js
 screenshots/
 screenshots_audit/
 screenshots_final/
