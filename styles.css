@@ -1895,3 +1895,49 @@ html, body {
     background: var(--bg-surface) !important;
   }
 }
+
+/* ==========================================================================
+   Omnichannel Chat Frames & Integration Demo UI Theme Adaptation
+   ========================================================================== */
+.fb-chat-frame, .ig-chat-frame, .wa-chat-frame, .pos-frame {
+  background: var(--bg-card) !important;
+  border: 1.5px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+.fb-chat-header, .ig-chat-header, .wa-chat-header, .pos-header {
+  background: var(--bg-surface) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.fb-user-info h4, .ig-user-info h4, .wa-user-info h4, .pos-user-info h4 {
+  color: var(--text-main) !important;
+}
+
+.fb-user-info p, .ig-user-info p, .wa-user-info p, .pos-user-info p {
+  color: var(--text-muted) !important;
+}
+
+.fb-msg-in, .ig-msg-in, .wa-msg-in {
+  background: var(--bg-subtle) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.fb-msg-out, .ig-msg-out, .wa-msg-out {
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="light"] .fb-msg-out,
+html[data-theme="light"] .ig-msg-out,
+html[data-theme="light"] .wa-msg-out {
+  background: var(--color-primary) !important;
+  color: #ffffff !important;
+}
+
+.why-wins-box {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}

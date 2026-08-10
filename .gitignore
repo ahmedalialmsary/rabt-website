@@ -17,6 +17,11 @@ fix_copy_honesty.js
 master_audit_39_pages.js
 replace_brand_mentions.js
 fix_blog_layout_and_contrast.js
+deep_multitheme_i18n_audit.js
+multitheme_audit_report.json
+debug_light_contrast.js
+fix_all_integration_contrast.js
+fix_all_inline_theme_variables.js
 screenshots/
 screenshots_audit/
 screenshots_final/
