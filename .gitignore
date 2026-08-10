@@ -15,6 +15,8 @@ take_final_verification_screenshots.js
 audit_copy.js
 fix_copy_honesty.js
 master_audit_39_pages.js
+replace_brand_mentions.js
+fix_blog_layout_and_contrast.js
 screenshots/
 screenshots_audit/
 screenshots_final/
