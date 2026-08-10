@@ -350,7 +350,8 @@ a {
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: nowrap !important;
 }
 
 .brand-logo {
@@ -386,19 +387,20 @@ a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.85rem;
   list-style: none;
   margin: 0;
   padding: 0;
   white-space: nowrap;
+  flex-wrap: nowrap !important;
 }
 
 .nav-link {
-  font-size: 0.95rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-muted);
   position: relative;
-  padding: 0.4rem 0;
+  padding: 0.35rem 0.2rem;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -427,14 +429,14 @@ a {
 .nav-dropdown-btn {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.95rem;
+  gap: 0.35rem;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-muted);
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.4rem 0.6rem;
+  padding: 0.35rem 0.5rem;
   border-radius: var(--radius-md);
   font-family: inherit;
   transition: all var(--transition-normal);
@@ -583,7 +585,9 @@ html[dir="ltr"] .nav-dropdown-item:hover {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  flex-wrap: nowrap !important;
 }
 
 /* Control Toggles */
@@ -1607,16 +1611,16 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1180px) {
   .nav-menu {
     display: none;
     position: absolute;
-    top: 75px;
+    top: 72px;
     left: 0;
     right: 0;
     background: var(--bg-surface);
     border-bottom: 1px solid var(--border-color);
-    padding: 1.5rem;
+    padding: 1.25rem;
     box-shadow: var(--shadow-lg);
     z-index: 1000;
   }
@@ -1722,7 +1726,7 @@ textarea.form-control {
   color: var(--text-main);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1181px) {
   .mobile-menu-btn {
     display: none;
   }
@@ -1785,10 +1789,9 @@ html, body {
   max-width: 100%;
 }
 
-/* 4. Navbar Actions & Hero Elements Responsiveness (< 991px & < 520px) */
-@media (max-width: 991px) {
+/* 4. Navbar Actions & Hero Elements Responsiveness */
+@media (max-width: 1180px) {
   .header-content {
-    flex-wrap: wrap;
     gap: 0.5rem;
   }
   .nav-actions {

@@ -8,6 +8,8 @@ inspect_layout.js
 audit_all_pages.js
 verify_all_pages_and_links.js
 check_links.js
+add_cache_buster.js
+test_nav_wrapping.js
 screenshots/
 screenshots_audit/
 full_qa_report.json
