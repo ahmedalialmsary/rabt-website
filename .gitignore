@@ -12,6 +12,8 @@ add_cache_buster.js
 test_nav_wrapping.js
 test_short_viewports.js
 take_final_verification_screenshots.js
+audit_copy.js
+fix_copy_honesty.js
 screenshots/
 screenshots_audit/
 screenshots_final/
