@@ -113,6 +113,12 @@ html {
   overflow-x: hidden;
 }
 
+@media (min-width: 1024px) {
+  html {
+    font-size: 85%;
+  }
+}
+
 body {
   background-color: var(--bg-main);
   color: var(--text-main);
