@@ -1,0 +1,7 @@
+node_modules/
+*.log
+audit_results.json
+scratch_audit.js
+test_overflow_375.js
+capture_375_clean.js
+screenshots/

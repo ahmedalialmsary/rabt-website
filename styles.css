@@ -109,6 +109,8 @@ html[data-theme="light"] {
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -117,6 +119,7 @@ body {
   font-family: var(--font-ar);
   line-height: 1.8; /* Arabic B2B Typography: Enhanced breathing room */
   min-height: 100vh;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   transition: background-color var(--transition-normal), color var(--transition-normal);
@@ -286,6 +289,10 @@ a {
   font-size: 0.825rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .badge-primary {
@@ -633,6 +640,7 @@ html[dir="ltr"] .nav-dropdown-item:hover {
   padding: 5rem 0 4rem;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .hero-glow {
@@ -641,6 +649,7 @@ html[dir="ltr"] .nav-dropdown-item:hover {
   left: 50%;
   transform: translateX(-50%);
   width: 600px;
+  max-width: 100vw;
   height: 400px;
   background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
   pointer-events: none;
@@ -658,6 +667,9 @@ html[dir="ltr"] .nav-dropdown-item:hover {
 .hero-badge-wrap {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 100%;
   margin-bottom: 1.5rem;
 }
 
@@ -1716,5 +1728,109 @@ textarea.form-control {
   }
   .nav-menu {
     display: flex !important;
+  }
+}
+
+/* ==========================================================================
+   RABT Mobile Responsiveness & Overflow Protection System (375px - 412px Audit)
+   ========================================================================== */
+
+/* 1. Global Defensive Overflow Control */
+html, body {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* 2. SaaS Mockup Windows & Code Logs Safety */
+.saas-mockup-window {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.saas-mockup-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.saas-mockup-title {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.saas-mockup-body {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.saas-mockup-body span,
+.saas-mockup-body code,
+.saas-mockup-body pre,
+.saas-mockup-body div {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 3. Feature & Pricing Matrix Table Responsiveness */
+.matrix-table-wrap {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+/* 4. Navbar Actions & Hero Elements Responsiveness (< 991px & < 520px) */
+@media (max-width: 991px) {
+  .header-content {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav-actions {
+    gap: 0.4rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .nav-actions .btn-sm {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.775rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 520px) {
+  /* On small mobile screens (375px-412px), compact header actions so they never overflow */
+  .nav-actions {
+    gap: 0.35rem;
+  }
+  .nav-actions .btn-sm {
+    display: none !important; /* Hide navbar top CTA on narrow mobile to ensure 100% fit, main CTA is in Hero right below */
+  }
+  .lang-switch-btn span {
+    display: none !important; /* Hide 'English' label text on tiny screens, keeping globe icon */
+  }
+  .lang-switch-btn {
+    padding: 0.4rem 0.5rem !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    justify-content: center !important;
+  }
+  .toggle-btn {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+  
+  /* Floating Overlay Elements (Solution 2 - Percentage & Responsive relative positioning) */
+  .saas-mockup-window + div[style*="position: absolute;"] {
+    position: relative !important;
+    inset: auto !important;
+    padding: 1rem !important;
+    background: var(--bg-surface) !important;
   }
 }
