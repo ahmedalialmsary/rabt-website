@@ -4,4 +4,11 @@ audit_results.json
 scratch_audit.js
 test_overflow_375.js
 capture_375_clean.js
+inspect_layout.js
+audit_all_pages.js
+verify_all_pages_and_links.js
+check_links.js
 screenshots/
+screenshots_audit/
+full_qa_report.json
+audit_results_summary.json
