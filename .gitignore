@@ -22,6 +22,10 @@ multitheme_audit_report.json
 debug_light_contrast.js
 fix_all_integration_contrast.js
 fix_all_inline_theme_variables.js
+update_all_dashboard_mockups.js
+clean_precise_dashboard_mockup.js
+fix_mockup_cleanly.py
+perfect_mockup_replace.py
 screenshots/
 screenshots_audit/
 screenshots_final/
